@@ -1,10 +1,10 @@
 var SLIDE_CONFIG = {
   // Slide settings
   settings: {
-    title: 'Title Goes Here<br>Up To Two Lines',
+    title: 'Mobile HTML5<br>A hall of awesome',
     subtitle: 'Subtitle Goes Here',
-    //eventTitle: 'Google I/O 2013',
-    useBuilds: true, // Default: true. False will turn off slide animation builds.
+    eventTitle: 'Google I/O 2013',
+    useBuilds: false, // Default: true. False will turn off slide animation builds.
     usePrettify: true, // Default: true
     enableSlideAreas: true, // Default: true. False turns off the click areas on either slide of the slides.
     enableTouch: true, // Default: true. If touch support should enabled. Note: the device must support touch.
@@ -19,19 +19,19 @@ var SLIDE_CONFIG = {
 
   // Author information
   presenters: [{
-    name: 'Firstname Lastname',
-    company: 'Job Title, Google',
+    name: 'Peter Beverloo',
+    company: 'Engineer, Google',
     gplus: 'http://plus.google.com/1234567890',
-    twitter: '@yourhandle',
-    www: 'http://www.you.com',
+    twitter: '@ppk',
+    www: 'http://www.peter.sh',
     github: 'http://github.com/you'
-  }/*, {
-    name: 'Second Name',
-    company: 'Job Title, Google',
-    gplus: 'http://plus.google.com/1234567890',
-    twitter: '@yourhandle',
-    www: 'http://www.you.com',
-    github: 'http://github.com/you'
-  }*/]
+  }, {
+    name: 'Paul Kinlan',
+    company: 'Developer Advocate, Google',
+    gplus: 'http://google.com/+PaulKinlan',
+    twitter: '@paul_kinlan',
+    www: 'http://paul.kinlan.me',
+    github: 'http://github.com/paulkinlan'
+  }]
 };
 
