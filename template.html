@@ -163,6 +163,26 @@ URL: https://code.google.com/p/io-2012-slides
       <h2>Geolocation</h2>
     </hgroup>
     <video class=demo poster="/images/poster.png"></video>
+    <article>
+      <h3>Single location</h3>
+      <pre class="prettyprint">var success = function(pos) {
+  var latitude = pos.coords.latitude;
+  var longitude = pos.coords.latitude;
+};
+
+window.navigator.getCurrentPosition(success);</pre>
+      <h3>Continuos location</h3>
+      <pre class="prettyprint">function(success) {
+  var latitude = pos.coords.latitude;
+  var longitude = pos.coords.latitude;
+};
+
+var watchId = navigator.watchPosition(success);
+// Stop watching
+clearWatch(watchId);
+
+</pre>
+    </article>
   </slide>
 
   <slide>
