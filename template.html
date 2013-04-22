@@ -192,12 +192,10 @@ clearWatch(watchId);
     <video class=demo poster="/images/poster.png"></video>
     <article>
       <h3>Javascript</h3>
-      <pre class="prettyprint" data-lang="javascript">window.onorientation = function() {
+      <pre class="prettyprint" data-lang="javascript">window.onorientation = function() {}
+    </article>
+</pre>
 
-}</pre>
-      <h3>CSS</h3>
-      <pre class="prettyprint">@media screen and (orientation:portrait) {}</pre>
-      <pre class="prettyprint">@media screen and (orientation:landscape) {}</pre></article>
   </slide>
 
   <slide class="segue dark">
@@ -246,7 +244,6 @@ clearWatch(watchId);
     <hgroup>
       <h2>Usability</h2>
     </hgroup>
-    <video class=demo poster="/images/poster.png"></video>
   </slide>
 
   <slide>
@@ -281,6 +278,15 @@ clearWatch(watchId);
       <h2>Viewport</h2>
     </hgroup>
     <video class=demo poster="/images/poster.png"></video>
+    <article>
+      <pre class="prettyprint">&lt;meta name="viewport" content="" /&gt;</pre>
+      <ul>
+        <li>width</li>
+        <li>initial-scale</li>
+        <li>minimum-scale=0.1-1.0</li>
+        <li>maximum-scale=0.1-1.0</li>
+      </ul>
+    </article>
   </slide>
 
   <slide>
@@ -288,7 +294,7 @@ clearWatch(watchId);
       <h2>Media Queries</h2>
     </hgroup>
     <video class=demo poster="/images/poster.png"></video>
-  </slide>
+   </slide>
 
   <slide>
     <hgroup>
@@ -309,6 +315,11 @@ clearWatch(watchId);
       <h2>Orientation Changes</h2>
     </hgroup>
     <video class=demo poster="/images/poster.png"></video>
+    <article>
+      <h3>CSS</h3>
+      <pre class="prettyprint">@media screen and (orientation:portrait) {}</pre>
+      <pre class="prettyprint">@media screen and (orientation:landscape) {}</pre>
+    </article>
   </slide>
 
   <slide class="segue dark">
@@ -321,6 +332,18 @@ clearWatch(watchId);
     <hgroup>
       <h2>Camera - Media Capture</h2>
     </hgroup>
+    <article>
+      <pre class="prettyprint">&lt;input type=file accepts="image/*" capture id="cam"&gt;</pre>
+      <pre class="prettyprint">var cam = document.getElementById("cam");
+cam.onchange = function(e) {
+  // An image has been captured.
+  if(e.target.files.length == 1 &&
+     e.target.files[0].type.indexOf("image/") == 0) {
+     // We have an image, most likely from a camera
+  }
+}</pre>
+    </article>
+
   </slide>
 
   <slide>
