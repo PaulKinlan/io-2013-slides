@@ -349,6 +349,12 @@ cam.onchange = function(e) {
   <slide>
     <hgroup>
       <h2>getUserMedia</h2>
+      <pre class="prettyprint">
+navigator.getUserMedia({audio:true, video: true}, function(stream) {
+  // An image has been captured.
+  video.src = URL.createObjectURL(stream);
+  video.play();
+};</pre>
     </hgroup>
   </slide>
 
@@ -362,6 +368,10 @@ cam.onchange = function(e) {
     <hgroup>
       <h2>NFC</h2>
     </hgroup>
+    <article>
+      <h3>There is no API</h3>
+      <div>But you can still use it</div>
+    </article>
   </slide>
 
   <slide>
@@ -369,6 +379,12 @@ cam.onchange = function(e) {
       <h2>Fullscreen</h2>
     </hgroup>
     <video class=demo poster="/images/poster.png"></video>
+    <article>
+      <h3>The old way</h3>
+      <pre class="prettyprint">window.scrollTo(0,1);</pre>
+      <h3>The new way</h3>
+      <pre class="prettyprint">window.requestFullScreen();</pre>
+    </article>
   </slide>
 
   <slide>
@@ -376,6 +392,9 @@ cam.onchange = function(e) {
       <h2>Device Motion</h2>
     </hgroup>
     <video class=demo poster="/images/poster.png"></video>
+    <article>
+    
+    </article>
   </slide>
 
   <slide>
@@ -396,6 +415,34 @@ cam.onchange = function(e) {
       <h2>User Timing API</h2>
     </hgroup>
     <video class=demo poster="/images/poster.png"></video>
+    <article>
+<pre class="prettyprint">function init() 
+{
+   performance.mark("startTask1");
+   doTask1();
+   performance.mark("endTask1");
+       
+   performance.mark("startTask2");
+   doTask2();
+   performance.mark("endTask2");
+
+   measurePerf();
+}
+
+function measurePerf() 
+{
+  var perfEntries = performance.getEntriesByType("mark");
+  for (var i = 0; i < perfEntries.length; i++)
+  {
+     if (window.console) console.log("Name: "        + perfEntries[i].name      + 
+                                     " Entry Type: " + perfEntries[i].entryType +
+                                     " Start Time: " + perfEntries[i].startTime + 
+                                     " Duration: "   + perfEntries[i].duration  + "\n");
+  }
+} </pre>
+
+
+    </article>
   </slide>
 
   <slide>
@@ -403,6 +450,27 @@ cam.onchange = function(e) {
       <h2>Navigation Timing API</h2>
     </hgroup>
     <video class=demo poster="/images/poster.png"></video>
+    <pre class="prettyprint">window.performance.timing.navigationStart
+window.performance.timing.unloadEventStart
+window.performance.timing.unloadEventEnd
+window.performance.timing.redirectStart
+window.performance.timing.redirectEnd
+window.performance.timing.fetchStart
+window.performance.timing.domainLookupStart
+window.performance.timing.domainLookupEnd
+window.performance.timing.connectStart
+window.performance.timing.connectEnd
+window.performance.timing.secureConnectionStart
+window.performance.timing.requestStart
+window.performance.timing.responseStart
+window.performance.timing.responseEnd
+window.performance.timing.domLoading
+window.performance.timing.domInteractive
+window.performance.timing.domContentLoadedEventStart
+window.performance.timing.domContentLoadedEventEnd
+window.performance.timing.domComplete
+window.performance.timing.loadEventStart
+window.performance.timing.loadEventEnd </pre>
   </slide>
 
   <slide>
@@ -410,6 +478,19 @@ cam.onchange = function(e) {
       <h2>window.performance.now()</h2>
     </hgroup>
     <video class=demo poster="/images/poster.png"></video>
+    <article>
+       <ul>
+         <li>High precision
+         <li>Since performance.timing.navigationStart
+         <li>No need for epoch
+       </ul>
+       <pre class="prettyprint">Date.now()         //  1337376068250
+   performance.now()  //  20303.427000007</pre>
+    </article>
+  </slide>
+
+  <slide>
+    Conclusion.
   </slide>
 
   <slide class="thank-you-slide segue nobackground">
