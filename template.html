@@ -128,6 +128,9 @@ URL: https://code.google.com/p/io-2012-slides
       <h2>Application Cache</h2>
     </hgroup>
     <video class=demo poster="/images/poster.png"></video>
+    <article>
+      <pre class="prettyprint">&lt;html manifest='test.manifest'&gt;</pre>
+    </article> 
   </slide>
 
   <slide>
@@ -135,6 +138,16 @@ URL: https://code.google.com/p/io-2012-slides
       <h2>Offline Events</h2>
     </hgroup>
     <video class=demo poster="/images/poster.png"></video>
+    <article> 
+      <pre class="prettyprint">window.navigator.onLine</pre>
+      <pre class="prettyprint">window.ononline = function() {
+
+};
+
+window.onoffline = function() {
+
+};</pre>
+    </article>
   </slide>
 
   <slide>
@@ -155,7 +168,6 @@ URL: https://code.google.com/p/io-2012-slides
     <hgroup>
       <h2>Location and Orientation</h2>
     </hgroup>
-
   </slide>
 
   <slide>
@@ -213,8 +225,14 @@ clearWatch(watchId);
       <h3>IME</h3>
       <pre class="prettyprint">&lt;input type="email" /&gt;</pre>
       <pre class="prettyprint">&lt;input type="search" /&gt;</pre>
+      <pre class="prettyprint">&lt;input type="url" /&gt;</pre>
+      <pre class="prettyprint">&lt;input type="tel" /&gt;</pre>
+      <pre class="prettyprint">&lt;input type="number" /&gt;</pre>
       <pre class="prettyprint">&lt;input type="date" /&gt;</pre>
+      <pre class="prettyprint">&lt;input type="week" /&gt;</pre>
+      <pre class="prettyprint">&lt;input type="month" /&gt;</pre>
       <pre class="prettyprint">&lt;input type="datetime" /&gt;</pre>
+      <a href="http://jsbin.com/apejur/latest" target="_blank">Demo</a>
     </article>
   </slide>
 
@@ -224,7 +242,7 @@ clearWatch(watchId);
     </hgroup>
     <video class=demo poster="/images/poster.png"></video>
     <article>
-
+       <pre class="prettyprint"></pre>
     </article>
   </slide>
 
@@ -233,6 +251,9 @@ clearWatch(watchId);
       <h2>Pointer Events</h2>
     </hgroup>
     <video class=demo poster="/images/poster.png"></video>
+    <article>
+       <pre class="prettyprint"></pre>
+    </article>
   </slide>
 
   <slide>
@@ -240,6 +261,9 @@ clearWatch(watchId);
       <h2>Ambiguous Clicks</h2>
     </hgroup>
     <video class=demo poster="/images/poster.png"></video>
+    <article>
+       <pre class="prettyprint"></pre>
+    </article>
   </slide>
 
   <slide class="segue dark">
@@ -253,6 +277,9 @@ clearWatch(watchId);
       <h2>Font size</h2>
     </hgroup>
     <video class=demo poster="/images/poster.png"></video>
+    <article>
+      <pre class="prettyprint"></pre>
+    </article>
   </slide>
 
   <slide>
@@ -260,6 +287,9 @@ clearWatch(watchId);
       <h2>Auto size</h2>
     </hgroup>
     <video class=demo poster="/images/poster.png"></video>
+    <article>
+      <pre class="prettyprint"></pre>
+    </article>
   </slide>
 
   <slide>
@@ -267,6 +297,9 @@ clearWatch(watchId);
       <h2>position:sticky</h2>
     </hgroup>
     <video class=demo poster="/images/poster.png"></video>
+    <article>
+      <pre class="prettyprint"></pre>
+    </article>
   </slide>
 
   <slide class="segue dark">
@@ -296,6 +329,9 @@ clearWatch(watchId);
       <h2>Media Queries</h2>
     </hgroup>
     <video class=demo poster="/images/poster.png"></video>
+    <article>
+      <pre class="prettyprint"></pre>
+    </article>
    </slide>
 
   <slide>
@@ -303,6 +339,9 @@ clearWatch(watchId);
       <h2>Flex Box</h2>
     </hgroup>
     <video class=demo poster="/images/poster.png"></video>
+    <article>
+      <pre class="prettyprint"></pre>
+    </article>
   </slide>
 
   <slide>
@@ -310,6 +349,9 @@ clearWatch(watchId);
       <h2>Grid Layout</h2>
     </hgroup>
     <video class=demo poster="/images/poster.png"></video>
+    <article>
+      <pre class="prettyprint"></pre>
+    </article>
   </slide>
 
   <slide>
@@ -395,7 +437,11 @@ navigator.getUserMedia({audio:true, video: true}, function(stream) {
     </hgroup>
     <video class=demo poster="/images/poster.png"></video>
     <article>
-    
+      <pre class="prettyprint">window.ondevicemotion = function(e) {
+   var acceleration = e.acceleration;
+   var accelInclGravity = e.accelerationIncludingGravity;
+   var rotationRate = e.rotationRate;
+};</pre> 
     </article>
   </slide>
 
@@ -428,21 +474,15 @@ navigator.getUserMedia({audio:true, video: true}, function(stream) {
    doTask2();
    performance.mark("endTask2");
 
-   measurePerf();
-}
-
-function measurePerf() 
-{
-  var perfEntries = performance.getEntriesByType("mark");
-  for (var i = 0; i < perfEntries.length; i++)
-  {
-     if (window.console) console.log("Name: "        + perfEntries[i].name      + 
+   var perfEntries = performance.getEntriesByType("mark");
+   for (var i = 0; i < perfEntries.length; i++)
+   {
+      if (window.console) console.log("Name: "        + perfEntries[i].name      + 
                                      " Entry Type: " + perfEntries[i].entryType +
                                      " Start Time: " + perfEntries[i].startTime + 
                                      " Duration: "   + perfEntries[i].duration  + "\n");
-  }
-} </pre>
-
+   }
+}</pre>
 
     </article>
   </slide>
@@ -492,7 +532,9 @@ performance.now(); //  20303.427000007</pre>
   </slide>
 
   <slide>
-    Conclusion.
+    <hgroup>
+      <h2>Conclusion</h2>
+    </hgroup>
   </slide>
 
   <slide class="thank-you-slide segue nobackground">
