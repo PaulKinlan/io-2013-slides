@@ -864,7 +864,7 @@ video.demo {
   height: 1280px;
   @include transform(translateX(350px) scale(0.5));
   @include transform-origin(0,0);
-  @include box-shadow(0px 0px 5px black);
+  @include box-shadow(0px 0px 20px black);
   z-index: 400;
   float: right;
   position: relative;
