@@ -62,13 +62,6 @@ URL: https://code.google.com/p/io-2012-slides
 
   <slide>
     <hgroup>
-      <h2>Unique Capabilities</h2>
-    </hgroup>
-    <article>[TODO Add image of on the temperature sensor]</article>
-  </slide>
-
-  <slide>
-    <hgroup>
       <h2>Input is harder</h2>
     </hgroup>
     <article>[TODO Add image of on the lots of buttons]</article>
@@ -99,15 +92,19 @@ URL: https://code.google.com/p/io-2012-slides
     <hgroup>
       <h2>Using the mobile web is hard</h2>
     </hgroup>
-    <article>
-      <p>Because we rarely take all these issues in to account</p>
-    </article>
+
   </slide>
 
-  <slide class="segue dark">
+  <slide class="segue fill transparent">
     <hgroup>
       <h1>But is developing for the mobile web hard?</h1>
     </hgroup>
+  </slide>
+  
+  <slide class="segue fill blue">
+      <hgroup>
+        <h1>Maybe...</h1>
+      </hgroup>
   </slide>
 
   <slide class="segue">
@@ -128,11 +125,11 @@ URL: https://code.google.com/p/io-2012-slides
     </hgroup>
     <video class=demo poster="/images/poster.png"></video>
     <article>
-	  <div>The most critical element for mobile TODAY!!</div>
+	  <h3>The most critical element for mobile TODAY!</h3>
       <pre class="prettyprint">&lt;meta name="viewport" content="" /&gt;</pre>
       <ul>
-        <li>width</li>
-        <li>initial-scale</li>
+        <li>width=device-width|Pixel value</li>
+        <li>initial-scale=0.1-1.0</li>
         <li>minimum-scale=0.1-1.0</li>
         <li>maximum-scale=0.1-1.0</li>
       </ul>
@@ -145,7 +142,7 @@ URL: https://code.google.com/p/io-2012-slides
     </hgroup>
     <video class=demo poster="/images/poster.png"></video>
     <article>
-	  <div>A saner solution</div>
+	  <h3>A saner solution</h3>
       <pre class="prettyprint">@viewport {
   width: device-width;
   zoom: 0.5;
@@ -156,7 +153,16 @@ URL: https://code.google.com/p/io-2012-slides
     </ul>
     </article>
   </slide>
-
+  
+  <slide>
+      <hgroup>
+        <h2>Viewport units</h2>
+      </hgroup>
+      <video class=demo poster="/images/poster.png"></video>
+      <article>
+  	  
+      </article>
+    </slide>
 
   <slide>
     <hgroup>
@@ -164,9 +170,14 @@ URL: https://code.google.com/p/io-2012-slides
     </hgroup>
     <video class=demo poster="/images/poster.png"></video>
     <article>
+      <h3>Adaptive to screen size</h3>
 	  <pre class="prettyprint">@media screen and (min-device-width: 800px) { ... }</pre>
 	  <pre class="prettyprint">@media screen and (device-aspect-ratio: 16/9) { ... }</pre>
 	  <pre class="prettyprint">@media screen and (min-device-pixel-ratio: 3/2) { ... }</pre>
+	  <ul>
+        <li>Logically group css
+  	    <li>Dynamically responsive
+      </ul>
     </article>
    </slide>
 
@@ -176,6 +187,7 @@ URL: https://code.google.com/p/io-2012-slides
     </hgroup>
     <video class=demo poster="/images/poster.png"></video>
     <article>
+        <h3>Adaptive layouts</h3>
       <pre class="prettyprint">.flex {
   display: flex;
   flex-direction: row | row-reverse | column | column-reverse;
@@ -189,6 +201,24 @@ URL: https://code.google.com/p/io-2012-slides
       <p>Spec: <a href="http://dev.w3.org/csswg/css-flexbox/">http://dev.w3.org/csswg/css-flexbox/</a></p>
     </article>
   </slide>
+  
+  <slide>
+      <hgroup>
+        <h2>Responsive Images</h2>
+      </hgroup>
+      <video class=demo poster="/images/poster.png"></video>
+      <article>
+          <h3>image-set</h3>
+        <pre class="prettyprint">.images {
+    content: -webkit-image-set("1x test.png, 2x test2.png");
+  }</pre>
+
+      <ul>
+        <li>Combines well with Media queries
+        <li>Adaptive to display size
+      </ul>
+      </article>
+    </slide>
 
   <slide>
     <hgroup>
@@ -196,14 +226,34 @@ URL: https://code.google.com/p/io-2012-slides
     </hgroup>
     <video class=demo poster="/images/poster.png"></video>
     <article>
+      <h3>[TODO]</h3>
       <pre class="prettyprint"></pre>
       <p>Spec: <a href="http://dev.w3.org/csswg/css-flexbox/">http://dev.w3.org/csswg/css-flexbox/</a></p>
     </article>
   </slide>
+  
+  <slide>
+      <hgroup>
+        <h2>position:sticky</h2>
+      </hgroup>
+      <video class=demo poster="/images/poster.png"></video>
+      <article>
+        <h3>FTW</h3>
+        <ul>
+          <li>Initially a relative element
+          <li>When parent is partially out of view turns in to position:fixed
+          <li>When parent is out of view it is not shown
+        </ul>
+        <pre class="prettyprint">.sticky-class {
+    position: sticky;
+    top: 10px;
+  }</pre>
+      </article>
+  </slide>
 
   <slide>
     <hgroup>
-      <h2>Orientation Changes</h2>
+      <h2>Orientation</h2>
     </hgroup>
     <video class=demo poster="/images/poster.png"></video>
     <article>
@@ -258,10 +308,13 @@ clearWatch(watchId);</pre>
     <video class=demo poster="/images/poster.png"></video>
     <article>
       <h3>Javascript</h3>
-      <pre class="prettyprint" data-lang="javascript">window.onorientation = function() {}
+      <pre class="prettyprint" data-lang="javascript">window.onorientationchange = function(e) {
+  var yaw = e.alpha; 
+  var pitch = e.beta;
+  var roll = e.gamma;
+};</pre>
+    <p>Demo: <a href="http://jsbin.com/ofeces">jsbin.com/ofeces/latest</a></p>
     </article>
-</pre>
-
   </slide>
 
   <slide class="segue dark">
@@ -286,7 +339,7 @@ clearWatch(watchId);</pre>
 &lt;input type="week" /&gt;
 &lt;input type="month" /&gt;
 &lt;input type="datetime" /&gt;</pre>
-      <a href="http://jsbin.com/apejur/latest" target="_blank">Demo</a>
+      <p>Demo: <a href="http://jsbin.com/apejur/latest" target="_blank">jsbin.com/apejur/latest</a></p>
     </article>
   </slide>
 
@@ -296,14 +349,22 @@ clearWatch(watchId);</pre>
     </hgroup>
     <video class=demo poster="/images/poster.png"></video>
     <article>
-	   <div>
+	   <h3>
 		Implements Touch Events spec version 1
-		</div>
+	   </h3>
        <pre class="prettyprint">[element].ontouchstart = function(e) {};
 [element].ontouchmove = function(e) {};
 [element].ontouchend = function(e) {};
 </pre>
+      <ul>
+        <li>300ms delay for click
+        <li>No gestures
+      </ul>
+      <p>Docs: <a href="http://toolkitchen.github.io/platform/pointer-events.html">http://toolkitchen.github.io/platform/pointer-events.html</a></p>
+      <p>Demo: <a href="http://jsbin.com/apejur/latest" target="_blank">Demo</a></p>
+       
     </article>
+    
   </slide>
 
   <slide>
@@ -327,10 +388,12 @@ clearWatch(watchId);</pre>
 	    <pre class="prettyprint">touch-action: none | auto | pan-x | pan-y;</pre>
 	<pre class="prettyprint">@media (pointer:coarse) {}
 	@media (pointer:fine) {}</pre>
+	
+	 <p><a href="http://jsbin.com/apejur/latest" target="_blank">Demo</a></p>
     </article>
   </slide>
 
-  <slide>
+  <slide hidden>
     <hgroup>
       <h2>Ambiguous Clicks</h2>
     </hgroup>
@@ -341,16 +404,17 @@ clearWatch(watchId);</pre>
       	<li>Increase the margin
 	    <li>Increase the padding
       </ul>
+      <p>Demo: <a href="http://jsbin.com/irivohlatest" target="_blank">http://jsbin.com/irivoh/latest</a></p>
     </article>
   </slide>
 
-  <slide class="segue dark">
+  <slide class="segue dark" hidden>
     <hgroup>
       <h2>Usability</h2>
     </hgroup>
   </slide>
 
-  <slide>
+  <slide hidden>
     <hgroup>
       <h2>Font size</h2>
     </hgroup>
@@ -364,7 +428,7 @@ clearWatch(watchId);</pre>
     </article>
   </slide>
 
-  <slide>
+  <slide hidden>
     <hgroup>
       <h2>Auto size</h2>
     </hgroup>
@@ -376,26 +440,6 @@ clearWatch(watchId);</pre>
       <pre class="prettyprint"></pre>
     </article>
   </slide>
-
-  <slide>
-    <hgroup>
-      <h2>position:sticky</h2>
-    </hgroup>
-    <video class=demo poster="/images/poster.png"></video>
-    <article>
-      <ul>
-        <li>Initially a relative element
-        <li>When parent is partially out of view turns in to position:fixed
-        <li>When parent is out of view it is not shown
-      </ul>
-      <pre class="prettyprint">.sticky-class {
-  position: sticky;
-  top: 10px;
-}</pre>
-    </article>
-  </slide>
-
-  
 
   <slide class="segue dark">
     <hgroup>
@@ -409,6 +453,7 @@ clearWatch(watchId);</pre>
     </hgroup>
     <video class=demo poster="/images/poster.png"></video>
     <article>
+      <h3>Fundamental Offline API</h3>
       <pre class="prettyprint">&lt;html manifest='test.manifest'&gt;</pre>
     </article> 
   </slide>
@@ -418,7 +463,8 @@ clearWatch(watchId);</pre>
       <h2>Offline Events</h2>
     </hgroup>
     <video class=demo poster="/images/poster.png"></video>
-    <article> 
+    <article>
+      <h3>Network state</h3>
       <pre class="prettyprint">window.navigator.onLine</pre>
       <pre class="prettyprint">window.ononline = function() {
 
@@ -427,6 +473,9 @@ clearWatch(watchId);</pre>
 window.onoffline = function() {
 
 };</pre>
+      <ul>
+          <li>Not 100% reliable
+      </ul>
     </article>
   </slide>
 
@@ -435,9 +484,21 @@ window.onoffline = function() {
       <h2>Storage APIs</h2>
     </hgroup>
     <video class=demo poster="/images/poster.png"></video>
+    <article>
+      <h3>4 technologies</h3>
+      <h4>localStorage</h4>
+      <pre class="prettyprint">localStorage["test"] = 1234;
+var test = localStorage["test"];</pre>
+      <h4>WebSQL</h4>
+      <pre></pre>
+      <h4>IndexedDB</h4>
+      <pre></pre>
+      <h4>FileSystem</h4>
+      <pre></pre>
+    </article>
   </slide>
 
-  <slide>
+  <slide hidden>
     <hgroup>
       <h2>Navigation Controller</h2>
     </hgroup>
@@ -455,6 +516,7 @@ window.onoffline = function() {
       <h2>Camera - Media Capture</h2>
     </hgroup>
     <article>
+      <h3>Take photos</h3>
       <pre class="prettyprint">&lt;input type=file accepts="image/*" capture id="cam"&gt;</pre>
       <pre class="prettyprint">var cam = document.getElementById("cam");
 cam.onchange = function(e) {
@@ -471,32 +533,35 @@ cam.onchange = function(e) {
   <slide>
     <hgroup>
       <h2>getUserMedia</h2>
-      <pre class="prettyprint">
-navigator.getUserMedia({audio:true, video: true}, function(stream) {
+    </hgroup>
+    <article>
+    <h3>Inline camera and mic access</h3>    
+    <pre class="prettyprint">navigator.getUserMedia({audio:true, video: true}, function(stream) {
   // An image has been captured.
   video.src = URL.createObjectURL(stream);
   video.play();
-};</pre>
-    </hgroup>
+};</pre></article>
   </slide>
 
   <slide>
     <hgroup>
       <h2>WebRTC</h2>
     </hgroup>
+    <article></article>
   </slide>
 
   <slide>
     <hgroup>
       <h2>NFC</h2>
     </hgroup>
+    <video class=demo poster="/images/poster.png"></video>
     <article>
       <h3>There is no API</h3>
       <div>But you can still use it</div>
     </article>
   </slide>
 
-<slide>
+  <slide>
     <hgroup>
       <h2>Android Intents</h2>
     </hgroup>
@@ -513,7 +578,7 @@ navigator.getUserMedia({audio:true, video: true}, function(stream) {
   end;</pre>
       <pre class="prettyprint">&lt;a href="intent://scan/#Intent;scheme=zxing;package=com.google.zxing.client.android;end"&gt;Take a QR code &lt;/a&gt;
 	  </pre>
-	  <a href="https://developers.google.com/chrome/mobile/docs/intents">More information</a>
+	  <p>More information: <a href="https://developers.google.com/chrome/mobile/docs/intents">developers.google.com/chrome/mobile/docs/intents</a></p>
     </article>
   </slide>
 
@@ -532,6 +597,7 @@ navigator.getUserMedia({audio:true, video: true}, function(stream) {
 [element].fullscreenEnabled();
 [element].isFullScreen();
 </pre>
+    <p>Demo <a href="http://jsbin.com/onadep/latest">jsbin.com/onadep/latest</a></p>
     </article>
   </slide>
 
@@ -543,13 +609,22 @@ navigator.getUserMedia({audio:true, video: true}, function(stream) {
     <article>
       <pre class="prettyprint">window.ondevicemotion = function(e) {
    var acceleration = e.acceleration;
-   var accelInclGravity = e.accelerationIncludingGravity;
+   //acceleration.x
+   //acceleration.y
+   //acceleration.z
+   var accelWgravity = e.accelerationIncludingGravity;
    var rotationRate = e.rotationRate;
-};</pre> 
+   //rotationRate.alpha
+   //rotationRate.beta
+   //rotationRate.gama
+};</pre>
+      <ul>
+        <li>
+      </ul>
     </article>
   </slide>
 
-  <slide>
+  <slide hidden>
     <hgroup>
       <h2>Continuous Audio</h2>
     </hgroup>
@@ -568,6 +643,7 @@ navigator.getUserMedia({audio:true, video: true}, function(stream) {
     </hgroup>
     <video class=demo poster="/images/poster.png"></video>
     <article>
+        <h3>A good timing API</h3>
 <pre class="prettyprint">performance.mark("startTask1");
 doTask1();
 performance.mark("endTask1");
@@ -595,6 +671,7 @@ for (var i = 0; i &lt; perfEntries.length; i++)
     </hgroup>
     <video class=demo poster="/images/poster.png"></video>
     <article>
+        <h3>Programmatically understanding the network</h3>
 <pre class="prettyprint">var perfEntries = performance.getEntriesByType("resource");
 for (var i = 0; i &lt; perfEntries.length; i++)
 {
@@ -611,7 +688,9 @@ for (var i = 0; i &lt; perfEntries.length; i++)
       <h2>Navigation Timing API</h2>
     </hgroup>
     <video class=demo poster="/images/poster.png"></video>
-    <pre class="prettyprint">window.performance.timing.navigationStart
+    <article class="smaller">
+      <h3>Understanding high-level network</h3>
+      <pre class="prettyprint">window.performance.timing.navigationStart
 window.performance.timing.unloadEventStart
 window.performance.timing.unloadEventEnd
 window.performance.timing.redirectStart
@@ -632,6 +711,7 @@ window.performance.timing.domContentLoadedEventEnd
 window.performance.timing.domComplete
 window.performance.timing.loadEventStart
 window.performance.timing.loadEventEnd </pre>
+    </article>
   </slide>
 
   <slide>

@@ -99,7 +99,7 @@ slides > slide {
   display: none;
   font-family: 'Open Sans', Arial, sans-serif;
   font-size: 26px;
-  color: $gray-3;
+  color: $gray-4;
   //@include background(linear-gradient(white, white 85%, $gray-1));
   //background-color: white;
   width: $slide-width;
@@ -164,12 +164,28 @@ slides > slide {
     background: $gray-4 !important;
   }
   
+  &.blue {
+     background: $brand-blue !important;
+     color:white;
+     
+     q {
+          font-size: 128px;
+          line-height: 1;
+          color: white;
+     }
+     
+     h1 {
+       color: white;
+     }
+  }
+  
   &.transparent {
     background: black !important;
     
     q {
       font-size: 128px;
       line-height: 1;
+      color: white;
     }
     
     q:before { 
@@ -367,7 +383,8 @@ ul {
     content: '\00B7';
     margin-left: -1em;
     position: absolute;
-    font-weight: 600;
+    font-weight: 900;
+    font-size: 1em;
   }
 
   ul {
