@@ -1,8 +1,8 @@
 var SLIDE_CONFIG = {
   // Slide settings
   settings: {
-    title: 'Mobile HTML5<br>A hall of awesome',
-    subtitle: 'Subtitle Goes Here',
+    title: 'Mobile HTML5',
+    subtitle: 'Making you awesome on mobile',
     eventTitle: 'Google I/O 2013',
     useBuilds: false, // Default: true. False will turn off slide animation builds.
     usePrettify: true, // Default: true

@@ -42,64 +42,57 @@ URL: https://code.google.com/p/io-2012-slides
     </hgroup>
   </slide>
 
-  <slide>
-    <hgroup>
-      <h2>Mobile is Different</h2>
-    </hgroup>
+  <slide class="fill transparent quote nobackground">
+    <article><q>Mobile is Different</q></article>
   </slide>
 
   <slide>
     <hgroup>
       <h2>On the move</h2>
     </hgroup>
+    <article>[TODO Add image of on the move]</article>
   </slide>
 
   <slide>
     <hgroup>
       <h2>Flakey connections</h2>
     </hgroup>
+    <article>[TODO Add image of on the internet connection]</article>
   </slide>
 
   <slide>
     <hgroup>
       <h2>Unique Capabilities</h2>
     </hgroup>
+    <article>[TODO Add image of on the temperature sensor]</article>
   </slide>
 
   <slide>
     <hgroup>
-      <h2>Input is different</h2>
+      <h2>Input is harder</h2>
     </hgroup>
+    <article>[TODO Add image of on the lots of buttons]</article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Network is slower</h2>
+    </hgroup>
+    <article>[TODO Add image of on the cell tower]</article>
   </slide>
 
   <slide>
     <hgroup>
       <h2>Performance is lower</h2>
     </hgroup>
+    <article>[TODO Add image of on the something slow]</article>
   </slide>
 
   <slide>
     <hgroup>
       <h2>People use mobile sites differently</h2>
     </hgroup>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Action-oriented</h2>
-    </hgroup>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>More infomration in less space</h2>
-    </hgroup>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Client-based experiences</h2>
-    </hgroup>
+    <article>[TODO Add kill slide]</article>
   </slide>
 
   <slide>
@@ -113,9 +106,296 @@ URL: https://code.google.com/p/io-2012-slides
 
   <slide class="segue dark">
     <hgroup>
-      <h2>Developing for the mobile web is hard??</h2>
+      <h1>But is developing for the mobile web hard?</h1>
     </hgroup>
   </slide>
+
+  <slide class="segue">
+    <hgroup>
+      <h1>Parity</h1>
+    </hgroup>
+  </slide>
+
+  <slide class="segue dark">
+    <hgroup>
+      <h2>Responsiveness</h2>
+    </hgroup>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Viewport</h2>
+    </hgroup>
+    <video class=demo poster="/images/poster.png"></video>
+    <article>
+	  <div>The most critical element for mobile TODAY!!</div>
+      <pre class="prettyprint">&lt;meta name="viewport" content="" /&gt;</pre>
+      <ul>
+        <li>width</li>
+        <li>initial-scale</li>
+        <li>minimum-scale=0.1-1.0</li>
+        <li>maximum-scale=0.1-1.0</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Viewport queries</h2>
+    </hgroup>
+    <video class=demo poster="/images/poster.png"></video>
+    <article>
+	  <div>A saner solution</div>
+      <pre class="prettyprint">@viewport {
+  width: device-width;
+  zoom: 0.5;
+}</pre>
+    <ul>
+      <li>Great delivery flexibility
+	  <li>Increased readability
+    </ul>
+    </article>
+  </slide>
+
+
+  <slide>
+    <hgroup>
+      <h2>Media Queries</h2>
+    </hgroup>
+    <video class=demo poster="/images/poster.png"></video>
+    <article>
+	  <pre class="prettyprint">@media screen and (min-device-width: 800px) { ... }</pre>
+	  <pre class="prettyprint">@media screen and (device-aspect-ratio: 16/9) { ... }</pre>
+	  <pre class="prettyprint">@media screen and (min-device-pixel-ratio: 3/2) { ... }</pre>
+    </article>
+   </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Flex Box</h2>
+    </hgroup>
+    <video class=demo poster="/images/poster.png"></video>
+    <article>
+      <pre class="prettyprint">.flex {
+  display: flex;
+  flex-direction: row | row-reverse | column | column-reverse;
+}</pre>
+
+    <ul>
+      <li>Combines well with Media queries
+      <li>Adaptive to display size
+    </ul>
+      
+      <p>Spec: <a href="http://dev.w3.org/csswg/css-flexbox/">http://dev.w3.org/csswg/css-flexbox/</a></p>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Grid Layout</h2>
+    </hgroup>
+    <video class=demo poster="/images/poster.png"></video>
+    <article>
+      <pre class="prettyprint"></pre>
+      <p>Spec: <a href="http://dev.w3.org/csswg/css-flexbox/">http://dev.w3.org/csswg/css-flexbox/</a></p>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Orientation Changes</h2>
+    </hgroup>
+    <video class=demo poster="/images/poster.png"></video>
+    <article>
+      <h3>CSS</h3>
+      <pre class="prettyprint">@media screen and (orientation:portrait) {}</pre>
+      <pre class="prettyprint">@media screen and (orientation:landscape) {}</pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+       <h2>On Scroll</h2>
+    </hgroup>
+    <article></article>
+  </slide>
+
+  <slide class="segue dark">
+    <hgroup>
+      <h2>Location and Orientation</h2>
+    </hgroup>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Geolocation</h2>
+    </hgroup>
+    <video class=demo poster="/images/poster.png"></video>
+    <article>
+      <h3>Single location</h3>
+      <pre class="prettyprint">var success = function(pos) {
+  var latitude = pos.coords.latitude;
+  var longitude = pos.coords.latitude;
+};
+
+window.navigator.getCurrentPosition(success);</pre>
+      <h3>Continuous location</h3>
+      <pre class="prettyprint">function(success) {
+  var latitude = pos.coords.latitude;
+  var longitude = pos.coords.latitude;
+};
+
+var watchId = navigator.watchPosition(success);
+// Stop watching
+clearWatch(watchId);</pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Orientation</h2>
+    </hgroup>
+    <video class=demo poster="/images/poster.png"></video>
+    <article>
+      <h3>Javascript</h3>
+      <pre class="prettyprint" data-lang="javascript">window.onorientation = function() {}
+    </article>
+</pre>
+
+  </slide>
+
+  <slide class="segue dark">
+    <hgroup>
+      <h2>Input</h2>
+    </hgroup>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Semantic input types</h2>
+    </hgroup>
+    <video class=demo poster="/images/poster.png"></video>
+    <article>
+      <h3>IME</h3>
+      <pre class="prettyprint">&lt;input type="email" /&gt;
+&lt;input type="search" /&gt;
+&lt;input type="url" /&gt;
+&lt;input type="tel" /&gt;
+&lt;input type="number" /&gt;
+&lt;input type="date" /&gt;
+&lt;input type="week" /&gt;
+&lt;input type="month" /&gt;
+&lt;input type="datetime" /&gt;</pre>
+      <a href="http://jsbin.com/apejur/latest" target="_blank">Demo</a>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Touch Events</h2>
+    </hgroup>
+    <video class=demo poster="/images/poster.png"></video>
+    <article>
+	   <div>
+		Implements Touch Events spec version 1
+		</div>
+       <pre class="prettyprint">[element].ontouchstart = function(e) {};
+[element].ontouchmove = function(e) {};
+[element].ontouchend = function(e) {};
+</pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Pointer Events</h2>
+    </hgroup>
+    <video class=demo poster="/images/poster.png"></video>
+    <article>
+       	<h3>JS</h3>
+	      <pre class="prettyprint">[elem].onpointerdown = function(e) {}
+	[elem].onpointerup = function(e) {}
+	[elem].onpointermove = function(e) {}
+	[elem].onpointerover = function(e) {}
+	[elem].onpointerenter = function(e) {}
+	[elem].onpointerout = function(e) {}
+	[elem].onpointerleave = function(e) {}</pre>
+
+		<pre class="prettyprint">navigator.maxTouchPoints</pre>
+
+	    <h3>CSS</h3>
+	    <pre class="prettyprint">touch-action: none | auto | pan-x | pan-y;</pre>
+	<pre class="prettyprint">@media (pointer:coarse) {}
+	@media (pointer:fine) {}</pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Ambiguous Clicks</h2>
+    </hgroup>
+    <video class=demo poster="/images/poster.png"></video>
+    <article>
+	  <p>For all touch targets (links and buttons)</p>
+      <ul>
+      	<li>Increase the margin
+	    <li>Increase the padding
+      </ul>
+    </article>
+  </slide>
+
+  <slide class="segue dark">
+    <hgroup>
+      <h2>Usability</h2>
+    </hgroup>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Font size</h2>
+    </hgroup>
+    <video class=demo poster="/images/poster.png"></video>
+    <article>
+      <ul>
+         <li>N4 12px font can read like a 7px font.
+         <li>N7 12px font can read like a 9px font.
+      </ul>
+      <pre class="prettyprint"></pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Auto size</h2>
+    </hgroup>
+    <video class=demo poster="/images/poster.png"></video>
+    <article>
+      <ul>
+        <li>Boosts font size to make text read better
+      </ul>
+      <pre class="prettyprint"></pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>position:sticky</h2>
+    </hgroup>
+    <video class=demo poster="/images/poster.png"></video>
+    <article>
+      <ul>
+        <li>Initially a relative element
+        <li>When parent is partially out of view turns in to position:fixed
+        <li>When parent is out of view it is not shown
+      </ul>
+      <pre class="prettyprint">.sticky-class {
+  position: sticky;
+  top: 10px;
+}</pre>
+    </article>
+  </slide>
+
+  
 
   <slide class="segue dark">
     <hgroup>
@@ -166,209 +446,7 @@ window.onoffline = function() {
 
   <slide class="segue dark">
     <hgroup>
-      <h2>Location and Orientation</h2>
-    </hgroup>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Geolocation</h2>
-    </hgroup>
-    <video class=demo poster="/images/poster.png"></video>
-    <article>
-      <h3>Single location</h3>
-      <pre class="prettyprint">var success = function(pos) {
-  var latitude = pos.coords.latitude;
-  var longitude = pos.coords.latitude;
-};
-
-window.navigator.getCurrentPosition(success);</pre>
-      <h3>Continuos location</h3>
-      <pre class="prettyprint">function(success) {
-  var latitude = pos.coords.latitude;
-  var longitude = pos.coords.latitude;
-};
-
-var watchId = navigator.watchPosition(success);
-// Stop watching
-clearWatch(watchId);
-
-</pre>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Orientation</h2>
-    </hgroup>
-    <video class=demo poster="/images/poster.png"></video>
-    <article>
-      <h3>Javascript</h3>
-      <pre class="prettyprint" data-lang="javascript">window.onorientation = function() {}
-    </article>
-</pre>
-
-  </slide>
-
-  <slide class="segue dark">
-    <hgroup>
-      <h2>Input</h2>
-    </hgroup>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Semantic Types</h2>
-    </hgroup>
-    <video class=demo poster="/images/poster.png"></video>
-    <article>
-      <h3>IME</h3>
-      <pre class="prettyprint">&lt;input type="email" /&gt;</pre>
-      <pre class="prettyprint">&lt;input type="search" /&gt;</pre>
-      <pre class="prettyprint">&lt;input type="url" /&gt;</pre>
-      <pre class="prettyprint">&lt;input type="tel" /&gt;</pre>
-      <pre class="prettyprint">&lt;input type="number" /&gt;</pre>
-      <pre class="prettyprint">&lt;input type="date" /&gt;</pre>
-      <pre class="prettyprint">&lt;input type="week" /&gt;</pre>
-      <pre class="prettyprint">&lt;input type="month" /&gt;</pre>
-      <pre class="prettyprint">&lt;input type="datetime" /&gt;</pre>
-      <a href="http://jsbin.com/apejur/latest" target="_blank">Demo</a>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Touch Events</h2>
-    </hgroup>
-    <video class=demo poster="/images/poster.png"></video>
-    <article>
-       <pre class="prettyprint"></pre>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Pointer Events</h2>
-    </hgroup>
-    <video class=demo poster="/images/poster.png"></video>
-    <article>
-       <pre class="prettyprint"></pre>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Ambiguous Clicks</h2>
-    </hgroup>
-    <video class=demo poster="/images/poster.png"></video>
-    <article>
-       <pre class="prettyprint"></pre>
-    </article>
-  </slide>
-
-  <slide class="segue dark">
-    <hgroup>
-      <h2>Usability</h2>
-    </hgroup>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Font size</h2>
-    </hgroup>
-    <video class=demo poster="/images/poster.png"></video>
-    <article>
-      <pre class="prettyprint"></pre>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Auto size</h2>
-    </hgroup>
-    <video class=demo poster="/images/poster.png"></video>
-    <article>
-      <pre class="prettyprint"></pre>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>position:sticky</h2>
-    </hgroup>
-    <video class=demo poster="/images/poster.png"></video>
-    <article>
-      <pre class="prettyprint"></pre>
-    </article>
-  </slide>
-
-  <slide class="segue dark">
-    <hgroup>
-      <h2>Responsiveness</h2>
-    </hgroup>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Viewport</h2>
-    </hgroup>
-    <video class=demo poster="/images/poster.png"></video>
-    <article>
-      <pre class="prettyprint">&lt;meta name="viewport" content="" /&gt;</pre>
-      <ul>
-        <li>width</li>
-        <li>initial-scale</li>
-        <li>minimum-scale=0.1-1.0</li>
-        <li>maximum-scale=0.1-1.0</li>
-      </ul>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Media Queries</h2>
-    </hgroup>
-    <video class=demo poster="/images/poster.png"></video>
-    <article>
-      <pre class="prettyprint"></pre>
-    </article>
-   </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Flex Box</h2>
-    </hgroup>
-    <video class=demo poster="/images/poster.png"></video>
-    <article>
-      <pre class="prettyprint"></pre>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Grid Layout</h2>
-    </hgroup>
-    <video class=demo poster="/images/poster.png"></video>
-    <article>
-      <pre class="prettyprint"></pre>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Orientation Changes</h2>
-    </hgroup>
-    <video class=demo poster="/images/poster.png"></video>
-    <article>
-      <h3>CSS</h3>
-      <pre class="prettyprint">@media screen and (orientation:portrait) {}</pre>
-      <pre class="prettyprint">@media screen and (orientation:landscape) {}</pre>
-    </article>
-  </slide>
-
-  <slide class="segue dark">
-    <hgroup>
-      <h2>Interactions</h2>
+      <h2>Device Interactions</h2>
     </hgroup>
   </slide>
 
@@ -381,7 +459,7 @@ clearWatch(watchId);
       <pre class="prettyprint">var cam = document.getElementById("cam");
 cam.onchange = function(e) {
   // An image has been captured.
-  if(e.target.files.length == 1 &&
+  if(e.target.files.length == 1 &amp;&amp;
      e.target.files[0].type.indexOf("image/") == 0) {
      // We have an image, most likely from a camera
   }
@@ -418,6 +496,27 @@ navigator.getUserMedia({audio:true, video: true}, function(stream) {
     </article>
   </slide>
 
+<slide>
+    <hgroup>
+      <h2>Android Intents</h2>
+    </hgroup>
+    <article>
+      <h3>Interacting with native apps</h3>
+      <pre>intent:
+  HOST/URI-path // Optional host 
+  #Intent; 
+     package=[string]; 
+     action=[string]; 
+     category=[string]; 
+     component=[string]; 
+     scheme=[string]; 
+  end;</pre>
+      <pre class="prettyprint">&lt;a href="intent://scan/#Intent;scheme=zxing;package=com.google.zxing.client.android;end"&gt;Take a QR code &lt;/a&gt;
+	  </pre>
+	  <a href="https://developers.google.com/chrome/mobile/docs/intents">More information</a>
+    </article>
+  </slide>
+
   <slide>
     <hgroup>
       <h2>Fullscreen</h2>
@@ -427,7 +526,12 @@ navigator.getUserMedia({audio:true, video: true}, function(stream) {
       <h3>The old way</h3>
       <pre class="prettyprint">window.scrollTo(0,1);</pre>
       <h3>The new way</h3>
-      <pre class="prettyprint">window.requestFullScreen();</pre>
+      <pre class="prettyprint">[element].requestFullscreen();
+[element].currentFullScreenElement();
+[element].cancelFullscreen();
+[element].fullscreenEnabled();
+[element].isFullScreen();
+</pre>
     </article>
   </slide>
 
@@ -464,26 +568,41 @@ navigator.getUserMedia({audio:true, video: true}, function(stream) {
     </hgroup>
     <video class=demo poster="/images/poster.png"></video>
     <article>
-<pre class="prettyprint">function init() 
+<pre class="prettyprint">performance.mark("startTask1");
+doTask1();
+performance.mark("endTask1");
+    
+performance.mark("startTask2");
+doTask2();
+performance.mark("endTask2");
+
+var perfEntries = performance.getEntriesByType("mark");
+for (var i = 0; i &lt; perfEntries.length; i++)
 {
-   performance.mark("startTask1");
-   doTask1();
-   performance.mark("endTask1");
-       
-   performance.mark("startTask2");
-   doTask2();
-   performance.mark("endTask2");
+   if (window.console) console.log("Name: "        + perfEntries[i].name      + 
+                                  " Entry Type: " + perfEntries[i].entryType +
+                                  " Start Time: " + perfEntries[i].startTime + 
+                                  " Duration: "   + perfEntries[i].duration  + "\n");
+}
+</pre>
 
-   var perfEntries = performance.getEntriesByType("mark");
-   for (var i = 0; i < perfEntries.length; i++)
-   {
-      if (window.console) console.log("Name: "        + perfEntries[i].name      + 
-                                     " Entry Type: " + perfEntries[i].entryType +
-                                     " Start Time: " + perfEntries[i].startTime + 
-                                     " Duration: "   + perfEntries[i].duration  + "\n");
-   }
+    </article>
+  </slide>
+
+<slide>
+    <hgroup>
+      <h2>Resource Timing API</h2>
+    </hgroup>
+    <video class=demo poster="/images/poster.png"></video>
+    <article>
+<pre class="prettyprint">var perfEntries = performance.getEntriesByType("resource");
+for (var i = 0; i &lt; perfEntries.length; i++)
+{
+   if (window.console) console.log("Name: "        + perfEntries[i].name      + 
+                                  " Entry Type: " + perfEntries[i].entryType +
+                                  " Start Time: " + perfEntries[i].startTime + 
+                                  " Duration: "   + perfEntries[i].duration  + "\n");
 }</pre>
-
     </article>
   </slide>
 
@@ -535,6 +654,9 @@ performance.now(); //  20303.427000007</pre>
     <hgroup>
       <h2>Conclusion</h2>
     </hgroup>
+    <article>
+	  Add something insightful and witty
+	</article>
   </slide>
 
   <slide class="thank-you-slide segue nobackground">

@@ -2,7 +2,7 @@
 @import "compass/css3/columns";
 @import "compass/css3/user-interface";
 
-$social-tags: '#yourhashtag';
+$social-tags: '#mobilehtml';
 $brand-small-icon-size: 30px;
 
 $gray-1: #e6e6e6;
@@ -110,7 +110,7 @@ slides > slide {
 
   @include border-radius($slide-border-radius);
   //@include box-shadow(5px 5px 20px $gray-4);
-  @include transition(all 0.6s ease-in-out);
+  @include transition(all 0.2s ease-in-out);
 
   //$translateX: 1020px;
   //$rotateY: 30deg;
@@ -162,6 +162,22 @@ slides > slide {
 
   &.dark {
     background: $gray-4 !important;
+  }
+  
+  &.transparent {
+    background: black !important;
+    
+    q {
+      font-size: 128px;
+      line-height: 1;
+    }
+    
+    q:before { 
+      content:""
+    }
+    q:after { 
+         content:""
+       }
   }
 
   &:not(.nobackground) {
@@ -363,7 +379,7 @@ ul {
 .highlight-code slide.current {
   pre > * {
     opacity: 0.25;
-    @include transition(opacity 0.5s ease-in);
+    @include transition(opacity 0.2s ease-in);
   }
   b {
     opacity: 1;
@@ -597,7 +613,7 @@ article.smaller {
 
 .build {
   > * {
-    @include transition(opacity 0.5s ease-in-out 0.2s);
+    @include transition(opacity 0.2s ease-in-out 0.2s);
   }
 
   .to-build {
@@ -671,7 +687,8 @@ article.smaller {
   @include border-radius($slide-border-radius);
 
   @include box-sizing(border-box);
-  @include transform(translateY($slide-height / 2));@include transition(all 0.4s ease-in-out);
+  @include transform(translateY($slide-height / 2));
+  @include transition(all 0.2s ease-in-out);
 
   > section {
     background: #fff;
@@ -736,7 +753,7 @@ article.smaller {
       @include box-shadow(0 0 10px $gray-3);
 
       @include transform(translate3d(250px, $slide-height + 100, 0) scale(1.5));
-      @include transition(opacity 400ms ease-in-out);
+      @include transition(opacity 200ms ease-in-out);
 
       > section {
         background: #fff;
@@ -843,7 +860,14 @@ article.smaller {
 }
 
 .segue {
-  padding: $slide-left-right-padding $slide-left-right-padding * 2;
+  padding: $slide-left-right-padding $slide-left-right-padding;
+
+  h1 {
+    color: $gray-1;
+    font-size: 128px;
+    bottom: -170px;
+    position: absolute;
+  }
 
   h2 {
     color: $gray-1;
@@ -853,6 +877,7 @@ article.smaller {
     color: $gray-1;
     line-height: 2.8;
   }
+  
   hgroup {
     position: absolute;
     bottom: 225px;
@@ -900,7 +925,7 @@ aside.gdbar {
   @include border-radius(0 10px 10px 0);
   @include background(linear-gradient(left, $gray-1, $gray-1) no-repeat);
   @include background-size(0% 100%);
-  @include transition(all 0.5s ease-out 0.5s); /* Better to transition only on background-size, but not sure how to do that with the mixin. */
+  @include transition(all 0.2s ease-out 0.2s); /* Better to transition only on background-size, but not sure how to do that with the mixin. */
 
   &.right {
     right: 0;
