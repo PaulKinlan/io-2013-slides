@@ -271,14 +271,14 @@ URL: https://code.google.com/p/io-2012-slides
       <h3>Single location</h3>
       <pre class="prettyprint">var success = function(pos) {
   var latitude = pos.coords.latitude;
-  var longitude = pos.coords.latitude;
+  var longitude = pos.coords.longitude;
 };
 
 window.navigator.getCurrentPosition(success);</pre>
       <h3>Continuous location</h3>
       <pre class="prettyprint">function(success) {
   var latitude = pos.coords.latitude;
-  var longitude = pos.coords.latitude;
+  var longitude = pos.coords.longitude;
 };
 
 var watchId = navigator.watchPosition(success);
