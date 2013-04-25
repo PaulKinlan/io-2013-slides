@@ -22,6 +22,9 @@ handlers:
 - url: /images
   static_dir: images
   
+- url: /videos
+  static_dir: videos
+  
 - url: /favicon\.ico
   static_files: images/chrome-logo-tiny.png
   upload: images/chrome-logo-tiny.png
