@@ -646,12 +646,10 @@ performance.mark("endTask2");
 var perfEntries = performance.getEntriesByType("mark");
 for (var i = 0; i &lt; perfEntries.length; i++)
 {
-   if (window.console) {
-     console.log("Name: " + perfEntries[i].name      + 
-      " Entry Type: " + perfEntries[i].entryType +
-      " Start Time: " + perfEntries[i].startTime + 
-      " Duration: "   + perfEntries[i].duration  + "\n");
-   }
+  console.log("Name: " + perfEntries[i].name      + 
+    " Entry Type: " + perfEntries[i].entryType +
+    " Start Time: " + perfEntries[i].startTime + 
+    " Duration: "   + perfEntries[i].duration  + "\n");
 }
 </pre>
 
@@ -668,10 +666,11 @@ for (var i = 0; i &lt; perfEntries.length; i++)
 <pre class="prettyprint">var perfEntries = performance.getEntriesByType("resource");
 for (var i = 0; i &lt; perfEntries.length; i++)
 {
-   if (window.console) console.log("Name: "        + perfEntries[i].name      + 
-                                  " Entry Type: " + perfEntries[i].entryType +
-                                  " Start Time: " + perfEntries[i].startTime + 
-                                  " Duration: "   + perfEntries[i].duration  + "\n");
+  console.log("Name: " +
+    perfEntries[i].name + 
+    " Entry Type: " + perfEntries[i].entryType +
+    " Start Time: " + perfEntries[i].startTime + 
+    " Duration: "   + perfEntries[i].duration  + "\n");
 }</pre>
     </article>
   </slide>
