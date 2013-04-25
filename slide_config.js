@@ -1,7 +1,7 @@
 var SLIDE_CONFIG = {
   // Slide settings
   settings: {
-    title: 'Mobile HTML5',
+    title: 'Mobile HTML',
     subtitle: 'Making you awesome on mobile',
     eventTitle: 'Google I/O 2013',
     useBuilds: false, // Default: true. False will turn off slide animation builds.
@@ -9,7 +9,7 @@ var SLIDE_CONFIG = {
     enableSlideAreas: true, // Default: true. False turns off the click areas on either slide of the slides.
     enableTouch: true, // Default: true. If touch support should enabled. Note: the device must support touch.
     //analytics: 'UA-XXXXXXXX-1', // TODO: Using this breaks GA for some reason (probably requirejs). Update your tracking code in template.html instead.
-    favIcon: 'images/google_developers_logo_tiny.png',
+    favIcon: 'images/chrome_logo_tiny.png',
     fonts: [
       'Open Sans:regular,semibold,italic,italicsemibold',
       'Source Code Pro'
@@ -20,11 +20,11 @@ var SLIDE_CONFIG = {
   // Author information
   presenters: [{
     name: 'Peter Beverloo',
-    company: 'Engineer, Google',
+    company: 'Software Engineer, Google',
     gplus: 'http://plus.google.com/1234567890',
-    twitter: '@ppk',
+    twitter: '@beverloo',
     www: 'http://www.peter.sh',
-    github: 'http://github.com/you'
+    github: 'http://github.com/beverloo'
   }, {
     name: 'Paul Kinlan',
     company: 'Developer Advocate, Google',

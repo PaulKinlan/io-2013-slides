@@ -110,7 +110,7 @@ slides > slide {
 
   @include border-radius($slide-border-radius);
   //@include box-shadow(5px 5px 20px $gray-4);
-  @include transition(all 0.2s ease-in-out);
+  //@include transition(all 0.2s ease-in-out);
 
   //$translateX: 1020px;
   //$rotateY: 30deg;
@@ -177,6 +177,57 @@ slides > slide {
      h1 {
        color: white;
      }
+     
+     q:before { 
+       content:""
+     }
+     q:after { 
+          content:""
+     }
+  }
+  
+  &.red {
+     background: $brand-red !important;
+     color:white;
+
+     q {
+          font-size: 128px;
+          line-height: 1;
+          color: white;
+     }
+
+     h1 {
+       color: white;
+     }
+     
+     q:before { 
+       content:""
+     }
+     q:after { 
+          content:""
+     }
+  }
+    
+  &.green {
+     background: $brand-green !important;
+     color:white;
+
+     q {
+          font-size: 128px;
+          line-height: 1;
+          color: white;
+     }
+
+     h1 {
+       color: white;
+     }
+     
+     q:before { 
+       content:""
+     }
+     q:after { 
+          content:""
+     }
   }
   
   &.transparent {
@@ -193,7 +244,7 @@ slides > slide {
     }
     q:after { 
          content:""
-       }
+    }
   }
 
   &:not(.nobackground) {
@@ -392,11 +443,22 @@ ul {
   }
 }
 
+.weavebg {
+background: -webkit-linear-gradient(63deg, hsl(0, 0%, 8%) 5px, hsla(0, 0%, 0%, 0) 5px) 0 5px,-webkit-linear-gradient(243deg, hsl(0, 0%, 8%) 5px, hsla(0, 0%, 0%, 0) 5px) 10px 0px,-webkit-linear-gradient(63deg, hsl(0, 0%, 13%) 5px, hsla(0, 0%, 0%, 0) 5px) 0px 10px,-webkit-linear-gradient(243deg, hsl(0, 0%, 13%) 5px, hsla(0, 0%, 0%, 0) 5px) 10px 5px,-webkit-linear-gradient(0deg, hsl(0, 0%, 11%) 10px, hsla(0, 0%, 0%, 0) 10px),-webkit-linear-gradient(hsl(0, 0%, 11%) 25%, hsl(0, 0%, 10%) 25%, hsl(0, 0%, 10%) 50%, hsla(0, 0%, 0%, 0) 50%, hsla(0, 0%, 0%, 0) 75%, hsl(0, 0%, 14%) 75%, hsl(0, 0%, 14%));
+background: -moz-linear-gradient(63deg, hsl(0, 0%, 8%) 5px, hsla(0, 0%, 0%, 0) 5px) 0 5px,-moz-linear-gradient(243deg, hsl(0, 0%, 8%) 5px, hsla(0, 0%, 0%, 0) 5px) 10px 0px,-moz-linear-gradient(63deg, hsl(0, 0%, 13%) 5px, hsla(0, 0%, 0%, 0) 5px) 0px 10px,-moz-linear-gradient(243deg, hsl(0, 0%, 13%) 5px, hsla(0, 0%, 0%, 0) 5px) 10px 5px,-moz-linear-gradient(0deg, hsl(0, 0%, 11%) 10px, hsla(0, 0%, 0%, 0) 10px),-moz-linear-gradient(hsl(0, 0%, 11%) 25%, hsl(0, 0%, 10%) 25%, hsl(0, 0%, 10%) 50%, hsla(0, 0%, 0%, 0) 50%, hsla(0, 0%, 0%, 0) 75%, hsl(0, 0%, 14%) 75%, hsl(0, 0%, 14%));
+background: -ms-linear-gradient(63deg, hsl(0, 0%, 8%) 5px, hsla(0, 0%, 0%, 0) 5px) 0 5px,-ms-linear-gradient(243deg, hsl(0, 0%, 8%) 5px, hsla(0, 0%, 0%, 0) 5px) 10px 0px,-ms-linear-gradient(63deg, hsl(0, 0%, 13%) 5px, hsla(0, 0%, 0%, 0) 5px) 0px 10px,-ms-linear-gradient(243deg, hsl(0, 0%, 13%) 5px, hsla(0, 0%, 0%, 0) 5px) 10px 5px,-ms-linear-gradient(0deg, hsl(0, 0%, 11%) 10px, hsla(0, 0%, 0%, 0) 10px),-ms-linear-gradient(hsl(0, 0%, 11%) 25%, hsl(0, 0%, 10%) 25%, hsl(0, 0%, 10%) 50%, hsla(0, 0%, 0%, 0) 50%, hsla(0, 0%, 0%, 0) 75%, hsl(0, 0%, 14%) 75%, hsl(0, 0%, 14%));
+background-color: hsl(0, 0%, 7%);
+-webkit-background-size: 20px 20px;
+-moz-background-size: 20px 20px;
+-o-background-size: 20px 20px;
+background-size: 20px 20px;
+}
+
 // Code highlighting only effects the current slide.
 .highlight-code slide.current {
   pre > * {
     opacity: 0.25;
-    @include transition(opacity 0.2s ease-in);
+    //@include transition(opacity 0.2s ease-in);
   }
   b {
     opacity: 1;
@@ -630,7 +692,7 @@ article.smaller {
 
 .build {
   > * {
-    @include transition(opacity 0.2s ease-in-out 0.2s);
+    //@include transition(opacity 0.2s ease-in-out 0.2s);
   }
 
   .to-build {
@@ -705,7 +767,7 @@ article.smaller {
 
   @include box-sizing(border-box);
   @include transform(translateY($slide-height / 2));
-  @include transition(all 0.2s ease-in-out);
+  //@include transition(all 0.2s ease-in-out);
 
   > section {
     background: #fff;
@@ -736,7 +798,7 @@ article.smaller {
     slide {
       overflow: visible;
       background: white;
-      @include transition(none); // No slide transition goodies when in presenter mode.
+      //@include transition(none); // No slide transition goodies when in presenter mode.
       pointer-events: none;
       @include transform-origin(0, 0); // For speaker note transition.
 
@@ -770,7 +832,7 @@ article.smaller {
       @include box-shadow(0 0 10px $gray-3);
 
       @include transform(translate3d(250px, $slide-height + 100, 0) scale(1.5));
-      @include transition(opacity 200ms ease-in-out);
+      //@include transition(opacity 200ms ease-in-out);
 
       > section {
         background: #fff;
@@ -835,7 +897,7 @@ article.smaller {
 }
 
 .auto-fadein {
-  @include transition(opacity 0.6s ease-in 1s);
+  //@include transition(opacity 0.6s ease-in 1s);
   opacity: 0;
 }
 
@@ -909,6 +971,7 @@ video.demo {
   float: right;
   position: relative;
   top: -55px;
+  right: -40px;
 }
 
 .thank-you-slide {
@@ -942,7 +1005,7 @@ aside.gdbar {
   @include border-radius(0 10px 10px 0);
   @include background(linear-gradient(left, $gray-1, $gray-1) no-repeat);
   @include background-size(0% 100%);
-  @include transition(all 0.2s ease-out 0.2s); /* Better to transition only on background-size, but not sure how to do that with the mixin. */
+  //@include transition(all 0.2s ease-out 0.2s); /* Better to transition only on background-size, but not sure how to do that with the mixin. */
 
   &.right {
     right: 0;
@@ -1090,7 +1153,7 @@ aside.gdbar {
 
       .build {
         > * {
-          @include transition(none);
+          //@include transition(none);
         }
 
         .to-build,

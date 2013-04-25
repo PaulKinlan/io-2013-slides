@@ -22,7 +22,7 @@ URL: https://code.google.com/p/io-2012-slides
   <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
   <script data-main="js/slides" src="js/require-1.0.8.min.js"></script>
 </head>
-<body style="opacity: 0">
+<body style="opacity: 0" class="weavebg">
 
 <slides class="layout-widescreen">
 
@@ -33,7 +33,7 @@ URL: https://code.google.com/p/io-2012-slides
   </slide>
 
   <slide class="title-slide segue nobackground">
-    <aside class="gdbar"><img src="images/google_developers_icon_128.png"></aside>
+    <aside class="gdbar"><img src="images/chrome_logo.png"></aside>
     <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
     <hgroup class="auto-fadein">
       <h1 data-config-title><!-- populated from slide_config.json --></h1>
@@ -42,76 +42,62 @@ URL: https://code.google.com/p/io-2012-slides
     </hgroup>
   </slide>
 
-  <slide class="fill transparent quote nobackground">
-    <article><q>Mobile is Different</q></article>
+  <slide class="fill red quote">
+    <article class="flexbox vcenter"><q>Mobile is Different</q></article>
   </slide>
 
-  <slide>
-    <hgroup>
-      <h2>On the move</h2>
-    </hgroup>
-    <article>[TODO Add image of on the move]</article>
+  <slide class="fill red quote">
+    <article class="flexbox vcenter"><q>On the move</q></article>
   </slide>
 
-  <slide>
-    <hgroup>
-      <h2>Flakey connections</h2>
-    </hgroup>
-    <article>[TODO Add image of on the internet connection]</article>
+  <slide class="fill red quote">
+    <article class="flexbox vcenter"><q>Input is harder</q></article>
   </slide>
 
-  <slide>
-    <hgroup>
-      <h2>Input is harder</h2>
-    </hgroup>
-    <article>[TODO Add image of on the lots of buttons]</article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Network is slower</h2>
-    </hgroup>
-    <article>[TODO Add image of on the cell tower]</article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Performance is lower</h2>
-    </hgroup>
-    <article>[TODO Add image of on the something slow]</article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>People use mobile sites differently</h2>
-    </hgroup>
-    <article>[TODO Add kill slide]</article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Using the mobile web is hard</h2>
-    </hgroup>
-
-  </slide>
-
-  <slide class="segue fill transparent">
-    <hgroup>
-      <h1>But is developing for the mobile web hard?</h1>
-    </hgroup>
+  <slide class="fill red quote">
+    <article class="flexbox vcenter"><q>Network is slower</q></article>
   </slide>
   
-  <slide class="segue fill blue">
-      <hgroup>
-        <h1>Maybe...</h1>
-      </hgroup>
+  <slide class="fill red quote">
+    <article class="flexbox vcenter">Screens are smaller</article>
   </slide>
 
-  <slide class="segue">
-    <hgroup>
-      <h1>Parity</h1>
-    </hgroup>
+  <slide class="fill red quote">
+    <article class="flexbox vcenter"><q>Devices are slower</q></article>
   </slide>
+
+  <slide class="fill red quote">
+    <article class="flexbox vcenter"><q>Using the mobile web is hard</q></article>
+  </slide>
+  
+  <slide class="fill green quote">
+    <article class="flexbox vcenter"><q>But is developing for the mobile web hard?</q></article>
+  </slide>
+  
+  <slide class="fill blue quote">
+    <article class="flexbox vcenter"><q>Maybe..</q></article>
+  </slide>
+  
+  <slide class="fill blue quote">
+    <article class="flexbox vcenter"><q>Parity</q></article>
+  </slide>
+  
+  <slide class="fill">
+       <hgroup>
+         <h2>In this talk</h2>
+       </hgroup>
+       <article>
+         <h3>We will show you the latest technology to:</h3>
+         <ul>
+           <li>Build responsiveness in to your sites
+           <li>Take advantage of the users mobility
+           <li>Let the users input data
+           <li>Manage connectivity issues by taking your app or site offline
+           <li>Use the latest and greatest device features
+           <li>Understand the performance charateristics of your site
+         </ul>
+       </article>
+   </slide>
 
   <slide class="segue dark">
     <hgroup>
@@ -565,7 +551,8 @@ cam.onchange = function(e) {
     <hgroup>
       <h2>Android Intents</h2>
     </hgroup>
-    <article>
+    <video class=demo poster="/images/poster.png"></video>
+    <article class="smaller">
       <h3>Interacting with native apps</h3>
       <pre>intent:
   HOST/URI-path // Optional host 
@@ -576,7 +563,10 @@ cam.onchange = function(e) {
      component=[string]; 
      scheme=[string]; 
   end;</pre>
-      <pre class="prettyprint">&lt;a href="intent://scan/#Intent;scheme=zxing;package=com.google.zxing.client.android;end"&gt;Take a QR code &lt;/a&gt;
+      <pre class="prettyprint">&lt;a 
+  href="intent://scan/#Intent;scheme=zxing;package=com.google.zxing.client.android;end"&gt;
+  Take a QR code 
+&lt;/a&gt;
 	  </pre>
 	  <p>More information: <a href="https://developers.google.com/chrome/mobile/docs/intents">developers.google.com/chrome/mobile/docs/intents</a></p>
     </article>
@@ -621,6 +611,7 @@ cam.onchange = function(e) {
       <ul>
         <li>
       </ul>
+      <p>Demo: <a href="http://jsbin.com/esenik/">jsbin.com/esenik/</a>
     </article>
   </slide>
 
@@ -642,7 +633,7 @@ cam.onchange = function(e) {
       <h2>User Timing API</h2>
     </hgroup>
     <video class=demo poster="/images/poster.png"></video>
-    <article>
+    <article class="smaller">
         <h3>A good timing API</h3>
 <pre class="prettyprint">performance.mark("startTask1");
 doTask1();
@@ -655,10 +646,12 @@ performance.mark("endTask2");
 var perfEntries = performance.getEntriesByType("mark");
 for (var i = 0; i &lt; perfEntries.length; i++)
 {
-   if (window.console) console.log("Name: "        + perfEntries[i].name      + 
-                                  " Entry Type: " + perfEntries[i].entryType +
-                                  " Start Time: " + perfEntries[i].startTime + 
-                                  " Duration: "   + perfEntries[i].duration  + "\n");
+   if (window.console) {
+     console.log("Name: " + perfEntries[i].name      + 
+      " Entry Type: " + perfEntries[i].entryType +
+      " Start Time: " + perfEntries[i].startTime + 
+      " Duration: "   + perfEntries[i].duration  + "\n");
+   }
 }
 </pre>
 
@@ -737,6 +730,18 @@ performance.now(); //  20303.427000007</pre>
     <article>
 	  Add something insightful and witty
 	</article>
+  </slide>
+  
+  <slide>
+    <hgroup>
+      <h2>Links</h2>
+    </hgroup>
+    <article>
+	    <ul>
+	      <li>Specs used
+	      <li>Demos created
+	    </ul>
+	  </article>
   </slide>
 
   <slide class="thank-you-slide segue nobackground">
