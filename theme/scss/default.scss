@@ -975,6 +975,12 @@ video.demo {
   right: -40px;
 }
 
+h2 ~ label {
+  &.perf {
+    display: inline-block;
+  }
+}
+
 label {
   &.color {
     padding: 5px 10px;
