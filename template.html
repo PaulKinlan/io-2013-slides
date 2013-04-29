@@ -45,9 +45,13 @@ URL: https://code.google.com/p/io-2012-slides
   <slide class="fill red quote">
     <article class="flexbox vcenter"><q>Mobile is Different</q></article>
   </slide>
+  
+  <slide class="fill red quote">
+    <article class="flexbox vcenter">Screens are smaller</article>
+  </slide>
 
   <slide class="fill red quote">
-    <article class="flexbox vcenter"><q>On the move</q></article>
+    <article class="flexbox vcenter"><q>Users are on the move</q></article>
   </slide>
 
   <slide class="fill red quote">
@@ -58,10 +62,6 @@ URL: https://code.google.com/p/io-2012-slides
     <article class="flexbox vcenter"><q>Network is slower</q></article>
   </slide>
   
-  <slide class="fill red quote">
-    <article class="flexbox vcenter">Screens are smaller</article>
-  </slide>
-
   <slide class="fill red quote">
     <article class="flexbox vcenter"><q>Devices are slower</q></article>
   </slide>
@@ -99,9 +99,9 @@ URL: https://code.google.com/p/io-2012-slides
        </article>
    </slide>
 
-  <slide class="segue dark">
+  <slide class="segue red">
     <hgroup>
-      <h2>Responsiveness</h2>
+      <h2>Screens are smaller</h2>
     </hgroup>
   </slide>
 
@@ -249,19 +249,12 @@ URL: https://code.google.com/p/io-2012-slides
     </article>
   </slide>
 
-  <slide>
+  <slide class="segue red">
     <hgroup>
-       <h2>On Scroll</h2>
-    </hgroup>
-    <article></article>
-  </slide>
-
-  <slide class="segue dark">
-    <hgroup>
-      <h2>Location and Orientation</h2>
+      <h2>On the move</h2>
     </hgroup>
   </slide>
-
+  
   <slide>
     <hgroup>
       <h2>Geolocation</h2>
@@ -302,10 +295,68 @@ clearWatch(watchId);</pre>
     <p>Demo: <a href="http://jsbin.com/ofeces">jsbin.com/ofeces/latest</a></p>
     </article>
   </slide>
+  
+   <slide>
+      <hgroup>
+        <h2>Application Cache</h2>
+      </hgroup>
+      <video class=demo poster="/images/poster.png"></video>
+      <article>
+        <h3>Fundamental Offline API</h3>
+        <pre class="prettyprint">&lt;html manifest='test.manifest'&gt;</pre>
+      </article> 
+    </slide>
 
-  <slide class="segue dark">
+    <slide>
+      <hgroup>
+        <h2>Offline Events</h2>
+      </hgroup>
+      <video class=demo poster="/images/poster.png"></video>
+      <article>
+        <h3>Network state</h3>
+        <pre class="prettyprint">window.navigator.onLine</pre>
+        <pre class="prettyprint">window.ononline = function() {
+
+  };
+
+  window.onoffline = function() {
+
+  };</pre>
+        <ul>
+            <li>Not 100% reliable
+        </ul>
+      </article>
+    </slide>
+
+    <slide>
+      <hgroup>
+        <h2>Storage APIs</h2>
+      </hgroup>
+      <video class=demo poster="/images/poster.png"></video>
+      <article>
+        <h3>4 technologies</h3>
+        <h4>localStorage</h4>
+        <pre class="prettyprint">localStorage["test"] = 1234;
+  var test = localStorage["test"];</pre>
+        <h4>WebSQL</h4>
+        <pre></pre>
+        <h4>IndexedDB</h4>
+        <pre></pre>
+        <h4>FileSystem</h4>
+        <pre></pre>
+      </article>
+    </slide>
+
+    <slide hidden>
+      <hgroup>
+        <h2>Navigation Controller</h2>
+      </hgroup>
+      <video class=demo poster="/images/poster.png"></video>
+    </slide>
+
+  <slide class="segue red">
     <hgroup>
-      <h2>Input</h2>
+      <h2>Input is harder</h2>
     </hgroup>
   </slide>
 
@@ -396,7 +447,7 @@ clearWatch(watchId);</pre>
     </article>
   </slide>
 
-  <slide class="segue dark" hidden>
+  <slide class="segue red" hidden>
     <hgroup>
       <h2>Usability</h2>
     </hgroup>
@@ -429,71 +480,9 @@ clearWatch(watchId);</pre>
     </article>
   </slide>
 
-  <slide class="segue dark">
-    <hgroup>
-      <h2>Offline</h2>
-    </hgroup>
-  </slide>
+ 
 
-  <slide>
-    <hgroup>
-      <h2>Application Cache</h2>
-    </hgroup>
-    <video class=demo poster="/images/poster.png"></video>
-    <article>
-      <h3>Fundamental Offline API</h3>
-      <pre class="prettyprint">&lt;html manifest='test.manifest'&gt;</pre>
-    </article> 
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Offline Events</h2>
-    </hgroup>
-    <video class=demo poster="/images/poster.png"></video>
-    <article>
-      <h3>Network state</h3>
-      <pre class="prettyprint">window.navigator.onLine</pre>
-      <pre class="prettyprint">window.ononline = function() {
-
-};
-
-window.onoffline = function() {
-
-};</pre>
-      <ul>
-          <li>Not 100% reliable
-      </ul>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Storage APIs</h2>
-    </hgroup>
-    <video class=demo poster="/images/poster.png"></video>
-    <article>
-      <h3>4 technologies</h3>
-      <h4>localStorage</h4>
-      <pre class="prettyprint">localStorage["test"] = 1234;
-var test = localStorage["test"];</pre>
-      <h4>WebSQL</h4>
-      <pre></pre>
-      <h4>IndexedDB</h4>
-      <pre></pre>
-      <h4>FileSystem</h4>
-      <pre></pre>
-    </article>
-  </slide>
-
-  <slide hidden>
-    <hgroup>
-      <h2>Navigation Controller</h2>
-    </hgroup>
-    <video class=demo poster="/images/poster.png"></video>
-  </slide>
-
-  <slide class="segue dark">
+  <slide class="segue red">
     <hgroup>
       <h2>Device Interactions</h2>
     </hgroup>
@@ -624,7 +613,7 @@ cam.onchange = function(e) {
     <video class=demo poster="/images/poster.png"></video>
   </slide>
 
-  <slide class="segue">
+  <slide class="segue red">
     <hgroup>
       <h2>Performance</h2>
     </hgroup>

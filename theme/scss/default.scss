@@ -941,7 +941,7 @@ article.smaller {
 .segue {
   padding: $slide-left-right-padding $slide-left-right-padding;
 
-  h1 {
+  :not(&.title-slide) h1 {
     color: $gray-1;
     font-size: 128px;
     bottom: -170px;
@@ -952,6 +952,7 @@ article.smaller {
     color: $gray-1;
     font-size: 60px;
   }
+  
   h3 {
     color: $gray-1;
     line-height: 2.8;
@@ -972,6 +973,19 @@ video.demo {
   position: relative;
   top: -55px;
   right: -40px;
+}
+
+label {
+  &.color {
+    padding: 5px 10px;
+    border-radius: 10px;
+    color: white;
+    margin-right: 10px;
+  }
+  &.perf {
+    background-color: $brand-green;
+    font-weight: bold;
+  }
 }
 
 .thank-you-slide {
