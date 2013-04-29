@@ -810,6 +810,25 @@ performance.now(); //  20303.427000007</pre>
 </slides>
 
 <script>
+  document.addEventListener("slideenter", function(e) {
+    var vid = e.slide.querySelector("video");
+    if(vid) {
+      vid.play();
+    }
+    
+  }, false);
+  
+  document.addEventListener("slideleave", function(e) {
+     var vid = e.slide.querySelector("video");
+     if(vid) {
+       vid.pause();
+     }
+
+   }, false);
+  
+</script>
+
+<script>
 var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-XXXXXXXX-1']);
 _gaq.push(['_trackPageview']);
