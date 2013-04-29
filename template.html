@@ -9,7 +9,7 @@ URL: https://code.google.com/p/io-2012-slides
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Mobile HTML5</title>
+  <title>Mobile HTML</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">-->
@@ -89,12 +89,12 @@ URL: https://code.google.com/p/io-2012-slides
        <article>
          <h3>We will show you the latest technology to:</h3>
          <ul>
-           <li>Build responsiveness in to your sites
-           <li>Take advantage of the users mobility
-           <li>Let the users input data
-           <li>Manage connectivity issues by taking your app or site offline
-           <li>Use the latest and greatest device features
-           <li>Understand the performance charateristics of your site
+           <li>Build responsiveness in to your sites</li>
+           <li>Take advantage of the users mobility</li>
+           <li>Let the users input data</li>
+           <li>Manage connectivity issues by taking your app or site offline</li>
+           <li>Use the latest and greatest device features</li>
+           <li>Understand the performance charateristics of your site</li>
          </ul>
        </article>
    </slide>
@@ -133,10 +133,10 @@ URL: https://code.google.com/p/io-2012-slides
   width: device-width;
   zoom: 0.5;
 }</pre>
-    <ul>
-      <li>Great delivery flexibility
-	  <li>Increased readability
-    </ul>
+      <ul>
+        <li>Great delivery flexibility
+        <li>Increased readability
+      </ul>
     </article>
   </slide>
   
@@ -146,7 +146,15 @@ URL: https://code.google.com/p/io-2012-slides
       </hgroup>
       <video class=demo poster="/images/poster.png"></video>
       <article>
-  	  
+        <h3>Sizing relatively to the viewport</h3>
+        <pre class="prettyprint">#visible-square {
+  width: 100vmin;
+  height: 100vmin;
+}</pre>
+        <ul>
+          <li>Four new units: vw(idth), vh(eight), vmin, vmax</li>
+          <li>Relative to the size of the viewport</li>
+        </ul>
       </article>
     </slide>
 
@@ -160,6 +168,8 @@ URL: https://code.google.com/p/io-2012-slides
 	  <pre class="prettyprint">@media screen and (min-device-width: 800px) { ... }</pre>
 	  <pre class="prettyprint">@media screen and (device-aspect-ratio: 16/9) { ... }</pre>
 	  <pre class="prettyprint">@media screen and (min-device-pixel-ratio: 3/2) { ... }</pre>
+      <pre class="prettyprint">@media screen and (resolution: 2dppx) { ... }</pre>
+      <!-- The latter case is not yet supported in Chrome, but coming soon. -->
 	  <ul>
         <li>Logically group css
   	    <li>Dynamically responsive
@@ -176,7 +186,8 @@ URL: https://code.google.com/p/io-2012-slides
         <h3>Adaptive layouts</h3>
       <pre class="prettyprint">.flex {
   display: flex;
-  flex-direction: row | row-reverse | column | column-reverse;
+  flex-direction: row | row-reverse | column |
+      column-reverse;
 }</pre>
 
     <ul>
@@ -196,8 +207,8 @@ URL: https://code.google.com/p/io-2012-slides
       <article>
           <h3>image-set</h3>
         <pre class="prettyprint">.images {
-    content: -webkit-image-set("1x test.png, 2x test2.png");
-  }</pre>
+  content: -webkit-image-set("1x test.png, 2x test2.png");
+}</pre>
 
       <ul>
         <li>Combines well with Media queries
@@ -231,9 +242,9 @@ URL: https://code.google.com/p/io-2012-slides
           <li>When parent is out of view it is not shown
         </ul>
         <pre class="prettyprint">.sticky-class {
-    position: sticky;
-    top: 10px;
-  }</pre>
+  position: sticky;
+  top: 10px;
+}</pre>
       </article>
   </slide>
 
@@ -244,8 +255,8 @@ URL: https://code.google.com/p/io-2012-slides
     <video class=demo poster="/images/poster.png"></video>
     <article>
       <h3>CSS</h3>
-      <pre class="prettyprint">@media screen and (orientation:portrait) {}</pre>
-      <pre class="prettyprint">@media screen and (orientation:landscape) {}</pre>
+      <pre class="prettyprint">@media screen and (orientation: portrait) {}</pre>
+      <pre class="prettyprint">@media screen and (orientation: landscape) {}</pre>
     </article>
   </slide>
 
@@ -266,15 +277,14 @@ URL: https://code.google.com/p/io-2012-slides
   var latitude = pos.coords.latitude;
   var longitude = pos.coords.longitude;
 };
-
 window.navigator.getCurrentPosition(success);</pre>
       <h3>Continuous location</h3>
       <pre class="prettyprint">function(success) {
   var latitude = pos.coords.latitude;
   var longitude = pos.coords.longitude;
 };
-
 var watchId = navigator.watchPosition(success);
+
 // Stop watching
 clearWatch(watchId);</pre>
     </article>
@@ -282,11 +292,11 @@ clearWatch(watchId);</pre>
 
   <slide>
     <hgroup>
-      <h2>Orientation</h2>
+      <h2>Device Orientation</h2>
     </hgroup>
     <video class=demo poster="/images/poster.png"></video>
     <article>
-      <h3>Javascript</h3>
+      <h3>JavaScript</h3>
       <pre class="prettyprint" data-lang="javascript">window.onorientationchange = function(e) {
   var yaw = e.alpha; 
   var pitch = e.beta;
@@ -317,13 +327,13 @@ clearWatch(watchId);</pre>
         <pre class="prettyprint">window.navigator.onLine</pre>
         <pre class="prettyprint">window.ononline = function() {
 
-  };
+};
 
-  window.onoffline = function() {
+window.onoffline = function() {
 
-  };</pre>
+};</pre>
         <ul>
-            <li>Not 100% reliable
+            <li>Not completely reliable
         </ul>
       </article>
     </slide>
@@ -334,16 +344,57 @@ clearWatch(watchId);</pre>
       </hgroup>
       <video class=demo poster="/images/poster.png"></video>
       <article>
-        <h3>4 technologies</h3>
-        <h4>localStorage</h4>
+        <h3>There's localStorage..</h3>
         <pre class="prettyprint">localStorage["test"] = 1234;
-  var test = localStorage["test"];</pre>
-        <h4>WebSQL</h4>
-        <pre></pre>
-        <h4>IndexedDB</h4>
-        <pre></pre>
-        <h4>FileSystem</h4>
-        <pre></pre>
+var test = localStorage["test"];</pre>
+        <h3>..and sessionStorage!</h3>
+        <pre class="prettyprint">sessionStorage["test"] = 1234;
+var test = sessionStorage["test"];</pre>
+        <ul>
+          <li>sessionStorage only works for the current session, localStorage is persistent</li>
+          <li>Both are key-value data stores</li>
+        </ul>
+      </article>
+    </slide>
+
+    <slide>
+      <hgroup>
+        <h2>WebSQL</h2>
+      </hgroup>
+      <video class=demo poster="/images/poster.png"></video>
+      <article>
+        <h3>Relational databases for JavaScript</h3>
+        <pre class="prettyprint">var database = openDatabase('animals', ...);
+  database.transaction(function (tx) {
+    tx.executeSql('INSERT INTO animals VALUES ' +
+      '("cat", "awwww ❤");');
+});</pre>
+        </pre>
+        <ul>
+          <li>Deprecated, but still has fair support.</li>
+        </ul>
+      </article>
+    </slide>
+
+    <slide>
+      <hgroup>
+        <h2>IndexedDB</h2>
+      </hgroup>
+      <video class=demo poster="/images/poster.png"></video>
+      <article>
+        <h3>A new database for the Web?</h3>
+        <pre class="prettyprint">var database = indexedDB.open('animals', 1);
+database.onsuccess = function (event) {
+  var request = database.transaction("[animals]")
+                        .objectStore("animals")
+                        .get("cat");
+  request.onsuccess = function(event) {
+    request.result.comment; // awwww ❤
+  };
+};</pre>
+        <ul>
+          <li>IndexedDB.</li>
+        </ul>
       </article>
     </slide>
 
@@ -419,9 +470,9 @@ clearWatch(watchId);</pre>
 [elem].onpointerover = function(e) {}
 [elem].onpointerenter = function(e) {}
 [elem].onpointerout = function(e) {}
-[elem].onpointerleave = function(e) {}</pre>
+[elem].onpointerleave = function(e) {}
 
-		<pre class="prettyprint">navigator.maxTouchPoints</pre>
+navigator.maxTouchPoints</pre>
 
 	    <h3>CSS</h3>
 	    <pre class="prettyprint">touch-action: none | auto | pan-x | pan-y;</pre>
@@ -589,15 +640,20 @@ cam.onchange = function(e) {
     <video class=demo poster="/images/poster.png"></video>
     <article>
       <pre class="prettyprint">window.ondevicemotion = function(e) {
-   var acceleration = e.acceleration;
-   //acceleration.x
-   //acceleration.y
-   //acceleration.z
-   var accelWgravity = e.accelerationIncludingGravity;
-   var rotationRate = e.rotationRate;
-   //rotationRate.alpha
-   //rotationRate.beta
-   //rotationRate.gama
+  var accelWgravity = e.accelerationIncludingGravity;
+  var acceleration = e.acceleration;
+  if (acceleration !== null) {
+    // acceleration.x
+    // acceleration.y
+    // acceleration.z
+  }
+
+  var rotationRate = e.rotationRate;
+  if (rotationRate !== null) {
+    // rotationRate.alpha
+    // rotationRate.beta
+    // rotationRate.gama
+  }
 };</pre>
       <ul>
         <li>
@@ -626,21 +682,20 @@ cam.onchange = function(e) {
     <video class=demo poster="/images/poster.png"></video>
     <article class="smaller">
         <h3>A good timing API</h3>
-<pre class="prettyprint">performance.mark("startTask1");
+<pre class="prettyprint">performance.mark('startTask1');
 doTask1();
-performance.mark("endTask1");
+performance.mark('endTask1');
     
-performance.mark("startTask2");
+performance.mark('startTask2');
 doTask2();
-performance.mark("endTask2");
+performance.mark('endTask2');
 
-var perfEntries = performance.getEntriesByType("mark");
-for (var i = 0; i &lt; perfEntries.length; i++)
-{
-  console.log("Name: " + perfEntries[i].name      + 
-    " Entry Type: " + perfEntries[i].entryType +
-    " Start Time: " + perfEntries[i].startTime + 
-    " Duration: "   + perfEntries[i].duration  + "\n");
+var perfEntries = performance.getEntriesByType('mark');
+for (var i = 0; i &lt; perfEntries.length; i++) {
+  console.log('Name: ' + perfEntries[i].name   +
+    ' Entry Type: ' + perfEntries[i].entryType +
+    ' Start Time: ' + perfEntries[i].startTime +
+    ' Duration: '   + perfEntries[i].duration  + '\n');
 }
 </pre>
 
@@ -654,14 +709,12 @@ for (var i = 0; i &lt; perfEntries.length; i++)
     <video class=demo poster="/images/poster.png"></video>
     <article>
         <h3>Programmatically understanding the network</h3>
-<pre class="prettyprint">var perfEntries = performance.getEntriesByType("resource");
-for (var i = 0; i &lt; perfEntries.length; i++)
-{
-  console.log("Name: " +
-    perfEntries[i].name + 
-    " Entry Type: " + perfEntries[i].entryType +
-    " Start Time: " + perfEntries[i].startTime + 
-    " Duration: "   + perfEntries[i].duration  + "\n");
+<pre class="prettyprint">var perfEntries = performance.getEntriesByType('resource');
+for (var i = 0; i &lt; perfEntries.length; i++) {
+  console.log('Name: ' + perfEntries[i].name +
+    ' Entry Type: ' + perfEntries[i].entryType +
+    ' Start Time: ' + perfEntries[i].startTime +
+    ' Duration: '   + perfEntries[i].duration  + '\n');
 }</pre>
     </article>
   </slide>
