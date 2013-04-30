@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Responsive Images</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+    <style>
+      body { padding: 10px; }
+      
+      img {
+        content: -webkit-image-set(url("/images/1x.png") 1x, url("/images/2x.png") 2x);
+        width:100px;
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Responsive Images</h1>
+    
+    <img src="normal.png">
+    
+    <h2>Code</h2>
+    <pre>img {
+  content: -webkit-image-set(url("/images/1x.png") 1x, url("/images/2x.png") 2x);
+  width:100px;
+  height: 100px;
+}</pre>
+  </body>
+</html>
