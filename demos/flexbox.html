@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>position: sticky</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+    <style>
+      body { padding: 10px; }
+      
+      h3 { position: sticky; top: 5px; background-color: #ddd; padding: 5px;}
+      
+      #items {
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: flex;
+        -webkit-flex-direction: row;
+        flex-direction: row;
+      }
+      
+      #items div {
+        float: left;
+        width: 100px;
+        height: 100px;
+        background-color: black;
+        color: white;
+        font-size: 48px;
+        padding: 10px;
+        margin: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Flex Box</h1>
+    
+    <div id=items>
+      <div id="1">1</div>
+      <div id="2">2</div>
+      <div id="3">3</div>
+      <div id="4">4</div>
+    </div>
+    <button id="row" class="btn btn-primary">row</button>
+    <button id="rowreverse" class="btn btn-primary">row-reverse</button>
+    <button id="column" class="btn btn-primary">column</button>
+    <button id="columnreverse" class="btn btn-primary">column-reverse</button>
+    <script>
+    onload = function() {
+      var items = document.getElementById("items");
+      var row = document.getElementById("row");
+      var rowreverse = document.getElementById("rowreverse");
+      var column = document.getElementById("column");
+      var columnreverse = document.getElementById("columnreverse");
+      
+      row.onclick = function() {
+        items.style.webkitFlexDirection = "row";
+        items.style.flexDirection = "row";
+      };
+      
+      rowreverse.onclick = function() {
+        items.style.webkitFlexDirection = "row-reverse";
+        items.style.flexDirection = "row-reverse";
+      };
+      
+      column.onclick = function() {
+        items.style.webkitFlexDirection = "column";
+        items.style.flexDirection = "column";
+      };
+      
+      columnreverse.onclick = function() {
+        items.style.webkitFlexDirection = "column-reverse";
+        items.style.flexDirection = "column-reverse";
+      };
+    }; 
+    </script>
+    
+    <h2>Code</h2>
+    <pre> #items {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+}</pre>
+  </body>
+</html>
