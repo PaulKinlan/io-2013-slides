@@ -86,7 +86,7 @@ URL: https://code.google.com/p/io-2012-slides
     <article class="flexbox vcenter"><q>Parity</q></article>
   </slide>
   
-  <slide class="fill">
+  <slide class="fill" hidden>
        <hgroup>
          <h2>In this talk</h2>
        </hgroup>
@@ -113,7 +113,7 @@ URL: https://code.google.com/p/io-2012-slides
     <hgroup>
       <h2>Viewport</h2>
     </hgroup>
-    <video class=demo poster="/images/poster.png"></video>
+    <video class=demo poster="/images/poster.png" loop controls></video>
     <article>
 	  <h3>The most critical element for mobile TODAY!</h3>
       <pre class="prettyprint">&lt;meta name="viewport" content="" /&gt;</pre>
@@ -130,7 +130,7 @@ URL: https://code.google.com/p/io-2012-slides
     <hgroup>
       <h2>Viewport queries</h2>
     </hgroup>
-    <video class=demo poster="/images/poster.png"></video>
+    <video class=demo poster="/images/poster.png" loop controls></video>
     <article>
 	  <h3>A saner solution</h3>
       <pre class="prettyprint">@viewport {
@@ -148,7 +148,7 @@ URL: https://code.google.com/p/io-2012-slides
       <hgroup>
         <h2>Viewport units</h2>
       </hgroup>
-      <video class=demo poster="/images/poster.png"></video>
+      <video class=demo poster="/images/poster.png" loop controls></video>
       <article>
         <h3>Sizing relatively to the viewport</h3>
         <pre class="prettyprint">#visible-square {
@@ -166,7 +166,7 @@ URL: https://code.google.com/p/io-2012-slides
     <hgroup>
       <h2>Media Queries</h2>
     </hgroup>
-    <video class=demo poster="/images/poster.png"></video>
+    <video class=demo poster="/images/poster.png" loop controls></video>
     <article>
       <h3>Adaptive to screen size</h3>
 	  <pre class="prettyprint">@media screen and (min-device-width: 800px) { ... }</pre>
@@ -185,7 +185,7 @@ URL: https://code.google.com/p/io-2012-slides
     <hgroup>
       <h2>Flex Box</h2>
     </hgroup>
-    <video class=demo poster="/images/poster.png"></video>
+    <video class=demo poster="/images/poster.png" loop controls></video>
     <article>
         <h3>Adaptive layouts</h3>
       <pre class="prettyprint">.flex {
@@ -207,7 +207,7 @@ URL: https://code.google.com/p/io-2012-slides
       <hgroup>
         <h2>Responsive Images</h2>
       </hgroup>
-      <video class=demo poster="/images/poster.png"></video>
+      <video class=demo poster="/images/poster.png" loop controls></video>
       <article>
           <h3>image-set</h3>
         <pre class="prettyprint">.images {
@@ -225,7 +225,7 @@ URL: https://code.google.com/p/io-2012-slides
     <hgroup>
       <h2>Grid Layout</h2>
     </hgroup>
-    <video class=demo poster="/images/poster.png"></video>
+    <video class=demo poster="/images/poster.png" loop controls></video>
     <article>
       <h3>[TODO]</h3>
       <pre class="prettyprint"></pre>
@@ -237,7 +237,7 @@ URL: https://code.google.com/p/io-2012-slides
       <hgroup>
         <h2>position: sticky</h2>
       </hgroup>
-      <video class=demo poster="/images/poster.png"></video>
+      <video class=demo poster="/images/poster.png" loop controls></video>
       <article>
         <h3>FTW</h3>
         <ul>
@@ -256,7 +256,7 @@ URL: https://code.google.com/p/io-2012-slides
     <hgroup>
       <h2>Orientation</h2>
     </hgroup>
-    <video class=demo poster="/images/poster.png"></video>
+    <video class=demo poster="/images/poster.png" loop controls></video>
     <article>
       <h3>CSS</h3>
       <pre class="prettyprint">@media screen and (orientation: portrait) {}</pre>
@@ -274,7 +274,7 @@ URL: https://code.google.com/p/io-2012-slides
     <hgroup>
       <h2>Geolocation</h2>
     </hgroup>
-    <video class=demo poster="/images/poster.png"></video>
+    <video class=demo poster="/images/poster.png" loop controls></video>
     <article>
       <h3>Single location</h3>
       <pre class="prettyprint">var success = function(pos) {
@@ -298,7 +298,7 @@ clearWatch(watchId);</pre>
     <hgroup>
       <h2>Device Orientation</h2>
     </hgroup>
-    <video class=demo poster="/images/poster.png"></video>
+    <video class=demo poster="/images/poster.png" loop controls></video>
     <article>
       <h3>JavaScript</h3>
       <pre class="prettyprint" data-lang="javascript">window.onorientationchange = function(e) {
@@ -314,7 +314,7 @@ clearWatch(watchId);</pre>
       <hgroup>
         <h2>Application Cache</h2>
       </hgroup>
-      <video class=demo poster="/images/poster.png"></video>
+      <video class=demo poster="/images/poster.png" loop controls></video>
       <article>
         <h3>Fundamental offline API</h3>
         <pre class="prettyprint">&lt;html manifest='test.manifest'&gt;</pre>
@@ -325,7 +325,7 @@ clearWatch(watchId);</pre>
       <hgroup>
         <h2>Offline Events</h2>
       </hgroup>
-      <video class=demo poster="/images/poster.png"></video>
+      <video class=demo poster="/images/poster.png" loop controls></video>
       <article>
         <h3>Network state</h3>
         <pre class="prettyprint">window.navigator.onLine</pre>
@@ -346,7 +346,7 @@ window.onoffline = function() {
       <hgroup>
         <h2>Storage APIs</h2>
       </hgroup>
-      <video class=demo poster="/images/poster.png"></video>
+      <video class=demo poster="/images/poster.png" loop controls></video>
       <article>
         <h3>There's localStorage..</h3>
         <pre class="prettyprint">localStorage["test"] = 1234;
@@ -365,7 +365,7 @@ var test = sessionStorage["test"];</pre>
       <hgroup>
         <h2>WebSQL</h2>
       </hgroup>
-      <video class=demo poster="/images/poster.png"></video>
+      <video class=demo poster="/images/poster.png" loop controls></video>
       <article>
         <h3>Relational databases for JavaScript</h3>
         <pre class="prettyprint">var database = openDatabase('animals', ...);
@@ -384,7 +384,7 @@ var test = sessionStorage["test"];</pre>
       <hgroup>
         <h2>IndexedDB</h2>
       </hgroup>
-      <video class=demo poster="/images/poster.png"></video>
+      <video class=demo poster="/images/poster.png" loop controls></video>
       <article>
         <h3>A new database for the Web?</h3>
         <pre class="prettyprint">var database = indexedDB.open('animals', 1);
@@ -406,7 +406,7 @@ database.onsuccess = function (event) {
       <hgroup>
         <h2>Navigation Controller</h2>
       </hgroup>
-      <video class=demo poster="/images/poster.png"></video>
+      <video class=demo poster="/images/poster.png" loop controls></video>
     </slide>
 
   <slide class="segue red">
@@ -419,7 +419,7 @@ database.onsuccess = function (event) {
     <hgroup>
       <h2>Semantic input types</h2>
     </hgroup>
-    <video class=demo poster="/images/poster.png" autoplay loop controls>
+    <video class=demo poster="/images/poster.png" loop controls>
       <source src="/videos/IME.webm"></source>
     </video>
     <article>
@@ -441,7 +441,7 @@ database.onsuccess = function (event) {
     <hgroup>
       <h2>Touch Events</h2>
     </hgroup>
-    <video class=demo poster="/images/poster.png"></video>
+    <video class=demo poster="/images/poster.png" loop controls></video>
     <article>
 	   <h3>
 		Implements Touch Events spec version 1
@@ -464,7 +464,7 @@ database.onsuccess = function (event) {
     <hgroup>
       <h2>Pointer Events</h2>
     </hgroup>
-    <video class=demo poster="/images/poster.png"></video>
+    <video class=demo poster="/images/poster.png" loop controls></video>
     <article>
        	<h3>JS</h3>
 	      <pre class="prettyprint">[elem].onpointerdown = function(e) {}
@@ -490,7 +490,7 @@ navigator.maxTouchPoints</pre>
     <hgroup>
       <h2>Ambiguous Clicks</h2>
     </hgroup>
-    <video class=demo poster="/images/poster.png"></video>
+    <video class=demo poster="/images/poster.png" loop controls></video>
     <article>
 	  <p>For all touch targets (links and buttons)</p>
       <ul>
@@ -511,7 +511,7 @@ navigator.maxTouchPoints</pre>
     <hgroup>
       <h2>Font size</h2>
     </hgroup>
-    <video class=demo poster="/images/poster.png"></video>
+    <video class=demo poster="/images/poster.png" loop controls></video>
     <article>
       <ul>
          <li>N4 12px font can read like a 7px font.
@@ -525,7 +525,7 @@ navigator.maxTouchPoints</pre>
     <hgroup>
       <h2>Auto size</h2>
     </hgroup>
-    <video class=demo poster="/images/poster.png"></video>
+    <video class=demo poster="/images/poster.png" loop controls></video>
     <article>
       <ul>
         <li>Boosts font size to make text read better
@@ -585,7 +585,7 @@ cam.onchange = function(e) {
     <hgroup>
       <h2>NFC</h2>
     </hgroup>
-    <video class=demo poster="/images/poster.png"></video>
+    <video class=demo poster="/images/poster.png" loop controls></video>
     <article>
       <h3>There is no API</h3>
       <div>But you can still use it</div>
@@ -596,7 +596,7 @@ cam.onchange = function(e) {
     <hgroup>
       <h2>Android Intents</h2>
     </hgroup>
-    <video class=demo poster="/images/poster.png"></video>
+    <video class=demo poster="/images/poster.png" loop controls></video>
     <article class="smaller">
       <h3>Interacting with native apps</h3>
       <pre>intent:
@@ -621,7 +621,7 @@ cam.onchange = function(e) {
     <hgroup>
       <h2>Fullscreen</h2>
     </hgroup>
-    <video class=demo poster="/images/poster.png"></video>
+    <video class=demo poster="/images/poster.png" loop controls></video>
     <article>
       <h3>The old way</h3>
       <pre class="prettyprint">window.scrollTo(0,1);</pre>
@@ -640,7 +640,7 @@ cam.onchange = function(e) {
     <hgroup>
       <h2>Device Motion</h2>
     </hgroup>
-    <video class=demo poster="/images/poster.png"></video>
+    <video class=demo poster="/images/poster.png" loop controls></video>
     <article>
       <pre class="prettyprint">window.ondevicemotion = function(e) {
   var accelWgravity = e.accelerationIncludingGravity;
@@ -666,7 +666,7 @@ cam.onchange = function(e) {
     <hgroup>
       <h2>Continuous Audio</h2>
     </hgroup>
-    <video class=demo poster="/images/poster.png"></video>
+    <video class=demo poster="/images/poster.png" loop controls></video>
   </slide>
 
   <slide class="segue red">
@@ -680,7 +680,7 @@ cam.onchange = function(e) {
     <hgroup>
       <h2>User Timing API</h2>
     </hgroup>
-    <video class=demo poster="/images/poster.png"></video>
+    <video class=demo poster="/images/poster.png" loop controls></video>
     <article class="smaller">
         <h3>A good timing API</h3>
 <pre class="prettyprint">performance.mark('startTask1');
@@ -707,7 +707,7 @@ for (var i = 0; i &lt; perfEntries.length; i++) {
     <hgroup>
       <h2>Resource Timing API</h2>
     </hgroup>
-    <video class=demo poster="/images/poster.png"></video>
+    <video class=demo poster="/images/poster.png" loop controls></video>
     <article>
         <h3>Programmatically understanding the network</h3>
 <pre class="prettyprint">var perfEntries = performance.getEntriesByType('resource');
@@ -724,7 +724,7 @@ for (var i = 0; i &lt; perfEntries.length; i++) {
     <hgroup>
       <h2>Navigation Timing API</h2>
     </hgroup>
-    <video class=demo poster="/images/poster.png"></video>
+    <video class=demo poster="/images/poster.png" loop controls></video>
     <article class="smaller">
       <h3>Understanding high-level network</h3>
       <pre class="prettyprint">window.performance.timing.navigationStart
@@ -755,7 +755,7 @@ window.performance.timing.loadEventEnd </pre>
     <hgroup>
       <h2>window.performance.now()</h2>
     </hgroup>
-    <video class=demo poster="/images/poster.png"></video>
+    <video class=demo poster="/images/poster.png" loop controls></video>
     <article>
        <ul>
          <li>High precision (double)
