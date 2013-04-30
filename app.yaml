@@ -15,6 +15,9 @@ handlers:
 
 - url: /js
   static_dir: js
+  
+- url: /demos
+  static_dir: demos
 
 - url: /theme
   static_dir: theme

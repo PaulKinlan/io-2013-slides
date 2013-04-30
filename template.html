@@ -51,11 +51,11 @@ URL: https://code.google.com/p/io-2012-slides
   </slide>
 
   <slide class="fill red quote">
-    <article class="flexbox vcenter"><q>User's are on the move</q></article>
+    <article class="flexbox vcenter"><q>Users are on the move</q></article>
   </slide>
 
   <slide class="fill red quote">
-    <article class="flexbox vcenter"><q>Input is harder</q></article>
+    <article class="flexbox vcenter"><q>Input. is. harder</q></article>
   </slide>
 
   <slide class="fill red quote">
@@ -79,33 +79,28 @@ URL: https://code.google.com/p/io-2012-slides
   </slide>
   
   <slide class="fill green quote">
-    <article class="flexbox vcenter"><q>And what is Chrome doing to help?</q></article>
+    <article class="flexbox vcenter"><q>What is Chrome doing to help?</q></article>
+  </slide>
+  
+  <slide class="fill blue quote">
+    <article class="flexbox vcenter"><q>Speed</q></article>
+  </slide>
+  
+  <slide class="fill blue quote">
+    <article class="flexbox vcenter"><q>Security</q></article>
+  </slide>
+  
+  <slide class="fill blue quote">
+    <article class="flexbox vcenter"><q>Simplicity</q></article>
   </slide>
   
   <slide class="fill blue quote">
     <article class="flexbox vcenter"><q>Parity</q></article>
   </slide>
-  
-  <slide class="fill" hidden>
-       <hgroup>
-         <h2>In this talk</h2>
-       </hgroup>
-       <article>
-         <h3>We will show you the latest technology to:</h3>
-         <ul>
-           <li>Build responsiveness in to your sites</li>
-           <li>Take advantage of the users mobility</li>
-           <li>Let the users input data</li>
-           <li>Manage connectivity issues by taking your app or site offline</li>
-           <li>Use the latest and greatest device features</li>
-           <li>Understand the performance charateristics of your site</li>
-         </ul>
-       </article>
-   </slide>
 
   <slide class="segue red">
     <hgroup>
-      <h2>Screens are smaller</h2>
+      <h1>Screens are smaller</h1>
     </hgroup>
   </slide>
 
@@ -117,12 +112,17 @@ URL: https://code.google.com/p/io-2012-slides
     <article>
 	  <h3>The most critical element for mobile TODAY!</h3>
       <pre class="prettyprint">&lt;meta name="viewport" content="" /&gt;</pre>
-      <ul>
-        <li>width=device-width|Pixel value</li>
-        <li>initial-scale=0.1-1.0</li>
-        <li>minimum-scale=0.1-1.0</li>
-        <li>maximum-scale=0.1-1.0</li>
-      </ul>
+      <h4>Device width</h4>
+      <pre class="prettyprint">&lt;meta name="viewport" content="width=device-width" /&gt;</pre>
+     
+      <h4>Initial Scale</h4>
+      <pre class="prettyprint">&lt;meta name="viewport" content="initial-scale=0.5" /&gt;</pre>
+      
+      <h4>Minimum Scale</h4>
+      <pre class="prettyprint">&lt;meta name="viewport" content="minimum-scale=0.5" /&gt;</pre>
+      
+      <h4>Maximum Scale</h4>
+      <pre class="prettyprint">&lt;meta name="viewport" content="maximum-scale=0.5" /&gt;</pre>
     </article>
   </slide>
 
@@ -281,13 +281,13 @@ URL: https://code.google.com/p/io-2012-slides
   var latitude = pos.coords.latitude;
   var longitude = pos.coords.longitude;
 };
-<b>window.navigator.getCurrentPosition(success);</b></pre>
+<b>navigator.geolocation.getCurrentPosition(success);</b></pre>
       <h3>Continuous location</h3>
       <pre class="prettyprint" data-lang="javascript">function(success) {
   var latitude = pos.coords.latitude;
   var longitude = pos.coords.longitude;
 };
-<b>var watchId = navigator.watchPosition(success);</b>
+<b>var watchId = navigator.geolocation.watchPosition(success);</b>
 
 // Stop watching
 clearWatch(watchId);</pre>
@@ -330,15 +330,12 @@ clearWatch(watchId);</pre>
         <h3>Network state</h3>
         <pre class="prettyprint" data-lang="javascript">window.navigator.onLine</pre>
         <pre class="prettyprint" data-lang="javascript">window.ononline = function() {
-  console.log("User might be online");
+  console.log("User **might** be online");
 };
 
 window.onoffline = function() {
   console.log("User *is* offline");
 };</pre>
-        <ul>
-            <li>Not completely reliable
-        </ul>
       </article>
     </slide>
 
@@ -411,7 +408,7 @@ database.onsuccess = function (event) {
 
   <slide class="segue red">
     <hgroup>
-      <h2>Input is harder</h2>
+      <h2>Input. is. harder.</h2>
     </hgroup>
   </slide>
 
