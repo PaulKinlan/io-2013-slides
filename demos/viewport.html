@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CSS Orientation</title>
+    <meta id="viewport" name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+    <style>
+      body { padding: 10px;}
+    </style>
+    <script>
+      onload = function() {
+        var set = document.getElementById("set");
+        
+        set.onclick = function() {
+          var width = document.getElementById("width").value;
+          var minscale = document.getElementById("minscale").value;
+          var maxscale = document.getElementById("maxscale").value;
+          var initscale = document.getElementById("initscale").value;
+          var scalableEl = document.getElementById("scalable")
+          var scalable = scalableEl.options[scalableEl.selectedIndex].value;
+        
+          var content = []
+          if(width) content.push("width=" + width);
+          if(minscale) content.push("minimum-scale=" + minscale);
+          if(maxscale) content.push("maximum-scale=" + maxscale);
+          if(initscale) content.push("initial-scale=" + initscale);
+          if(scalable == "yes" || scalable == "no") content.push("user-scalable=" + scalable)
+          viewport.setAttribute("content",  content.join(","));
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <h1>Viewport</h1>
+    <p></p>
+    <fieldset>
+      <legend>Viewport Configuration</legend>
+      <label>Width</label>
+      <input type="text" value="" id="width">
+      <label>minimum-scale</label>
+      <input type="number" value="1.0" id="minscale">
+      <label>maximum-scale</label>
+      <input type="number" value="1.0" id="maxscale">
+      <label>initial-scale</label>
+      <input type="number" value="1.0" id="initscale">
+      <label>user-scalable</label>
+      <select id="scalable">
+        <option value=0>
+        <option value=no>no
+        <option value=yes>yes
+      </select><br/>
+      <button class="btn btn-primary" id="set">Set</button>
+      <button class="btn btn-warning">Clear</button>
+    </fieldset>
+  </body>
+</html>
