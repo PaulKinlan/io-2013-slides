@@ -188,7 +188,7 @@ URL: https://code.google.com/p/io-2012-slides
     <video class=demo poster="/images/poster.png" loop controls></video>
     <article>
         <h3>Adaptive layouts</h3>
-      <pre class="prettyprint">.flex {
+      <pre class="prettyprint" data-lang="css">#id {
   display: flex;
   flex-direction: row | row-reverse | column |
       column-reverse;
@@ -210,7 +210,7 @@ URL: https://code.google.com/p/io-2012-slides
       <video class=demo poster="/images/poster.png" loop controls></video>
       <article>
           <h3>image-set</h3>
-        <pre class="prettyprint">.images {
+        <pre class="prettyprint">#image1 {
   content: -webkit-image-set("1x test.png, 2x test2.png");
 }</pre>
 
@@ -277,17 +277,17 @@ URL: https://code.google.com/p/io-2012-slides
     <video class=demo poster="/images/poster.png" loop controls></video>
     <article>
       <h3>Single location</h3>
-      <pre class="prettyprint">var success = function(pos) {
+      <pre class="prettyprint" data-lang="javascript">var success = function(pos) {
   var latitude = pos.coords.latitude;
   var longitude = pos.coords.longitude;
 };
-window.navigator.getCurrentPosition(success);</pre>
+<b>window.navigator.getCurrentPosition(success);</b></pre>
       <h3>Continuous location</h3>
-      <pre class="prettyprint">function(success) {
+      <pre class="prettyprint" data-lang="javascript">function(success) {
   var latitude = pos.coords.latitude;
   var longitude = pos.coords.longitude;
 };
-var watchId = navigator.watchPosition(success);
+<b>var watchId = navigator.watchPosition(success);</b>
 
 // Stop watching
 clearWatch(watchId);</pre>
@@ -317,7 +317,7 @@ clearWatch(watchId);</pre>
       <video class=demo poster="/images/poster.png" loop controls></video>
       <article>
         <h3>Fundamental offline API</h3>
-        <pre class="prettyprint">&lt;html manifest='test.manifest'&gt;</pre>
+        <pre class="prettyprint" data-lang="html">&lt;html manifest='test.manifest'&gt;</pre>
       </article> 
     </slide>
 
@@ -328,13 +328,13 @@ clearWatch(watchId);</pre>
       <video class=demo poster="/images/poster.png" loop controls></video>
       <article>
         <h3>Network state</h3>
-        <pre class="prettyprint">window.navigator.onLine</pre>
-        <pre class="prettyprint">window.ononline = function() {
-
+        <pre class="prettyprint" data-lang="javascript">window.navigator.onLine</pre>
+        <pre class="prettyprint" data-lang="javascript">window.ononline = function() {
+  console.log("User might be online");
 };
 
 window.onoffline = function() {
-
+  console.log("User *is* offline");
 };</pre>
         <ul>
             <li>Not completely reliable
@@ -349,10 +349,10 @@ window.onoffline = function() {
       <video class=demo poster="/images/poster.png" loop controls></video>
       <article>
         <h3>There's localStorage..</h3>
-        <pre class="prettyprint">localStorage["test"] = 1234;
+        <pre class="prettyprint" data-lang="javascript">localStorage["test"] = 1234;
 var test = localStorage["test"];</pre>
         <h3>..and sessionStorage!</h3>
-        <pre class="prettyprint">sessionStorage["test"] = 1234;
+        <pre class="prettyprint" data-lang="javascript">sessionStorage["test"] = 1234;
 var test = sessionStorage["test"];</pre>
         <ul>
           <li>sessionStorage only works for the current session, localStorage is persistent</li>
@@ -368,7 +368,7 @@ var test = sessionStorage["test"];</pre>
       <video class=demo poster="/images/poster.png" loop controls></video>
       <article>
         <h3>Relational databases for JavaScript</h3>
-        <pre class="prettyprint">var database = openDatabase('animals', ...);
+        <pre class="prettyprint" data-lang="javascript">var database = openDatabase('animals', ...);
   database.transaction(function (tx) {
     tx.executeSql('INSERT INTO animals VALUES ' +
       '("cat", "awwww ❤");');
@@ -387,7 +387,7 @@ var test = sessionStorage["test"];</pre>
       <video class=demo poster="/images/poster.png" loop controls></video>
       <article>
         <h3>A new database for the Web?</h3>
-        <pre class="prettyprint">var database = indexedDB.open('animals', 1);
+        <pre class="prettyprint" data-lang="javascript">var database = indexedDB.open('animals', 1);
 database.onsuccess = function (event) {
   var request = database.transaction("[animals]")
                         .objectStore("animals")
@@ -424,7 +424,7 @@ database.onsuccess = function (event) {
     </video>
     <article>
       <h3>IME</h3>
-      <pre class="prettyprint">&lt;input type="email" /&gt;
+      <pre class="prettyprint" data-lang="html">&lt;input type="email" /&gt;
 &lt;input type="search" /&gt;
 &lt;input type="url" /&gt;
 &lt;input type="tel" /&gt;
@@ -446,7 +446,7 @@ database.onsuccess = function (event) {
 	   <h3>
 		Implements Touch Events spec version 1
 	   </h3>
-       <pre class="prettyprint">[element].ontouchstart = function(e) {};
+       <pre class="prettyprint" data-lang="javascript">[element].ontouchstart = function(e) {};
 [element].ontouchmove = function(e) {};
 [element].ontouchend = function(e) {};
 </pre>
@@ -599,7 +599,7 @@ cam.onchange = function(e) {
     <video class=demo poster="/images/poster.png" loop controls></video>
     <article class="smaller">
       <h3>Interacting with native apps</h3>
-      <pre>intent:
+      <pre class="prettyprint">intent:
   HOST/URI-path // Optional host 
   #Intent; 
      package=[string]; 
