@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Touch Events</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+    <style>
+      
+    </style>
+    <script>
+    
+    </script>
+  </head>
+  <body>
+    <img id=img style="width:100%">
+    <input id=camera type=file accepts="image/*" capture=camera />
+    <h1>Media Capture</h1>
+    <script>
+      camera.onchange = function(e) {
+        var files = e.target.files;
+        if(files.length > 0  && files[0].type.indexOf("image/") == 0) {
+          img.src = URL.createObjectURL(files[0]);
+        }
+      };
+      </script>
+    <h2>Code</h2>
+    <pre>&lt;input id=camera type=file accepts="image/*" capture=camera /&gt;
+
+camera.onchange = function(e) {
+  var files = e.target.files;
+  if(files.length > 0  && files[0].type.indexOf("image/") == 0) {
+    img.src = URL.createObjectURL(files[0]);
+  }
+};</pre>
+  </body>
+</html>

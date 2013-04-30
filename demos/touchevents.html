@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Touch Events</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+    <style>
+      body { padding: 10px; }
+    </style>
+    <script>
+    
+    </script>
+  </head>
+  <body>
+    <h1>Touch events</h1>
+    <div id="container">
+      <div id="touchstart"></div>
+      <div id="touchmove"></div>
+      <div id="touchend"></div>
+      <div id="click"></div>
+    </div>
+    <h2>Code</h2>
+    <pre>window.ononline = function() {
+  console.log("User **might** be online");
+  var container = document.getElementById("container");
+  container.className = "online";
+};
+
+window.onoffline = function() {
+  console.log("User *is* offline");
+  var container = document.getElementById("container");
+  container.className = "offline";
+};</pre>
+  </body>
+</html>
