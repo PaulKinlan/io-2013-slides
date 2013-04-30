@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Touch Events</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+    <style>
+
+    </style>
+    <script>
+
+    </script>
+  </head>
+  <body>
+    <video id="v" style="width:100%; min-height: 1px;background-color: black;"></video> 
+    <h1>getUserMedia</h1>
+    <script>
+      var v = document.querySelector("#v");
+      v.onclick = function(e) {
+        navigator.webkitGetUserMedia({video:true, audio: true}, function(s) {
+          v.src = window.URL.createObjectURL(s);
+          v.play();
+        })
+      };
+    </script>
+    <h2>Code</h2>
+    <pre>var v = document.querySelector("#v");
+v.onclick = function(e) {
+  navigator.webkitGetUserMedia({video:true, audio: true}, function(s) {
+    v.src = window.URL.createObjectURL(s);
+    v.play();
+  })
+};</pre>
+  </body>
+</html>
