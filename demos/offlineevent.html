@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Offline Events</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+    <style>
+      body { padding: 10px; }
+      
+      #container div {
+        height: 100px;
+        display: none;
+        color: white;
+        font-size: 48px;
+        padding: 5px;
+      }
+      
+      #container.online {
+        background-color: green;
+      }
+      
+      #container.offline {
+        background-color: red;
+      }
+      
+      #container.offline #offline {
+        display: block;
+      }
+      
+      #container.offline #online {
+        display: none;
+      }
+      
+      #container.online #offline {
+        display: none;
+      }
+      
+      #container.online #online {
+        display: block;
+      }
+    </style>
+    <script>
+    window.ononline = function() {
+      console.log("User **might** be online");
+      var container = document.getElementById("container");
+      container.className = "online";
+    };
+
+    window.onoffline = function() {
+      console.log("User *is* offline");
+      var container = document.getElementById("container");
+      container.className = "offline";
+    };
+    </script>
+  </head>
+  <body>
+    <h1>Offline events</h1>
+    <div id="container">
+      <div id="online">The user might be online</div>
+      <div id="offline">The user is offline</div>
+    </div>
+    <h2>Code</h2>
+    <pre>window.ononline = function() {
+  console.log("User **might** be online");
+  var container = document.getElementById("container");
+  container.className = "online";
+};
+
+window.onoffline = function() {
+  console.log("User *is* offline");
+  var container = document.getElementById("container");
+  container.className = "offline";
+};</pre>
+  </body>
+</html>
