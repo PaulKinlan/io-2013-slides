@@ -636,16 +636,18 @@ cam.onchange = function(e) {
     <hgroup>
       <h2>Fullscreen</h2>
     </hgroup>
-    <video class=demo poster="/images/poster.png" loop controls></video>
+    <video class=demo poster="/images/poster.png" loop controls>
+      <source src="videos/fullscreen.webm"></source>
+    </video>
     <article>
       <h3>The old way</h3>
       <pre class="prettyprint">window.scrollTo(0,1);</pre>
       <h3>The new way</h3>
       <pre class="prettyprint">[element].requestFullscreen();
 [element].currentFullScreenElement();
-[element].cancelFullscreen();
-[element].fullscreenEnabled();
-[element].isFullScreen();
+document.cancelFullscreen();
+document.fullscreenEnabled();
+document.isFullScreen();
 </pre>
     <p>Demo <a href="http://jsbin.com/onadep/latest">jsbin.com/onadep/latest</a></p>
     </article>
