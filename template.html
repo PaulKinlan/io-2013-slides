@@ -344,7 +344,6 @@ window.onoffline = function() {
       <hgroup>
         <h2>Storage APIs</h2>
       </hgroup>
-      <video class=demo poster="/images/poster.png" loop controls></video>
       <article>
         <h3>There's localStorage..</h3>
         <pre class="prettyprint" data-lang="javascript">localStorage["test"] = 1234;
@@ -363,7 +362,6 @@ var test = sessionStorage["test"];</pre>
       <hgroup>
         <h2>WebSQL</h2>
       </hgroup>
-      <video class=demo poster="/images/poster.png" loop controls></video>
       <article>
         <h3>Relational databases for JavaScript</h3>
         <pre class="prettyprint" data-lang="javascript">var database = openDatabase('animals', ...);
@@ -382,7 +380,6 @@ var test = sessionStorage["test"];</pre>
       <hgroup>
         <h2>IndexedDB</h2>
       </hgroup>
-      <video class=demo poster="/images/poster.png" loop controls></video>
       <article>
         <h3>A new database for the Web?</h3>
         <pre class="prettyprint" data-lang="javascript">var database = indexedDB.open('animals', 1);
@@ -398,13 +395,6 @@ database.onsuccess = function (event) {
           <li>IndexedDB.</li>
         </ul>
       </article>
-    </slide>
-
-    <slide hidden>
-      <hgroup>
-        <h2>Navigation Controller</h2>
-      </hgroup>
-      <video class=demo poster="/images/poster.png" loop controls></video>
     </slide>
 
   <slide class="segue red">
@@ -450,6 +440,7 @@ database.onsuccess = function (event) {
 </pre>
       <ul>
         <li>300ms delay for click
+        <li>touchmove? preventDefault()
         <li>No gestures
       </ul>
       <p>Docs: <a href="http://toolkitchen.github.io/platform/pointer-events.html">http://toolkitchen.github.io/platform/pointer-events.html</a></p>
@@ -484,56 +475,7 @@ navigator.maxTouchPoints</pre>
     </article>
   </slide>
 
-  <slide hidden>
-    <hgroup>
-      <h2>Ambiguous Clicks</h2>
-    </hgroup>
-    <video class=demo poster="/images/poster.png" loop controls></video>
-    <article>
-	  <p>For all touch targets (links and buttons)</p>
-      <ul>
-      	<li>Increase the margin
-	    <li>Increase the padding
-      </ul>
-      <p>Demo: <a href="http://jsbin.com/irivohlatest" target="_blank">http://jsbin.com/irivoh/latest</a></p>
-    </article>
-  </slide>
-
-  <slide class="segue red" hidden>
-    <hgroup>
-      <h2>Usability</h2>
-    </hgroup>
-  </slide>
-
-  <slide hidden>
-    <hgroup>
-      <h2>Font size</h2>
-    </hgroup>
-    <video class=demo poster="/images/poster.png" loop controls></video>
-    <article>
-      <ul>
-         <li>N4 12px font can read like a 7px font.
-         <li>N7 12px font can read like a 9px font.
-      </ul>
-      <pre class="prettyprint"></pre>
-    </article>
-  </slide>
-
-  <slide hidden>
-    <hgroup>
-      <h2>Auto size</h2>
-    </hgroup>
-    <video class=demo poster="/images/poster.png" loop controls></video>
-    <article>
-      <ul>
-        <li>Boosts font size to make text read better
-      </ul>
-      <pre class="prettyprint"></pre>
-    </article>
-  </slide>
-
- 
-
+   
   <slide class="segue red">
     <hgroup>
       <h2>Device Interactions</h2>
