@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Resource Timing</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+    <style>
+      body { padding: 10px;}
+      
+      #landscape, #portrait {
+        -webkit-transition: 1s ease-in-out all;
+        height: 100px;
+        background-color: #111;
+        color: white;
+        float: left;
+        width: 100px;
+        padding: 5px;
+        margin: 5px;
+        font-size: 18px;
+      }
+    </style>
+    <script>
+    onload = function() {
+      var start = document.getElementById("start");
+      start.onclick = function() {
+        
+        var perfEntries = performance.webkitGetEntriesByType('resource');
+        output.innerText = "";
+        for (var i = 0; i < perfEntries.length; i++) {
+          output.innerText += ('Name: ' + perfEntries[i].name + '\n\t' +
+            'Initiator Type: ' + perfEntries[i].initiatorType +'\n\t' +
+            'Entry Type: ' + perfEntries[i].entryType +'\n\t' +
+            'Start Time: ' + perfEntries[i].startTime.toFixed(4) +'\n\t' +
+            'Connect Start Time: ' + perfEntries[i].connectStart.toFixed(4) +'\n\t' +
+            'Domain Lookup Start Time: ' + perfEntries[i].domainLookupStart.toFixed(4) +'\n\t' +
+            'Domain Lookup End Time: ' + perfEntries[i].domainLookupEnd.toFixed(4) +'\n\t' +
+            'Fetch Start Time: ' + perfEntries[i].fetchStart.toFixed(4) +'\n\t' +
+            'Request Start Time: ' + perfEntries[i].requestStart.toFixed(4) +'\n\t' +
+            'Response Start Time: ' + perfEntries[i].responseStart.toFixed(4) +'\n\t' +
+            'Response End Time: ' + perfEntries[i].responseEnd.toFixed(4) +'\n\t' +
+            'Duration: '   + perfEntries[i].duration.toFixed(4)  + '\n');
+        }
+      }
+    };
+    </script>
+  </head>
+  <body>
+    <h1>Resource timing</h1>
+    <button id="start" class="btn btn-primary">Analyze network</button><br><br>
+    <pre id="output"></pre>
+    <img src="img/paul.png">
+     
+     
+  </body>
+</html>

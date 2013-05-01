@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CSS Orientation</title>
+    <title>User timing</title>
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
@@ -21,26 +21,37 @@
       }
     </style>
     <script>
-    performance.mark('startTask1');
-    doTask1();
-    performance.mark('endTask1');
+    onload = function() {
+      var start = document.getElementById("start");
+      start.onclick = function() {
+        performance.webkitMark('startTask1');
+        var i = 0;
+        while(i < 10000000) {i++}
+        performance.webkitMark('endTask1');
 
-    performance.mark('startTask2');
-    doTask2();
-    performance.mark('endTask2');
+        performance.webkitMark('startTask2');
+        var i = 0;
+        while(i < 20000000) {i++}
+        performance.webkitMark('endTask2');
 
-    var perfEntries = performance.getEntriesByType('mark');
-    for (var i = 0; i < perfEntries.length; i++) {
-      console.log('Name: ' + perfEntries[i].name   +
-        ' Entry Type: ' + perfEntries[i].entryType +
-        ' Start Time: ' + perfEntries[i].startTime +
-        ' Duration: '   + perfEntries[i].duration  + '\n');
-    }
+        var perfEntries = performance.webkitGetEntriesByType('mark');
+        output.innerText = "";
+        for (var i = 0; i < perfEntries.length; i++) {
+          output.innerText += ('Name: ' + perfEntries[i].name + '\n\t' +
+            ' Entry Type: ' + perfEntries[i].entryType +'\n\t' +
+            ' Start Time: ' + perfEntries[i].startTime +'\n\t' +
+            ' Duration: '   + perfEntries[i].duration  + '\n');
+        }
+      }
+    };
     </script>
   </head>
   <body>
     <h1>User timing</h1>
     <button id="start" class="btn btn-primary">Start</button>
+    <pre id="output">
+      
+    </pre>
      
      
   </body>
