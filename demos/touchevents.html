@@ -16,6 +16,7 @@
         padding: 40px;
         margin: 10px;
         text-align: center;
+        line-height: 1em;
       }
     </style>
     <script>
@@ -24,11 +25,18 @@
       var touchmove = document.getElementById("touchmove");
       var touchend = document.getElementById("touchend");
       var click = document.getElementById("click");
+      var diff = document.getElementById("diff");
       
       var touch = document.getElementById("touch");
+      var touchtime =0;
       
       touch.ontouchstart = function(e) {
-        touchstart.innerText = e.timeStamp;
+        touchstart.innerText = touchtime = e.timeStamp;
+        touchmove.innerText = "";
+        touchend.innerText = "";
+        click.innerText = "";
+        
+        diff.innerText = "";
       };
       
       touch.ontouchmove = function(e) {
@@ -42,6 +50,7 @@
       
       touch.onclick = function(e) {
         click.innerText = e.timeStamp;
+        diff.innerText = "(" + (e.timeStamp - touchtime) + "ms difference from ontouchstart)"
       };
     };
     </script>
@@ -49,10 +58,10 @@
   <body>
     <h1>Touch events</h1>
     <div id="container">
-      <div>ontouchstart: <span id="touchstart"></span></div>
-      <div>ontouchmove: <span id="touchmove"></span></div>
-      <div>ontouchsend: <span id="touchend"></span></div>
-      <div>onclick: <span id="click"></span></div>
+      <div><b>ontouchstart</b>: <span id="touchstart"></span></div>
+      <div><b>ontouchmove</b>: <span id="touchmove"></span></div>
+      <div><b>ontouchend</b>: <span id="touchend"></span></div>
+      <div><b>onclick</b>: <span id="click"></span> <span id="diff"></span></div>
     </div>
     <div id="touch">
       Touch in here.
