@@ -46,6 +46,11 @@
   </head>
   <body>
     <h1>Fullscreen</h1>
+    
+    
+    <h2>ScrollTo</h2>
+    <button id="scroll" class="btn btn-primary">ScrollTo</button>
+    <h2>API</h2>
     <button id="fullscreen" class="btn btn-primary">Go fullscreen</button>
     <button id="cancelfullscreen" class="btn btn-cancel">Cancel fullscreen</button>
     
@@ -53,8 +58,10 @@
     <img src="img/paul.png" id="paul">
     <script>
       var fs = document.getElementById("fullscreen");
+      var scroll = document.getElementById("scroll");
       var cfs = document.getElementById("cancelfullscreen");
       var paul = document.getElementById("paul");
+      
       fs.onclick = function(e) {
         document.body.webkitRequestFullScreen();
       };
@@ -62,8 +69,13 @@
       paul.onclick = function(e) {
         paul.webkitRequestFullScreen();
       };
+      
       cfs.onclick = function(e) {
         document.webkitCancelFullScreen();
+      };
+      
+      scroll.onclick = function() {
+        window.scrollTo(0,1);
       };
     </script>
   </body>
