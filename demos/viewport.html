@@ -27,23 +27,27 @@
           if(initscale) content.push("initial-scale=" + initscale);
           if(scalable == "yes" || scalable == "no") content.push("user-scalable=" + scalable)
           viewport.setAttribute("content",  content.join(","));
+          //
+          vp.innerText = content.join(",")
         }
       };
     </script>
   </head>
   <body>
     <h1>Viewport</h1>
-    <p></p>
+    <pre>&lt;meta 
+  name="viewport" 
+  content="<span id="vp"></span>"&gt;</pre>
     <fieldset>
       <legend>Viewport Configuration</legend>
       <label>Width</label>
       <input type="text" value="" id="width">
       <label>minimum-scale</label>
-      <input type="number" value="1.0" id="minscale">
+      <input type="number" value="1.0" step=0.1 id="minscale">
       <label>maximum-scale</label>
-      <input type="number" value="1.0" id="maxscale">
+      <input type="number" value="1.0" step=0.1 id="maxscale">
       <label>initial-scale</label>
-      <input type="number" value="1.0" id="initscale">
+      <input type="number" value="1.0" step=0.1 id="initscale">
       <label>user-scalable</label>
       <select id="scalable">
         <option value=0>

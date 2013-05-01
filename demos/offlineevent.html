@@ -8,12 +8,15 @@
     <style>
       body { padding: 10px; }
       
+      #container {
+        padding: 5px;
+      }
+      
       #container div {
-        height: 100px;
+        height: 50px;
         display: none;
         color: white;
-        font-size: 48px;
-        padding: 5px;
+        font-size: 24px;
       }
       
       #container.online {
@@ -55,7 +58,7 @@
     </script>
   </head>
   <body>
-    <h1>Offline events</h1>
+    <h1>Offline events.</h1>
     <div id="container">
       <div id="online">The user might be online</div>
       <div id="offline">The user is offline</div>
