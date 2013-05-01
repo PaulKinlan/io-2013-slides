@@ -7,30 +7,55 @@
     <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
     <style>
       body { padding: 10px; }
+      
+      #touch {
+        background-color: #eee;
+        font-size: 48px;
+        font-weight: 800;
+        border-radius: 10px;
+        padding: 40px;
+        margin: 10px;
+        text-align: center;
+      }
     </style>
     <script>
-    
+    onload = function() {
+      var touchstart = document.getElementById("touchstart");
+      var touchmove = document.getElementById("touchmove");
+      var touchend = document.getElementById("touchend");
+      var click = document.getElementById("click");
+      
+      var touch = document.getElementById("touch");
+      
+      touch.ontouchstart = function(e) {
+        touchstart.innerText = e.timeStamp;
+      };
+      
+      touch.ontouchmove = function(e) {
+        e.preventDefault();
+        touchmove.innerText = e.timeStamp;
+      };
+      
+      touch.ontouchend = function(e) {
+        touchend.innerText = e.timeStamp;
+      };
+      
+      touch.onclick = function(e) {
+        click.innerText = e.timeStamp;
+      };
+    };
     </script>
   </head>
   <body>
     <h1>Touch events</h1>
     <div id="container">
-      <div id="touchstart"></div>
-      <div id="touchmove"></div>
-      <div id="touchend"></div>
-      <div id="click"></div>
+      <div>ontouchstart: <span id="touchstart"></span></div>
+      <div>ontouchmove: <span id="touchmove"></span></div>
+      <div>ontouchsend: <span id="touchend"></span></div>
+      <div>onclick: <span id="click"></span></div>
     </div>
-    <h2>Code</h2>
-    <pre>window.ononline = function() {
-  console.log("User **might** be online");
-  var container = document.getElementById("container");
-  container.className = "online";
-};
-
-window.onoffline = function() {
-  console.log("User *is* offline");
-  var container = document.getElementById("container");
-  container.className = "offline";
-};</pre>
+    <div id="touch">
+      Touch in here.
+    </div>
   </body>
 </html>
