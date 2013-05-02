@@ -50,33 +50,29 @@ URL: https://code.google.com/p/io-2012-slides
   <slide class="fill red quote">
     <article class="flexbox vcenter">Screens are smaller</article>
   </slide>
+  
+  <slide class="fill red quote">
+    <article class="flexbox vcenter"><q>Input. is. harder.</q></article>
+  </slide>
 
   <slide class="fill red quote">
     <article class="flexbox vcenter"><q>Users are on the move</q></article>
   </slide>
 
   <slide class="fill red quote">
-    <article class="flexbox vcenter"><q>Input. is. harder</q></article>
-  </slide>
-
-  <slide class="fill red quote">
-    <article class="flexbox vcenter"><q>Network is slower</q></article>
+    <article class="flexbox vcenter"><q>Everything is slower</q></article>
   </slide>
   
   <slide class="fill red quote">
-    <article class="flexbox vcenter"><q>Devices are slower</q></article>
-  </slide>
-
-  <slide class="fill red quote">
-    <article class="flexbox vcenter"><q>Using the mobile web is hard</q></article>
-  </slide>
-  
-  <slide class="fill green quote">
-    <article class="flexbox vcenter"><q>But is developing for the mobile web hard?</q></article>
+    <article class="flexbox vcenter"><q>Using it is hard.</q></article>
   </slide>
   
   <slide class="fill blue quote">
-    <article class="flexbox vcenter"><q>Maybe..</q></article>
+    <article class="flexbox vcenter"><q><i>So....</i> Can we make it any easier?</q></article>
+  </slide>
+  
+  <slide class="fill green quote">
+    <article class="flexbox vcenter"><q>Yes. It's awesome</q></article>
   </slide>
   
   <slide class="fill green quote">
@@ -84,15 +80,7 @@ URL: https://code.google.com/p/io-2012-slides
   </slide>
   
   <slide class="fill blue quote">
-    <article class="flexbox vcenter"><q>Speed</q></article>
-  </slide>
-  
-  <slide class="fill blue quote">
-    <article class="flexbox vcenter"><q>Security</q></article>
-  </slide>
-  
-  <slide class="fill blue quote">
-    <article class="flexbox vcenter"><q>Simplicity</q></article>
+    <article class="flexbox vcenter"><q>1. Speed. 2. Security. 3. Simplicity</q></article>
   </slide>
   
   <slide class="fill blue quote">
@@ -121,9 +109,6 @@ URL: https://code.google.com/p/io-2012-slides
       <h4>Initial scale:</h4>
       <pre class="prettyprint">&lt;meta name="viewport" content="initial-scale=1.0" /&gt;</pre>
       
-      <h4>User scalable:</h4>
-      <pre class="prettyprint">&lt;meta name="viewport" content="user-scalable=no" /&gt;</pre>
-
       <pre class="additional-margin-top prettyprint">&lt;meta name="viewport"
   content="width=device-width, initial-scale=1.0" /&gt;</pre>
     </article>
@@ -131,7 +116,7 @@ URL: https://code.google.com/p/io-2012-slides
 
   <slide>
     <hgroup>
-      <h2>Viewport queries</h2>
+      <h2>Device Adaptation</h2>
     </hgroup>
     <article>
 	  <h3>A saner solution is on it's way!</h3>
@@ -151,6 +136,35 @@ URL: https://code.google.com/p/io-2012-slides
   </slide>
   
   <slide>
+    <hgroup>
+      <h2>Media Queries</h2>
+    </hgroup>
+    <article>
+      <h3>Adaptive to screen size</h3>
+	  <pre class="prettyprint">@media screen and (min-device-width: 800px) { ... }</pre>
+	  <pre class="prettyprint">@media screen and (device-aspect-ratio: 16/9) { ... }</pre>
+	  <pre class="prettyprint">@media screen and (min-device-pixel-ratio: 3/2) { ... }</pre>
+      <pre class="prettyprint">@media screen and (resolution: 2dppx) { ... }</pre>
+	  <ul>
+        <li>Logically group your styling rules.</li>
+  	    <li>Dynamically responsive.</li>
+      </ul>
+    </article>
+   </slide>
+   
+    <slide>
+     <hgroup>
+       <h2>Orientation</h2>
+     </hgroup>
+     <article>
+       <h3>Mobile devices can usually be rotated</h3>
+       <pre class="prettyprint">@media screen and (orientation: portrait) {}</pre>
+       <pre class="prettyprint">@media screen and (orientation: landscape) {}</pre>
+     </article>
+   </slide>
+  
+  
+  <slide>
       <hgroup>
         <h2>Viewport units</h2>
       </hgroup>
@@ -167,41 +181,10 @@ URL: https://code.google.com/p/io-2012-slides
         </ul>
       </article>
     </slide>
-
+    
   <slide>
     <hgroup>
-      <h2>Media Queries</h2>
-    </hgroup>
-    <article>
-      <h3>Adaptive to screen size</h3>
-	  <pre class="prettyprint">@media screen and (min-device-width: 800px) { ... }</pre>
-	  <pre class="prettyprint">@media screen and (device-aspect-ratio: 16/9) { ... }</pre>
-	  <pre class="prettyprint">@media screen and (min-device-pixel-ratio: 3/2) { ... }</pre>
-      <pre class="prettyprint">@media screen and (resolution: 2dppx) { ... }</pre>
-	  <ul>
-        <li>Logically group your styling rules.</li>
-  	    <li>Dynamically responsive.</li>
-      </ul>
-    </article>
-   </slide>
-
-   <slide>
-    <hgroup>
-      <h2>Orientation</h2>
-    </hgroup>
-    <video class=demo poster="/images/poster.png" loop controls>
-      <source src="/videos/input.webm"></source>
-    </video>
-    <article>
-      <h3>Mobile devices can usually be rotated</h3>
-      <pre class="prettyprint">@media screen and (orientation: portrait) {}</pre>
-      <pre class="prettyprint">@media screen and (orientation: landscape) {}</pre>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Flex Box</h2>
+      <h2>Flexible Box Module</h2>
     </hgroup>
     <video class=demo poster="/images/poster.png" loop controls>
       <source src="/videos/flexbox.webm"></source>
@@ -222,23 +205,6 @@ URL: https://code.google.com/p/io-2012-slides
       <p>Spec: <a href="http://dev.w3.org/csswg/css-flexbox/">http://dev.w3.org/csswg/css-flexbox/</a></p>
     </article>
   </slide>
-  
-  <slide>
-      <hgroup>
-        <h2>Responsive Images</h2>
-      </hgroup>
-      <article>
-          <h3>The image-set() function</h3>
-        <pre class="prettyprint">image[class="header"] {
-  content: -webkit-image-set("1x header.png, 2x header-highres.png");
-}</pre>
-
-      <ul>
-        <li>Can be used with Media Queries, but not necesarilly so.</li>
-        <li>Adaptive to display size.</li>
-      </ul>
-      </article>
-    </slide>
   
   <slide>
       <hgroup>
@@ -280,6 +246,7 @@ URL: https://code.google.com/p/io-2012-slides
   var latitude = position.coords.latitude;
   var longitude = position.coords.longitude;
 };
+
 <b>navigator.geolocation.getCurrentPosition(success);</b></pre>
       <h3>Or keep track when they're on the move!</h3>
       <pre class="prettyprint" data-lang="javascript">var watchId = <b>navigator.geolocation.watchPosition</b>(
@@ -299,12 +266,12 @@ clearWatch(watchId);</pre>
     </video>
     <article>
       <h3>Events when the device's orientation changes</h3>
-      <pre class="prettyprint" data-lang="javascript">window.onorientationchange = function(e) {
-  var yaw = e.alpha; 
-  var pitch = e.beta;
-  var roll = e.gamma;
+      <pre class="prettyprint" data-lang="javascript">window.onorientationchange = function(event) {
+  var yaw = event.alpha; 
+  var pitch = event.beta;
+  var roll = event.gamma;
 
-  // You could make a compas!
+  // You could make a compass!
 };</pre>
     <p>Demo: <a href="http://jsbin.com/ofeces">jsbin.com/ofeces/latest</a></p>
     </article>
@@ -333,7 +300,7 @@ clearWatch(watchId);</pre>
         <h2>Offline Events</h2>
       </hgroup>
       <video class=demo poster="/images/poster.png" loop controls>
-        <source src="/videos/input.webm"></source>
+        <source src="/videos/offlineevents.webm"></source>
       </video>
       <article>
         <h3>Determine the network state</h3>
@@ -447,14 +414,14 @@ database.onsuccess = function (event) {
     </video>
     <article>
 	   <h3>Handle the visitor's touches</h3>
-       <pre class="prettyprint" data-lang="javascript">[element].ontouchstart = function(e) {};
-[element].ontouchmove = function(e) {};
-[element].ontouchend = function(e) {};
+       <pre class="prettyprint" data-lang="javascript">[element].ontouchstart = function(event) {};
+[element].ontouchmove = function(event) {};
+[element].ontouchend = function(event) {};
 </pre>
       <ul>
-        <li>300 millisecond click delay.</li>
-        <li>touchmove event? <span class="red">preventDefault()</span>!</li>
         <li>No support for gestures.</li>
+        <li>touchmove event? <span class="red">preventDefault()</span>!</li>
+        <li>300 millisecond click delay.</li>
       </ul>
       <p>Documentation: <a href="http://toolkitchen.github.io/platform/pointer-events.html">http://goo.gl/DKRXy</a></p> <!-- NOTE: This is a toolkitchen URL. -->
       <p>Demo: <a href="http://jsbin.com/apejur/latest" target="_blank">http://jsbin.com/apejur/latest</a></p>
@@ -475,8 +442,6 @@ onpointerout, onpointerenter, onpointerleave.</pre>
 	    <pre class="prettyprint">touch-action: none | auto | pan-x | pan-y;</pre>
 	<pre class="prettyprint">@media (pointer: coarse) { }
 @media (pointer: fine) { }</pre>
-	
-	 <p><a href="http://jsbin.com/apejur/latest" target="_blank">Demo</a></p>
     </article>
   </slide>
 
@@ -495,10 +460,10 @@ onpointerout, onpointerenter, onpointerleave.</pre>
       <h3>Take photos</h3>
       <pre class="prettyprint">&lt;input type="file" accepts="image/*" capture id="cam"&gt;</pre>
       <pre class="prettyprint">var cam = document.getElementById("cam");
-cam.onchange = function(e) {
+cam.onchange = function(event) {
   // An image has been captured.
-  if(e.target.files.length == 1 &amp;&amp;
-     e.target.files[0].type.indexOf("image/") == 0) {
+  if(event.target.files.length == 1 &amp;&amp;
+     event.target.files[0].type.indexOf("image/") == 0) {
      // We have an image, most likely from a camera
   }
 }</pre>
@@ -517,38 +482,6 @@ cam.onchange = function(e) {
   video.src = URL.createObjectURL(stream);
   video.play();
 };</pre></article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>WebRTC</h2>
-    </hgroup>
-    <article></article>
-  </slide>
-  
-  <slide>
-    <hgroup>
-      <h2>WebGL</h2>
-    </hgroup>
-    <article></article>
-  </slide>
-  
-  <slide>
-    <hgroup>
-      <h2>Web Audio</h2>
-    </hgroup>
-    <article></article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>NFC</h2>
-    </hgroup>
-    <video class=demo poster="/images/poster.png" loop controls></video>
-    <article>
-      <h3>There is no API</h3>
-      <div>But you can still use it</div>
-    </article>
   </slide>
 
   <slide>
@@ -605,16 +538,15 @@ document.isFullScreen();
     </hgroup>
     <video class=demo poster="/images/poster.png" loop controls></video>
     <article>
-      <pre class="prettyprint">window.ondevicemotion = function(e) {
-  var accelWgravity = e.accelerationIncludingGravity;
-  var acceleration = e.acceleration;
+      <pre class="prettyprint">window.ondevicemotion = function(event) {
+  var acceleration = event.acceleration;
   if (acceleration !== null) {
     // acceleration.x
     // acceleration.y
     // acceleration.z
   }
 
-  var rotationRate = e.rotationRate;
+  var rotationRate = event.rotationRate;
   if (rotationRate !== null) {
     // rotationRate.alpha
     // rotationRate.beta
@@ -623,6 +555,33 @@ document.isFullScreen();
 };</pre>
       <p>Demo: <a href="http://jsbin.com/esenik/">jsbin.com/esenik/</a>
     </article>
+  </slide>
+  
+  <slide class="segue red">
+    <hgroup>
+      <h2>Pizazz. Bling.</h2>
+    </hgroup>
+  </slide>
+  
+  <slide>
+    <hgroup>
+      <h2>WebRTC</h2>
+    </hgroup>
+    <article></article>
+  </slide>
+  
+  <slide>
+    <hgroup>
+      <h2>WebGL</h2>
+    </hgroup>
+    <article></article>
+  </slide>
+  
+  <slide>
+    <hgroup>
+      <h2>Web Audio</h2>
+    </hgroup>
+    <article></article>
   </slide>
 
   <slide class="segue red">
