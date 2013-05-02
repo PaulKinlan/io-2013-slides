@@ -1,0 +1,11 @@
+h4 {
+  margin-bottom: 10px;
+}
+
+slides > slide > hgroup+video+article {
+  margin-top: 45px;
+}
+
+.additional-margin-top {
+  margin-top: 45px;
+}
