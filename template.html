@@ -17,8 +17,9 @@ URL: https://code.google.com/p/io-2012-slides
   <!--This one seems to work all the time, but really small on ipad-->
   <!--<meta name="viewport" content="initial-scale=0.4">-->
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <link rel="stylesheet" media="all" href="theme/css/default.css">
+  <link rel="stylesheet" media="all" href="theme/css/default.css"  //>
   <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="theme/css/phone.css">
+  <link rel="stylesheet" media="all" href="theme/css/custom.css" />
   <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
   <script data-main="js/slides" src="js/require-1.0.8.min.js"></script>
 </head>
@@ -113,18 +114,18 @@ URL: https://code.google.com/p/io-2012-slides
     </video>
     <article>
 	  <h3>The most critical element for mobile TODAY!</h3>
-      <pre class="prettyprint">&lt;meta name="viewport" content="" /&gt;</pre>
-      <h4>Device width</h4>
+
+      <h4>Device width:</h4>
       <pre class="prettyprint">&lt;meta name="viewport" content="width=device-width" /&gt;</pre>
      
-      <h4>Initial Scale</h4>
-      <pre class="prettyprint">&lt;meta name="viewport" content="initial-scale=0.5" /&gt;</pre>
+      <h4>Initial scale:</h4>
+      <pre class="prettyprint">&lt;meta name="viewport" content="initial-scale=1.0" /&gt;</pre>
       
-      <h4>Minimum Scale</h4>
-      <pre class="prettyprint">&lt;meta name="viewport" content="minimum-scale=0.5" /&gt;</pre>
-      
-      <h4>Maximum Scale</h4>
-      <pre class="prettyprint">&lt;meta name="viewport" content="maximum-scale=0.5" /&gt;</pre>
+      <h4>User scalable:</h4>
+      <pre class="prettyprint">&lt;meta name="viewport" content="user-scalable=no" /&gt;</pre>
+
+      <pre class="additional-margin-top prettyprint">&lt;meta name="viewport"
+  content="width=device-width, initial-scale=1.0" /&gt;</pre>
     </article>
   </slide>
 
@@ -133,16 +134,17 @@ URL: https://code.google.com/p/io-2012-slides
       <h2>Viewport queries</h2>
     </hgroup>
     <article>
-	  <h3>A saner solution</h3>
+	  <h3>A saner solution is on it's way!</h3>
       <pre class="prettyprint">@viewport {
   width: device-width;
-  zoom: 0.5;
+  orientation: portrait;
 }</pre>
-      <h3>Greater flexibility</h3>
+      <h3>Greater flexibility when used with Media Queries:</h3>
       <pre class="prettyprint">@media screen and (min-device-width: 800px) { 
   @viewport {
     width: device-width;
-    zoom: 0.5;
+    user-zoom: fixed;
+    zoom: 1.0;
   }
 }</pre>
     </article>
@@ -159,7 +161,8 @@ URL: https://code.google.com/p/io-2012-slides
   height: 100vmin;
 }</pre>
         <ul>
-          <li>Four new units: vw(idth), vh(eight), vmin, vmax</li>
+          <li>Four new units: <span class="blue">vw</span>(idth), <span class="blue">vh</span>(eight),
+            <span class="blue">vmin</span> and <span class="blue">vmax</span>.</li>
           <li>Relative to the size of the viewport</li>
         </ul>
       </article>
@@ -175,13 +178,26 @@ URL: https://code.google.com/p/io-2012-slides
 	  <pre class="prettyprint">@media screen and (device-aspect-ratio: 16/9) { ... }</pre>
 	  <pre class="prettyprint">@media screen and (min-device-pixel-ratio: 3/2) { ... }</pre>
       <pre class="prettyprint">@media screen and (resolution: 2dppx) { ... }</pre>
-      <!-- The latter case is not yet supported in Chrome, but coming soon. -->
 	  <ul>
-        <li>Logically group css
-  	    <li>Dynamically responsive
+        <li>Logically group your styling rules.</li>
+  	    <li>Dynamically responsive.</li>
       </ul>
     </article>
    </slide>
+
+   <slide>
+    <hgroup>
+      <h2>Orientation</h2>
+    </hgroup>
+    <video class=demo poster="/images/poster.png" loop controls>
+      <source src="/videos/input.webm"></source>
+    </video>
+    <article>
+      <h3>Mobile devices can usually be rotated</h3>
+      <pre class="prettyprint">@media screen and (orientation: portrait) {}</pre>
+      <pre class="prettyprint">@media screen and (orientation: landscape) {}</pre>
+    </article>
+  </slide>
 
   <slide>
     <hgroup>
@@ -192,15 +208,15 @@ URL: https://code.google.com/p/io-2012-slides
     </video>
     <article>
         <h3>Adaptive layouts</h3>
-      <pre class="prettyprint" data-lang="css">#id {
+      <pre class="prettyprint" data-lang="css">element {
   display: flex;
   flex-direction: row | row-reverse | column |
       column-reverse;
 }</pre>
 
     <ul>
-      <li>Combines well with Media Queries
-      <li>Adaptive to display size
+      <li>Works well with Media Queries.</li>
+      <li>Adaptive to display size.</li>
     </ul>
       
       <p>Spec: <a href="http://dev.w3.org/csswg/css-flexbox/">http://dev.w3.org/csswg/css-flexbox/</a></p>
@@ -212,14 +228,14 @@ URL: https://code.google.com/p/io-2012-slides
         <h2>Responsive Images</h2>
       </hgroup>
       <article>
-          <h3>image-set</h3>
-        <pre class="prettyprint">#image1 {
-  content: -webkit-image-set("1x test.png, 2x test2.png");
+          <h3>The image-set() function</h3>
+        <pre class="prettyprint">image[class="header"] {
+  content: -webkit-image-set("1x header.png, 2x header-highres.png");
 }</pre>
 
       <ul>
-        <li>Combines well with Media Queries
-        <li>Adaptive to display size
+        <li>Can be used with Media Queries, but not necesarilly so.</li>
+        <li>Adaptive to display size.</li>
       </ul>
       </article>
     </slide>
@@ -232,31 +248,17 @@ URL: https://code.google.com/p/io-2012-slides
         <source src="/videos/sticky.webm"></source>
       </video>
       <article>
-        <h3>FTW</h3>
+        <h3>For The Win!</h3>
         <ul>
-          <li>Initially a relative element
-          <li>When parent is partially out of view turns in to position:fixed
-          <li>When parent is out of view it is not shown
+          <li>Initially a <span class="red">relatively positioned</span> element.</li>
+          <li>Becomes like <span class="red">position: fixed</span> when parent partially out of view.</li>
+          <li>Hidden when parent is completely out of view.</li>
         </ul>
-        <pre class="prettyprint">.sticky-class {
+        <pre class="prettyprint">.sticky-element {
   position: sticky;
   top: 10px;
 }</pre>
       </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Orientation</h2>
-    </hgroup>
-    <video class=demo poster="/images/poster.png" loop controls>
-      <source src="/videos/input.webm"></source>
-    </video>
-    <article>
-      <h3>CSS</h3>
-      <pre class="prettyprint">@media screen and (orientation: portrait) {}</pre>
-      <pre class="prettyprint">@media screen and (orientation: landscape) {}</pre>
-    </article>
   </slide>
 
   <slide class="segue red">
@@ -273,20 +275,17 @@ URL: https://code.google.com/p/io-2012-slides
       <source src="/videos/geolocation.webm"></source>
     </video>
     <article>
-      <h3>Single location</h3>
-      <pre class="prettyprint" data-lang="javascript">var success = function(pos) {
-  var latitude = pos.coords.latitude;
-  var longitude = pos.coords.longitude;
+      <h3>Request the current position once..</h3>
+      <pre class="prettyprint" data-lang="javascript">var success = function(position) {
+  var latitude = position.coords.latitude;
+  var longitude = position.coords.longitude;
 };
 <b>navigator.geolocation.getCurrentPosition(success);</b></pre>
-      <h3>Continuous location</h3>
-      <pre class="prettyprint" data-lang="javascript">function(success) {
-  var latitude = pos.coords.latitude;
-  var longitude = pos.coords.longitude;
-};
-<b>var watchId = navigator.geolocation.watchPosition(success);</b>
+      <h3>Or keep track when they're on the move!</h3>
+      <pre class="prettyprint" data-lang="javascript">var watchId = <b>navigator.geolocation.watchPosition</b>(
+    function (position) { ... });
 
-// Stop watching
+// Stop watching when you're done.
 clearWatch(watchId);</pre>
     </article>
   </slide>
@@ -299,11 +298,13 @@ clearWatch(watchId);</pre>
       <source src="/videos/orientation.webm"></source>
     </video>
     <article>
-      <h3>JavaScript</h3>
+      <h3>Events when the device's orientation changes</h3>
       <pre class="prettyprint" data-lang="javascript">window.onorientationchange = function(e) {
   var yaw = e.alpha; 
   var pitch = e.beta;
   var roll = e.gamma;
+
+  // You could make a compas!
 };</pre>
     <p>Demo: <a href="http://jsbin.com/ofeces">jsbin.com/ofeces/latest</a></p>
     </article>
@@ -318,7 +319,12 @@ clearWatch(watchId);</pre>
       </video>
       <article>
         <h3>Fundamental offline API</h3>
-        <pre class="prettyprint" data-lang="html">&lt;html manifest='test.manifest'&gt;</pre>
+        <pre class="prettyprint" data-lang="html">&lt;html manifest="website.manifest"&gt;</pre>
+        <ul>
+          <li>Will also be used when the user is online.</li>
+          <li>Allows you to define fallback pages.<br />&nbsp;</li>
+          <li>Don't cache the manifest!</li>
+        </ul>
       </article> 
     </slide>
 
@@ -330,16 +336,20 @@ clearWatch(watchId);</pre>
         <source src="/videos/input.webm"></source>
       </video>
       <article>
-        <h3>Network state</h3>
+        <h3>Determine the network state</h3>
         <pre class="prettyprint" data-lang="javascript">window.navigator.onLine</pre>
         <pre class="prettyprint" data-lang="javascript">window.ononline = function() {
-  console.log("User **might** be online");
+  console.log("Visitor <b>might</b> be online.");
 };
 
 window.onoffline = function() {
-  console.log("User *is* offline");
+  console.log("Visitor <b>is definitely</b> offline.");
 };</pre>
       </article>
+      <ul>
+        <li>Very hard to know for sure whether the visitor is online.</li>
+        <li>And what if the server is unavailable?</li>
+      </ul>
     </slide>
 
     <slide>
@@ -367,10 +377,11 @@ var test = sessionStorage["test"];</pre>
       <article>
         <h3>Relational databases for JavaScript</h3>
         <pre class="prettyprint" data-lang="javascript">var database = openDatabase('animals', ...);
-  database.transaction(function (tx) {
-    tx.executeSql('INSERT INTO animals VALUES ' +
-      '("cat", "awwww ❤");');
-});</pre>
+database.transaction(function (tx) {
+  tx.executeSql('INSERT INTO animals VALUES ("cat", "awwww ❤");');
+}, function(error) {
+  // Couldn't store this lovely cat :-(
+));</pre>
         </pre>
         <ul>
           <li>Deprecated, but still has fair support.</li>
@@ -394,7 +405,7 @@ database.onsuccess = function (event) {
   };
 };</pre>
         <ul>
-          <li>IndexedDB.</li>
+          <li>IndexedDB is gaining support.</li>
         </ul>
       </article>
     </slide>
@@ -413,7 +424,7 @@ database.onsuccess = function (event) {
       <source src="/videos/input.webm"></source>
     </video>
     <article>
-      <h3>IME</h3>
+      <h3>Specialized on-screen keyboards</h3>
       <pre class="prettyprint" data-lang="html">&lt;input type="email" /&gt;
 &lt;input type="search" /&gt;
 &lt;input type="url" /&gt;
@@ -435,20 +446,18 @@ database.onsuccess = function (event) {
       <source src="videos/touchevents.webm"></source>
     </video>
     <article>
-	   <h3>
-		Implements Touch Events spec version 1
-	   </h3>
+	   <h3>Handle the visitor's touches</h3>
        <pre class="prettyprint" data-lang="javascript">[element].ontouchstart = function(e) {};
 [element].ontouchmove = function(e) {};
 [element].ontouchend = function(e) {};
 </pre>
       <ul>
-        <li>300ms delay for click
-        <li>touchmove? preventDefault()
-        <li>No gestures
+        <li>300 millisecond click delay.</li>
+        <li>touchmove event? <span class="red">preventDefault()</span>!</li>
+        <li>No support for gestures.</li>
       </ul>
-      <p>Docs: <a href="http://toolkitchen.github.io/platform/pointer-events.html">http://toolkitchen.github.io/platform/pointer-events.html</a></p>
-      <p>Demo: <a href="http://jsbin.com/apejur/latest" target="_blank">Demo</a></p>
+      <p>Documentation: <a href="http://toolkitchen.github.io/platform/pointer-events.html">http://goo.gl/DKRXy</a></p> <!-- NOTE: This is a toolkitchen URL. -->
+      <p>Demo: <a href="http://jsbin.com/apejur/latest" target="_blank">http://jsbin.com/apejur/latest</a></p>
     </article>
     
   </slide>
@@ -458,21 +467,14 @@ database.onsuccess = function (event) {
       <h2>Pointer Events</h2>
     </hgroup>
     <article>
-       	<h3>JS</h3>
-	      <pre class="prettyprint">[elem].onpointerdown = function(e) {}
-[elem].onpointerup = function(e) {}
-[elem].onpointermove = function(e) {}
-[elem].onpointerover = function(e) {}
-[elem].onpointerenter = function(e) {}
-[elem].onpointerout = function(e) {}
-[elem].onpointerleave = function(e) {}
+      <h3>Various new JavaScript events available</h3>
+	  <pre class="prettyprint">onpointerdown, onpointerup, onpointermove, onpointerover,
+onpointerout, onpointerenter, onpointerleave.</pre>
 
-navigator.maxTouchPoints</pre>
-
-	    <h3>CSS</h3>
+	    <h3>More fine-grained support through CSS</h3>
 	    <pre class="prettyprint">touch-action: none | auto | pan-x | pan-y;</pre>
-	<pre class="prettyprint">@media (pointer:coarse) {}
-@media (pointer:fine) {}</pre>
+	<pre class="prettyprint">@media (pointer: coarse) { }
+@media (pointer: fine) { }</pre>
 	
 	 <p><a href="http://jsbin.com/apejur/latest" target="_blank">Demo</a></p>
     </article>
