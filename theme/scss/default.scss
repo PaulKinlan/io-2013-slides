@@ -938,7 +938,7 @@ article.smaller {
   }
 }
 
-.segue {
+.segue  {
   padding: $slide-left-right-padding $slide-left-right-padding;
 
   :not(&.title-slide) h1 {
@@ -949,8 +949,14 @@ article.smaller {
   }
 
   h2 {
-    color: $gray-1;
+    color: #fff;
     font-size: 60px;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 2px;
+    background-color: rgba(0,0,0,0.81);
+    
+    line-height: 1em;
   }
   
   h3 {
@@ -960,7 +966,7 @@ article.smaller {
   
   hgroup {
     position: absolute;
-    bottom: 225px;
+    bottom: 100px;
   }
 }
 

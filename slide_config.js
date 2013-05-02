@@ -26,7 +26,7 @@ var SLIDE_CONFIG = {
     www: 'http://www.peter.sh',
     github: 'http://github.com/beverloo'
   }, {
-    name: 'Paul "" Kinlan',
+    name: 'Paul "Pianist fingers" Kinlan',
     company: 'Developer Advocate, Google',
     gplus: 'http://google.com/+PaulKinlan',
     twitter: '@paul_kinlan',
