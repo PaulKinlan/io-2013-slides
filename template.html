@@ -102,7 +102,8 @@ URL: https://code.google.com/p/io-2012-slides
 
   <slide class="segue red">
     <hgroup>
-      <h2>How do I manage smaller screens</h2>
+      <h2>The screens are smaller</h2>
+      <q>How do I manage smaller screens</q>
     </hgroup>
   </slide>
 
@@ -240,7 +241,7 @@ URL: https://code.google.com/p/io-2012-slides
 
   <slide class="segue red">
     <hgroup>
-      <h2>"On the move"</h2>
+      <h2>Users are mobile</h2>
       <q>What can I do?</q>
     </hgroup>
   </slide>
@@ -322,7 +323,7 @@ console.log("Visitor <b>is definitely</b> offline.");
       </video>
       <article>
         <h3>Fundamental offline API</h3>
-        <pre class="prettyprint" data-lang="html">&lt;html manifest="website.manifest"&gt;</pre>
+        <pre class="prettyprint" data-lang="html">&lt;html <b>manifest="website.manifest"</b>&gt;</pre>
         <ul>
           <li>Will also be used when the user is online.</li>
           <li>Allows you to define fallback pages.<br />&nbsp;</li>
@@ -336,62 +337,24 @@ console.log("Visitor <b>is definitely</b> offline.");
         <h2>Storage APIs</h2>
       </hgroup>
       <article>
-        <h3>There's localStorage..</h3>
-        <pre class="prettyprint" data-lang="javascript">localStorage["test"] = 1234;
-var test = localStorage["test"];</pre>
-        <h3>..and sessionStorage!</h3>
-        <pre class="prettyprint" data-lang="javascript">sessionStorage["test"] = 1234;
-var test = sessionStorage["test"];</pre>
+        <h3>localStorage</h3>
         <ul>
-          <li>sessionStorage only works for the current session, localStorage is persistent</li>
-          <li>Both are key-value data stores</li>
+          <li>Amazing support but limited</li>
         </ul>
-      </article>
-    </slide>
-
-    <slide>
-      <hgroup>
-        <h2>WebSQL</h2>
-      </hgroup>
-      <article>
-        <h3>Relational databases for JavaScript</h3>
-        <pre class="prettyprint" data-lang="javascript">var database = openDatabase('animals', ...);
-database.transaction(function (tx) {
-  tx.executeSql('INSERT INTO animals VALUES ("cat", "awwww ❤");');
-}, function(error) {
-  // Couldn't store this lovely cat :-(
-));</pre>
-        </pre>
+        <h3>WebSQL</h3>
         <ul>
-          <li>Deprecated, but still has fair support.</li>
+          <li>Broad support but deprecated</li>
         </ul>
-      </article>
-    </slide>
-
-    <slide>
-      <hgroup>
-        <h2>IndexedDB</h2>
-      </hgroup>
-      <article>
-        <h3>A new database for the Web?</h3>
-        <pre class="prettyprint" data-lang="javascript">var database = indexedDB.open('animals', 1);
-database.onsuccess = function (event) {
-  var request = database.transaction("[animals]")
-                        .objectStore("animals")
-                        .get("cat");
-  request.onsuccess = function(event) {
-    request.result.comment; // awwww ❤
-  };
-};</pre>
+        <h3>IndexedDB</h3>
         <ul>
-          <li>IndexedDB is gaining support.</li>
+          <li>Weak support but growing</li>
         </ul>
       </article>
     </slide>
 
   <slide class="segue red">
     <hgroup>
-      <h2>But. Input. is. harder.</h2>
+      <h2>Input. is. harder.</h2>
       <q>Making interaction easy</q>
     </hgroup>
   </slide>
@@ -458,7 +421,6 @@ onpointerout, onpointerenter, onpointerleave.</pre>
     </article>
   </slide>
 
-   
   <slide class="segue red">
     <hgroup>
       <h2>Getting access to the device</h2>
@@ -481,7 +443,6 @@ cam.onchange = function(event) {
   }
 }</pre>
     </article>
-
   </slide>
 
   <slide>
@@ -667,9 +628,12 @@ performance.now(); //  20303.427000007</pre>
     </article>
   </slide>
 
-  <slide class="segue blue">
-    <article class="flexbox vcenter hcenter">
-      <q>The web is awesome.</q>
+  <slide>
+    <hgroup>
+      <h2>The web is awesome</h2>
+    </hgroup>
+    <article>
+      <ul>Nearing parity with the desktop
     </article>
   </slide>
   
