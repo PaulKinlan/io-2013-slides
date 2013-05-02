@@ -42,37 +42,46 @@ URL: https://code.google.com/p/io-2012-slides
       <p data-config-presenter><!-- populated from slide_config.json --></p>
     </hgroup>
   </slide>
+  
+  <slide class="fill red segue">
+    <article class="flexbox vcenter"><q>Strong home growth</q></article>
+  </slide>
+  
+  <slide class="fill red segue">
+    <article class="flexbox vcenter"><q>Stronger emerging growth</q></article>
+  </slide>
+  
+  <slide class="fill seque nobackgroud" style="background-image: url(/images/30inch.jpg); background-position: 0px -240px">
+    <article ><hgroup><h2 style="color: white;">Who has a 24 inch phone?</h2></hgroup>
+    </article>
+  </slide>
+  
+  <slide class="fill red segue">
+    <article><hgroup><h2>Who has a dual screen 24 inch phone?</h2></hgroup></article>
+  </slide>
+  
+  <slide class="fill red segue">
+    <article><hgroup><h2>Who loves typing on a phone?</h2></hgroup></article>
+  </slide>
 
-  <slide class="fill red quote">
-    <article class="flexbox vcenter"><q>Mobile is Different</q></article>
-  </slide>
-  
-  <slide class="fill red quote">
-    <article class="flexbox vcenter">Screens are smaller</article>
-  </slide>
-  
-  <slide class="fill red quote">
-    <article class="flexbox vcenter"><q>Input. is. harder.</q></article>
+  <slide class="fill red segue">
+    <article><hgroup><h2>Who uses their phone as a desktop?</h2></hgroup></article>
   </slide>
 
-  <slide class="fill red quote">
-    <article class="flexbox vcenter"><q>Users are on the move</q></article>
-  </slide>
-
-  <slide class="fill red quote">
-    <article class="flexbox vcenter"><q>Everything is slower</q></article>
+  <slide class="fill red segue">
+    <article><hgroup><h2>Who has a ethernet phone?</h2></hgroup></article>
   </slide>
   
   <slide class="fill red quote">
-    <article class="flexbox vcenter"><q>Using it is hard.</q></article>
-  </slide>
-  
-  <slide class="fill blue quote">
-    <article class="flexbox vcenter"><q><i>So....</i> Can we make it any easier?</q></article>
-  </slide>
-  
-  <slide class="fill green quote">
-    <article class="flexbox vcenter"><q>Yes. It's awesome</q></article>
+    <article class="flexbox vcenter">
+      <q>Constraints are different</q>
+      <br><br>
+      <ul>
+        <li>The screens are smaller.
+        <li>Input. is. harder.
+        <li>Devices have access to other hardware.
+        <li>Everything is slower.
+      </ul></article>
   </slide>
   
   <slide class="fill green quote">
@@ -80,16 +89,30 @@ URL: https://code.google.com/p/io-2012-slides
   </slide>
   
   <slide class="fill blue quote">
-    <article class="flexbox vcenter"><q>1. Speed. 2. Security. 3. Simplicity</q></article>
+    <article class="flexbox vcenter"><q><ol><li>1. Speed<li>2. Security<li>3. Simplicity</ol>?</q></article>
   </slide>
+  
+  <slide class="fill blue quote">
+    <article class="flexbox vcenter"><q>They don't help you build on mobile.</q></article>
+  </slide>
+  
+  <slide class="fill blue quote">
+     <article class="flexbox vcenter"><q>So what does?</q></article>
+   </slide>
   
   <slide class="fill blue quote">
     <article class="flexbox vcenter"><q>Parity</q></article>
   </slide>
+  
+  <slide class="fill green quote">
+     <article class="flexbox vcenter"><q>What can I do?</q></article>
+   </slide>
 
   <slide class="segue red">
     <hgroup>
+      
       <h1>Screens are smaller</h1>
+      <q>What can I do?</q>
     </hgroup>
   </slide>
 
@@ -163,7 +186,6 @@ URL: https://code.google.com/p/io-2012-slides
      </article>
    </slide>
   
-  
   <slide>
       <hgroup>
         <h2>Viewport units</h2>
@@ -198,7 +220,6 @@ URL: https://code.google.com/p/io-2012-slides
 }</pre>
 
     <ul>
-      <li>Works well with Media Queries.</li>
       <li>Adaptive to display size.</li>
     </ul>
       
@@ -229,7 +250,8 @@ URL: https://code.google.com/p/io-2012-slides
 
   <slide class="segue red">
     <hgroup>
-      <h2>On the move</h2>
+      <h2>"On the move"</h2>
+      <q>What can I do?</q>
     </hgroup>
   </slide>
   
@@ -277,6 +299,30 @@ clearWatch(watchId);</pre>
     </article>
   </slide>
   
+  <slide>
+    <hgroup>
+      <h2>Offline Events</h2>
+    </hgroup>
+    <video class=demo poster="/images/poster.png" loop controls>
+      <source src="/videos/offlineevents.webm"></source>
+    </video>
+    <article>
+      <h3>Determine the network state</h3>
+      <pre class="prettyprint" data-lang="javascript">window.navigator.onLine</pre>
+      <pre class="prettyprint" data-lang="javascript">window.ononline = function() {
+console.log("Visitor <b>might</b> be online.");
+};
+
+window.onoffline = function() {
+console.log("Visitor <b>is definitely</b> offline.");
+};</pre>
+    </article>
+    <ul>
+      <li>Very hard to know for sure whether the visitor is online.</li>
+      <li>And what if the server is unavailable?</li>
+    </ul>
+  </slide>
+  
    <slide>
       <hgroup>
         <h2>Application Cache</h2>
@@ -293,30 +339,6 @@ clearWatch(watchId);</pre>
           <li>Don't cache the manifest!</li>
         </ul>
       </article> 
-    </slide>
-
-    <slide>
-      <hgroup>
-        <h2>Offline Events</h2>
-      </hgroup>
-      <video class=demo poster="/images/poster.png" loop controls>
-        <source src="/videos/offlineevents.webm"></source>
-      </video>
-      <article>
-        <h3>Determine the network state</h3>
-        <pre class="prettyprint" data-lang="javascript">window.navigator.onLine</pre>
-        <pre class="prettyprint" data-lang="javascript">window.ononline = function() {
-  console.log("Visitor <b>might</b> be online.");
-};
-
-window.onoffline = function() {
-  console.log("Visitor <b>is definitely</b> offline.");
-};</pre>
-      </article>
-      <ul>
-        <li>Very hard to know for sure whether the visitor is online.</li>
-        <li>And what if the server is unavailable?</li>
-      </ul>
     </slide>
 
     <slide>
@@ -379,7 +401,8 @@ database.onsuccess = function (event) {
 
   <slide class="segue red">
     <hgroup>
-      <h2>Input. is. harder.</h2>
+      <h2>But. Input. is. harder.</h2>
+      <q>Making interaction easy</q>
     </hgroup>
   </slide>
 
@@ -448,7 +471,7 @@ onpointerout, onpointerenter, onpointerleave.</pre>
    
   <slide class="segue red">
     <hgroup>
-      <h2>Device Interactions</h2>
+      <h2>Getting access to the device</h2>
     </hgroup>
   </slide>
 
@@ -458,7 +481,7 @@ onpointerout, onpointerenter, onpointerleave.</pre>
     </hgroup>
     <article>
       <h3>Take photos</h3>
-      <pre class="prettyprint">&lt;input type="file" accepts="image/*" capture id="cam"&gt;</pre>
+      <pre class="prettyprint">&lt;input type="file" <b>capture</b> accepts="image/*"  id="cam"&gt;</pre>
       <pre class="prettyprint">var cam = document.getElementById("cam");
 cam.onchange = function(event) {
   // An image has been captured.
@@ -591,33 +614,7 @@ document.isFullScreen();
     </hgroup>
   </slide>
 
-  <slide>
-    <hgroup>
-      <h2>User Timing API</h2>
-    </hgroup>
-    <video class=demo poster="/images/poster.png" loop controls></video>
-    <article class="smaller">
-        <h3>A good timing API</h3>
-<pre class="prettyprint">performance.mark('startTask1');
-doTask1();
-performance.mark('endTask1');
-    
-performance.mark('startTask2');
-doTask2();
-performance.mark('endTask2');
-
-var perfEntries = performance.getEntriesByType('mark');
-for (var i = 0; i &lt; perfEntries.length; i++) {
-  console.log('Name: ' + perfEntries[i].name   +
-    ' Entry Type: ' + perfEntries[i].entryType +
-    ' Start Time: ' + perfEntries[i].startTime +
-    ' Duration: '   + perfEntries[i].duration  + '\n');
-}
-</pre>
-
-    </article>
-  </slide>
-
+  
 <slide>
     <hgroup>
       <h2>Resource Timing API</h2>
@@ -669,26 +666,41 @@ window.performance.timing.loadEventEnd </pre>
 
   <slide>
     <hgroup>
-      <h2>window.performance.now()</h2>
+      <h2>User Timing API</h2>
     </hgroup>
-    <article>
+    <video class=demo poster="/images/poster.png" loop controls></video>
+    <article class="smaller">
+        <h3>A good timing API</h3>
+<pre class="prettyprint">performance.mark('startTask1');
+doTask1();
+performance.mark('endTask1');
+    
+performance.mark('startTask2');
+doTask2();
+performance.mark('endTask2');
+
+var perfEntries = performance.getEntriesByType('mark');
+for (var i = 0; i &lt; perfEntries.length; i++) {
+  console.log('Name: ' + perfEntries[i].name   +
+    ' Entry Type: ' + perfEntries[i].entryType +
+    ' Start Time: ' + perfEntries[i].startTime +
+    ' Duration: '   + perfEntries[i].duration  + '\n');
+}
+</pre>
+
+      <h3>window.performance.now()</h3>
        <ul>
          <li>High precision (double)
-         <li>Time since performance.timing.navigationStart
-         <li>No need for epoch
        </ul>
        <pre class="prettyprint">Date.now();  //  1337376068250
 performance.now(); //  20303.427000007</pre>
     </article>
   </slide>
 
-  <slide>
-    <hgroup>
-      <h2>Conclusion</h2>
-    </hgroup>
-    <article>
-	  Add something insightful and witty
-	</article>
+  <slide class="segue blue">
+    <article class="flexbox vcenter hcenter">
+      <q>The web is awesome</q>
+    </article>
   </slide>
   
   <slide>

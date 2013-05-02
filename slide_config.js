@@ -2,7 +2,7 @@ var SLIDE_CONFIG = {
   // Slide settings
   settings: {
     title: 'Mobile HTML',
-    subtitle: 'Making you awesome on mobile',
+    subtitle: 'The Future of Your Sites',
     eventTitle: 'Google I/O 2013',
     useBuilds: false, // Default: true. False will turn off slide animation builds.
     usePrettify: true, // Default: true
@@ -19,14 +19,14 @@ var SLIDE_CONFIG = {
 
   // Author information
   presenters: [{
-    name: 'Peter Beverloo',
+    name: 'Peter "Mobile Maestro" Beverloo',
     company: 'Software Engineer, Google',
     gplus: 'http://plus.google.com/1234567890',
     twitter: '@beverloo',
     www: 'http://www.peter.sh',
     github: 'http://github.com/beverloo'
   }, {
-    name: 'Paul Kinlan',
+    name: 'Paul "" Kinlan',
     company: 'Developer Advocate, Google',
     gplus: 'http://google.com/+PaulKinlan',
     twitter: '@paul_kinlan',
