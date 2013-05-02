@@ -366,7 +366,16 @@ console.log("Visitor <b>is definitely</b> offline.");
     <slide>
       <hgroup>
         <h2>Storage APIs</h2>
+        <h3>Use abstractions</h3>
       </hgroup>
+      <article>
+        <ul>
+          <li>Lawn Chair - <a href="brian.io/lawnchair/">brian.io/lawnchair/</a>
+          <li>PouchDB - <a href="pouchdb.com/">pouchdb.com/</a>
+          <li>IndexedDBShim - <a href="http://nparashuram.com/IndexedDBShim/">nparashuram.com/IndexedDBShim/</a>
+        </ul>
+        
+      </article>
       </slide>
 
   <slide class="segue red">
@@ -520,31 +529,6 @@ document.fullscreenEnabled();
 document.isFullScreen();
 </pre>
     <p>Demo <a href="http://jsbin.com/onadep/latest">jsbin.com/onadep/latest</a></p>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Device Motion</h2>
-    </hgroup>
-    <video class=demo poster="/images/poster.png" loop controls></video>
-    <article>
-      <pre class="prettyprint">window.ondevicemotion = function(event) {
-  var acceleration = event.acceleration;
-  if (acceleration !== null) {
-    // acceleration.x
-    // acceleration.y
-    // acceleration.z
-  }
-
-  var rotationRate = event.rotationRate;
-  if (rotationRate !== null) {
-    // rotationRate.alpha
-    // rotationRate.beta
-    // rotationRate.gama
-  }
-};</pre>
-      <p>Demo: <a href="http://jsbin.com/esenik/">jsbin.com/esenik/</a>
     </article>
   </slide>
   
