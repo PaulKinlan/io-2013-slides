@@ -1,10 +1,12 @@
 application: mobile-html
+#application: google.com:mobile-html5-io-2013
 version: 1
 runtime: python27
 api_version: 1
 threadsafe: yes
 
 handlers:
+#- url: /secret_url.html
 - url: /
   static_files: template.html
   upload: template\.html
