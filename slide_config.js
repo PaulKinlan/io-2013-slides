@@ -4,7 +4,7 @@ var SLIDE_CONFIG = {
     title: 'Mobile HTML',
     subtitle: 'The Future of Your Sites',
     eventTitle: 'Google I/O 2013',
-    useBuilds: false, // Default: true. False will turn off slide animation builds.
+    useBuilds: true, // Default: true. False will turn off slide animation builds.
     usePrettify: true, // Default: true
     enableSlideAreas: true, // Default: true. False turns off the click areas on either slide of the slides.
     enableTouch: true, // Default: true. If touch support should enabled. Note: the device must support touch.

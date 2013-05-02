@@ -73,45 +73,36 @@ URL: https://code.google.com/p/io-2012-slides
   
   <slide class="fill red quote">
     <article class="flexbox vcenter">
-      <q>Constraints are different</q>
+      <h3 style="font-size: 96px">Mobile is different</h3>
       <br><br>
       <ul>
-        <li>The screens are smaller.
+        <li>The screens are smaller
+        <li>Users are mobile
         <li>Input. is. harder.
-        <li>Devices have access to other hardware.
-        <li>Everything is slower.
+        <li>Devices have access to other hardware
+        <li>Everything is slower
       </ul></article>
   </slide>
   
   <slide class="fill green quote">
-    <article class="flexbox vcenter"><q>What is Chrome doing to help?</q></article>
+    <article class="flexbox vcenter"><q>How does Chrome help me?</q></article>
   </slide>
   
   <slide class="fill blue quote">
-    <article class="flexbox vcenter"><q><ol><li>1. Speed<li>2. Security<li>3. Simplicity</ol>?</q></article>
+    <article class="flexbox vcenter"><q><ol class="build"><li>1. Speed<li>2. Security<li>3. Simplicity<li>4. ?</ol></q></article>
   </slide>
-  
-  <slide class="fill blue quote">
-    <article class="flexbox vcenter"><q>They don't help you build on mobile.</q></article>
-  </slide>
-  
-  <slide class="fill blue quote">
-     <article class="flexbox vcenter"><q>So what does?</q></article>
-   </slide>
   
   <slide class="fill blue quote">
     <article class="flexbox vcenter"><q>Parity</q></article>
   </slide>
   
   <slide class="fill green quote">
-     <article class="flexbox vcenter"><q>What can I do?</q></article>
+     <article class="flexbox vcenter"><q>Show me the tools</q></article>
    </slide>
 
   <slide class="segue red">
     <hgroup>
-      
-      <h1>Screens are smaller</h1>
-      <q>What can I do?</q>
+      <h2>How do I manage smaller screens</h2>
     </hgroup>
   </slide>
 
@@ -142,7 +133,7 @@ URL: https://code.google.com/p/io-2012-slides
     </hgroup>
     <article>
 	  <h3>A saner solution is on it's way!</h3>
-      <pre class="prettyprint">@viewport {
+      <pre class="prettyprint"><b>@viewport</b> {
   width: device-width;
   orientation: portrait;
 }</pre>
@@ -180,8 +171,8 @@ URL: https://code.google.com/p/io-2012-slides
      </hgroup>
      <article>
        <h3>Mobile devices can usually be rotated</h3>
-       <pre class="prettyprint">@media screen and (orientation: portrait) {}</pre>
-       <pre class="prettyprint">@media screen and (orientation: landscape) {}</pre>
+       <pre class="prettyprint">@media screen and (<b>orientation: portrait</b>) {}</pre>
+       <pre class="prettyprint">@media screen and (<b>orientation: landscape</b>) {}</pre>
      </article>
    </slide>
   
@@ -241,7 +232,7 @@ URL: https://code.google.com/p/io-2012-slides
           <li>Hidden when parent is completely out of view.</li>
         </ul>
         <pre class="prettyprint">.sticky-element {
-  position: sticky;
+  <b>position: sticky;</b>
   top: 10px;
 }</pre>
       </article>
@@ -287,7 +278,7 @@ clearWatch(watchId);</pre>
     </video>
     <article>
       <h3>Events when the device's orientation changes</h3>
-      <pre class="prettyprint" data-lang="javascript">window.onorientationchange = function(event) {
+      <pre class="prettyprint" data-lang="javascript"><b>window.onorientationchange</b> = function(event) {
   var yaw = event.alpha; 
   var pitch = event.beta;
   var roll = event.gamma;
@@ -307,12 +298,12 @@ clearWatch(watchId);</pre>
     </video>
     <article>
       <h3>Determine the network state</h3>
-      <pre class="prettyprint" data-lang="javascript">window.navigator.onLine</pre>
-      <pre class="prettyprint" data-lang="javascript">window.ononline = function() {
+      <pre class="prettyprint" data-lang="javascript">window.navigator.<b>onLine</b></pre>
+      <pre class="prettyprint" data-lang="javascript">window.<b>ononline</b> = function() {
 console.log("Visitor <b>might</b> be online.");
 };
 
-window.onoffline = function() {
+window.<b>onoffline</b> = function() {
 console.log("Visitor <b>is definitely</b> offline.");
 };</pre>
     </article>
@@ -612,7 +603,17 @@ document.isFullScreen();
       <label class="color perf">#perfmatters</label>
     </hgroup>
   </slide>
-
+  
+  <slide style="background-color: white;" >
+    <hgroup>
+      <h2>Navigation Timing API</h2>
+    </hgroup>
+    <article>
+      <img src="/images/timing-overview.png">
+    
+      </article>
+      <footer>w3c-test.org/webperf/specs/NavigationTiming/</footer>
+  </slide>
   
 <slide>
     <hgroup>
@@ -630,36 +631,6 @@ for (var i = 0; i &lt; perfEntries.length; i++) {
     ' Start Time: ' + perfEntries[i].startTime +
     ' Duration: '   + perfEntries[i].duration  + '\n');
 }</pre>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Navigation Timing API</h2>
-    </hgroup>
-    <article class="smaller">
-      <h3>Understanding high-level network</h3>
-      <pre class="prettyprint">window.performance.timing.navigationStart
-window.performance.timing.unloadEventStart
-window.performance.timing.unloadEventEnd
-window.performance.timing.redirectStart
-window.performance.timing.redirectEnd
-window.performance.timing.fetchStart
-window.performance.timing.domainLookupStart
-window.performance.timing.domainLookupEnd
-window.performance.timing.connectStart
-window.performance.timing.connectEnd
-window.performance.timing.secureConnectionStart
-window.performance.timing.requestStart
-window.performance.timing.responseStart
-window.performance.timing.responseEnd
-window.performance.timing.domLoading
-window.performance.timing.domInteractive
-window.performance.timing.domContentLoadedEventStart
-window.performance.timing.domContentLoadedEventEnd
-window.performance.timing.domComplete
-window.performance.timing.loadEventStart
-window.performance.timing.loadEventEnd </pre>
     </article>
   </slide>
 

@@ -6,9 +6,9 @@ $social-tags: '#mobilehtml';
 $brand-small-icon-size: 30px;
 
 $gray-1: #e6e6e6;
-$gray-2: #a9a9a9;
-$gray-3: #797979;
-$gray-4: #515151;
+$gray-2: #444;
+$gray-3: #333;
+$gray-4: #222;
 
 $brand-blue: rgb(67, 135, 253);
 $brand-blue-secondary: #3c8ef3;
@@ -1089,7 +1089,7 @@ aside.gdbar {
 }
 
 .quote {
-  color: $gray-1;
+  color: $gray-4;
 
   .author {
     font-size: 24px;
@@ -1166,7 +1166,7 @@ aside.gdbar {
       margin-top: 0 !important;
       margin-left: 0 !important;
       opacity: 1 !important;
-      color: #555;
+      color: #222;
 
       &.far-past,
       &.past,
