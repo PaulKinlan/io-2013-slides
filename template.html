@@ -337,20 +337,37 @@ console.log("Visitor <b>is definitely</b> offline.");
         <h2>Storage APIs</h2>
       </hgroup>
       <article>
-        <h3>localStorage</h3>
-        <ul>
-          <li>Amazing support but limited</li>
-        </ul>
-        <h3>WebSQL</h3>
-        <ul>
-          <li>Broad support but deprecated</li>
-        </ul>
-        <h3>IndexedDB</h3>
-        <ul>
-          <li>Weak support but growing</li>
-        </ul>
+        
+        
+        <table>
+                <tbody><tr>
+                  <th></th><th>Intuitive API</th><th>Powerful Querying</th><th>Asynchronous</th><th>Widely supported</th>
+                </tr>
+                <tr>
+                  <td>localStorage</td><td>Yes</td><td>No</td><td>Now</td><td>Yes</td>
+                </tr>
+                <tr>
+                  <td>WebSQL</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes (and no)</td>
+                </tr>
+                <tr>
+                  <td>IndexedDB</td><td>No</td><td>Yes</td><td>Yes</td><td>No (but maybe)</td>
+                </tr>
+                <tr>
+                  <td>FileSystem</td><td>Kind of</td><td>No</td><td>Yes</td><td>No</td>
+                </tr>
+              </tbody></table>
+        <div class="flexbox vcenter">
+          <br><br><br>
+        <h2>What is a developer supposed to do?</h2>
+        </div>
       </article>
     </slide>
+    
+    <slide>
+      <hgroup>
+        <h2>Storage APIs</h2>
+      </hgroup>
+      </slide>
 
   <slide class="segue red">
     <hgroup>
