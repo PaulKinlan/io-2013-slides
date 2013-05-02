@@ -9,7 +9,8 @@
       body { padding: 10px; }
       
       #touch {
-        background-color: #eee;
+        background-color: #000;
+        color: white;
         font-size: 48px;
         font-weight: 800;
         border-radius: 10px;
@@ -28,7 +29,7 @@
       var diff = document.getElementById("diff");
       
       var touch = document.getElementById("touch");
-      var touchtime =0;
+      var touchtime = 0;
       
       touch.ontouchstart = function(e) {
         touchstart.innerText = touchtime = e.timeStamp;
@@ -50,7 +51,13 @@
       
       touch.onclick = function(e) {
         click.innerText = e.timeStamp;
-        diff.innerText = "(" + (e.timeStamp - touchtime) + "ms difference from ontouchstart)"
+        if(touchtime > 0) {
+          diff.innerText = "(" + (e.timeStamp - touchtime) + "ms difference from ontouchstart)";
+        }
+        touch.style.backgroundColor = "red";
+        setTimeout(function() {
+          touch.style.backgroundColor = "";
+        }, 40)
       };
     };
     </script>
