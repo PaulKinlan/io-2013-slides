@@ -108,7 +108,9 @@ URL: https://code.google.com/p/io-2012-slides
     <hgroup>
       <h2>Viewport</h2>
     </hgroup>
-    <video class=demo poster="/images/poster.png" loop controls></video>
+    <video class=demo poster="/images/poster.png" loop controls>
+      <source src="videos/viewport.webm">
+    </video>
     <article>
 	  <h3>The most critical element for mobile TODAY!</h3>
       <pre class="prettyprint">&lt;meta name="viewport" content="" /&gt;</pre>
@@ -206,9 +208,6 @@ URL: https://code.google.com/p/io-2012-slides
       <hgroup>
         <h2>Responsive Images</h2>
       </hgroup>
-      <video class=demo poster="/images/poster.png" loop controls>
-        <source src="/videos/input.webm"></source>
-      </video>
       <article>
           <h3>image-set</h3>
         <pre class="prettyprint">#image1 {
@@ -455,7 +454,6 @@ database.onsuccess = function (event) {
     <hgroup>
       <h2>Pointer Events</h2>
     </hgroup>
-    <video class=demo poster="/images/poster.png" loop controls></video>
     <article>
        	<h3>JS</h3>
 	      <pre class="prettyprint">[elem].onpointerdown = function(e) {}
@@ -519,6 +517,20 @@ cam.onchange = function(e) {
   <slide>
     <hgroup>
       <h2>WebRTC</h2>
+    </hgroup>
+    <article></article>
+  </slide>
+  
+  <slide>
+    <hgroup>
+      <h2>WebGL</h2>
+    </hgroup>
+    <article></article>
+  </slide>
+  
+  <slide>
+    <hgroup>
+      <h2>Web Audio</h2>
     </hgroup>
     <article></article>
   </slide>
@@ -665,7 +677,6 @@ for (var i = 0; i &lt; perfEntries.length; i++) {
     <hgroup>
       <h2>Navigation Timing API</h2>
     </hgroup>
-    <video class=demo poster="/images/poster.png" loop controls></video>
     <article class="smaller">
       <h3>Understanding high-level network</h3>
       <pre class="prettyprint">window.performance.timing.navigationStart
@@ -696,7 +707,6 @@ window.performance.timing.loadEventEnd </pre>
     <hgroup>
       <h2>window.performance.now()</h2>
     </hgroup>
-    <video class=demo poster="/images/poster.png" loop controls></video>
     <article>
        <ul>
          <li>High precision (double)
