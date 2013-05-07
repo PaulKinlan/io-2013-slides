@@ -113,6 +113,8 @@ URL: https://code.google.com/p/io-2012-slides
       
       <pre class="additional-margin-top prettyprint">&lt;meta name="viewport"
   content="width=device-width, initial-scale=1.0" /&gt;</pre>
+  
+  <p>Demo: <a href="goo.gl/hYeFZ">goo.gl/EsOgA</a></p>
     </article>
   </slide>
 
@@ -151,6 +153,7 @@ URL: https://code.google.com/p/io-2012-slides
         <li>Logically group your styling rules.</li>
   	    <li>Dynamically responsive.</li>
       </ul>
+      <p>Demo: <a href="http://goo.gl/hYeFZ">TODO</a></p>
     </article>
    </slide>
    
@@ -162,6 +165,8 @@ URL: https://code.google.com/p/io-2012-slides
        <h3>Mobile devices can usually be rotated</h3>
        <pre class="prettyprint">@media screen and (<b>orientation: portrait</b>) {}</pre>
        <pre class="prettyprint">@media screen and (<b>orientation: landscape</b>) {}</pre>
+       
+       <p>Demo: <a href="http://goo.gl/hYeFZ">TODO</a></p>
      </article>
    </slide>
   
@@ -202,7 +207,8 @@ URL: https://code.google.com/p/io-2012-slides
       <li>Adaptive to display size.</li>
     </ul>
       
-      <p>Spec: <a href="http://dev.w3.org/csswg/css-flexbox/">http://dev.w3.org/csswg/css-flexbox/</a></p>
+      <p>Spec: <a href="http://dev.w3.org/csswg/css-flexbox/">dev.w3.org/csswg/css-flexbox/</a></p>
+      <p>Demo: <a href="http://goo.gl/hYeFZ">goo.gl/hYeFZ</a></p>
     </article>
   </slide>
   
@@ -224,6 +230,7 @@ URL: https://code.google.com/p/io-2012-slides
   <b>position: sticky;</b>
   top: 10px;
 }</pre>
+<p>Demo: <a href="http://goo.gl/BwtTT">goo.gl/BwtTT</a></p>
       </article>
   </slide>
 
@@ -255,6 +262,7 @@ URL: https://code.google.com/p/io-2012-slides
 
 // Stop watching when you're done.
 clearWatch(watchId);</pre>
+<p>Demo: <a href="http:///goo.gl/lIlES">goo.gl/lIlES</a></p>
     </article>
   </slide>
 
@@ -274,7 +282,7 @@ clearWatch(watchId);</pre>
 
   // You could make a compass!
 };</pre>
-    <p>Demo: <a href="http://jsbin.com/ofeces">jsbin.com/ofeces/latest</a></p>
+    <p>Demo: <a href="http://goo.gl/Lezvr">goo.gl/Lezvr</a></p>
     </article>
   </slide>
   
@@ -300,6 +308,7 @@ console.log("Visitor <b>is definitely</b> offline.");
       <li>Very hard to know for sure whether the visitor is online.</li>
       <li>And what if the server is unavailable?</li>
     </ul>
+    <p>Demo: <a href="http://goo.gl/sjKK2">goo.gl/sjKK2</a></p>
   </slide>
   
    <slide>
@@ -391,7 +400,7 @@ console.log("Visitor <b>is definitely</b> offline.");
 &lt;input type="week" /&gt;
 &lt;input type="month" /&gt;
 &lt;input type="datetime" /&gt;</pre>
-      <p>Demo: <a href="http://jsbin.com/apejur/latest" target="_blank">jsbin.com/apejur/latest</a></p>
+      <p>Demo: <a href="http://goo.gl/yGYXr" target="_blank">goo.gl/yGYXr</a></p>
     </article>
   </slide>
 
@@ -413,8 +422,9 @@ console.log("Visitor <b>is definitely</b> offline.");
         <li>touchmove event? <span class="red">preventDefault()</span>!</li>
         <li>300 millisecond click delay.</li>
       </ul>
-      <p>Documentation: <a href="http://toolkitchen.github.io/platform/pointer-events.html">http://goo.gl/DKRXy</a></p> <!-- NOTE: This is a toolkitchen URL. -->
-      <p>Demo: <a href="http://jsbin.com/apejur/latest" target="_blank">http://jsbin.com/apejur/latest</a></p>
+      <p>Documentation: <a href="http://toolkitchen.github.io/platform/pointer-events.html">:w
+        goo.gl/DKRXy</a></p> <!-- NOTE: This is a toolkitchen URL. -->
+      <p>Demo: <a href="http://goo.gl/ogqpq" target="_blank">goo.gl/ogqpq</a></p>
     </article>
     
   </slide>
@@ -516,8 +526,7 @@ document.cancelFullscreen();
 document.fullscreenEnabled();
 document.isFullScreen();
 </pre>
-    <p>Demo <a href="http://jsbin.com/onadep/latest">jsbin.com/onadep/latest</a></p>
-    </article>
+    <p>Demo: <a href="http://goo.gl/7t2t3">goo.gl/7t2t3</a></p>
   </slide>
   
   <slide class="segue red">
@@ -530,7 +539,29 @@ document.isFullScreen();
     <hgroup>
       <h2>WebRTC</h2>
     </hgroup>
-    <article></article>
+    <article>
+       <ul>
+          <li>chrome://flags
+          <li>Video
+          <li>Audio
+          <li>Data
+        </ul>
+    </article>
+  </slide>
+  
+  <slide>
+    <hgroup>
+      <h2>Web Audio</h2>
+    </hgroup>
+    <video class=demo poster="/images/poster.png" loop controls>
+      <source src="videos/fullscreen.webm"></source>
+    </video>
+    <article>
+      <ul>
+        <li>chrome://flags
+        <li>Neon supported phones only
+      </ul>
+    </article>
   </slide>
   
   <slide>
@@ -541,11 +572,18 @@ document.isFullScreen();
   </slide>
   
   <slide>
-    <hgroup>
-      <h2>Web Audio</h2>
-    </hgroup>
-    <article></article>
-  </slide>
+     <hgroup>
+       <h2>CSS Shaders</h2>
+     </hgroup>
+     <video class=demo poster="/images/poster.png" loop controls>
+       <source src="videos/fullscreen.webm"></source>
+     </video>
+     <article>
+       <ul>
+         <li>chrome://flags
+       </ul>
+     </article>
+   </slide>
 
   <slide class="segue red">
     <hgroup>
