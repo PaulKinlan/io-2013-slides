@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>getUserMedia</title>
+    <title>CSS Shader</title>
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
     <style>
-
+ 
+    #v {
+      -webkit-filter:
+    custom(url(shaders/fold.vs) mix(url(shaders/fold.fs) multiply source-atop), 8 50 border-box, transform perspective(1000) scale(1) rotateX(0deg) rotateY(-30deg) rotateZ(0deg), t 0.5, spins 1.5, phase -0.7, shadow 1.5, mapDepth 40, mapCurve -0.3, minSpacing 0.3, useColoredBack 1, backColor 0.5 0.5 0.5 1);
+    }
     </style>
-    <script>
-
-    </script>
+   
   </head>
   <body>
     <video id="v" autoplay style="width:100%; min-height: 1px;background-color: black;"></video> 
-    <h1>getUserMedia</h1>
+    <h1>CSS Shader</h1>
     <script>
       var v = document.querySelector("#v");
       v.onclick = function(e) {
@@ -24,11 +26,5 @@
       };
     </script>
     <h2>Code</h2>
-    <pre>var v = document.querySelector("#v");
-v.onclick = function(e) {
-  navigator.webkitGetUserMedia({video:true, audio: true}, function(s) {
-    v.src = window.URL.createObjectURL(s);
-  })
-};</pre>
   </body>
 </html>

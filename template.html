@@ -166,25 +166,30 @@ URL: https://code.google.com/p/io-2012-slides
        <pre class="prettyprint">@media screen and (<b>orientation: portrait</b>) {}</pre>
        <pre class="prettyprint">@media screen and (<b>orientation: landscape</b>) {}</pre>
        
-       <p>Demo: <a href="http://goo.gl/hYeFZ">TODO</a></p>
+       <p>Demo: <a href="http://goo.gl/5DeJq">goo.gl/5DeJq</a></p>
      </article>
    </slide>
   
-  <slide>
+  <slide class="smaller">
       <hgroup>
         <h2>Viewport units</h2>
       </hgroup>
-      <article>
+      <article class="smaller">
         <h3>Sizing relatively to the viewport</h3>
         <pre class="prettyprint">#visible-square {
-  width: 100vmin;
-  height: 100vmin;
+  width: 20vmin;
+  height: 20vmin;
 }</pre>
         <ul>
           <li>Four new units: <span class="blue">vw</span>(idth), <span class="blue">vh</span>(eight),
             <span class="blue">vmin</span> and <span class="blue">vmax</span>.</li>
           <li>Relative to the size of the viewport</li>
         </ul>
+        <h4>vw</h4>
+        <pre class="prettyprint">h1 {
+  font-size: 10vw; // 1 char is 10% of viewport
+}</pre>
+        <p>Demo: <a href="http://goo.gl/H9jXi">goo.gl/H9jXi</a></p>
       </article>
     </slide>
     
@@ -249,7 +254,7 @@ URL: https://code.google.com/p/io-2012-slides
       <source src="/videos/geolocation.webm"></source>
     </video>
     <article>
-      <h3>Request the current position once..</h3>
+      <h3>Request the current position once</h3>
       <pre class="prettyprint" data-lang="javascript">var success = function(position) {
   var latitude = position.coords.latitude;
   var longitude = position.coords.longitude;
@@ -326,6 +331,7 @@ console.log("Visitor <b>is definitely</b> offline.");
           <li>Allows you to define fallback pages.<br />&nbsp;</li>
           <li>Don't cache the manifest!</li>
         </ul>
+        <p>Demo: <a href="http://goo.gl/fLQHD">goo.gl/fLQHD</a></p>
       </article> 
     </slide>
 
@@ -334,8 +340,7 @@ console.log("Visitor <b>is definitely</b> offline.");
         <h2>Storage APIs</h2>
       </hgroup>
       <article>
-        
-        
+ 
         <table>
                 <tbody><tr>
                   <th></th><th>Intuitive API</th><th>Powerful Querying</th><th>Asynchronous</th><th>Widely supported</th>
@@ -422,7 +427,7 @@ console.log("Visitor <b>is definitely</b> offline.");
         <li>touchmove event? <span class="red">preventDefault()</span>!</li>
         <li>300 millisecond click delay.</li>
       </ul>
-      <p>Documentation: <a href="http://toolkitchen.github.io/platform/pointer-events.html">:w
+      <p>Documentation: <a href="http://toolkitchen.github.io/platform/pointer-events.html">
         goo.gl/DKRXy</a></p> <!-- NOTE: This is a toolkitchen URL. -->
       <p>Demo: <a href="http://goo.gl/ogqpq" target="_blank">goo.gl/ogqpq</a></p>
     </article>
@@ -455,6 +460,9 @@ onpointerout, onpointerenter, onpointerleave.</pre>
     <hgroup>
       <h2>Camera - Media Capture</h2>
     </hgroup>
+    <video class=demo poster="/images/poster.png" loop controls>
+      <source src="videos/touchevents.webm"></source>
+    </video>
     <article>
       <h3>Take photos</h3>
       <pre class="prettyprint">&lt;input type="file" <b>capture</b> accepts="image/*"  id="cam"&gt;</pre>
@@ -466,6 +474,7 @@ cam.onchange = function(event) {
      // We have an image, most likely from a camera
   }
 }</pre>
+    <p>Demo: <a href="http://goo.gl/KV4uS">goo.gl/KV4uS</a></p>
     </article>
   </slide>
 
@@ -473,13 +482,19 @@ cam.onchange = function(event) {
     <hgroup>
       <h2>getUserMedia</h2>
     </hgroup>
+    <video class=demo poster="/images/poster.png" loop controls>
+      <source src="videos/touchevents.webm"></source>
+    </video>
     <article>
     <h3>Inline camera and mic access</h3>    
-    <pre class="prettyprint">navigator.getUserMedia({audio:true, video: true}, function(stream) {
-  // An image has been captured.
-  video.src = URL.createObjectURL(stream);
-  video.play();
-};</pre></article>
+    <pre class="prettyprint">navigator.getUserMedia({audio:true, video: true}, 
+  function(stream) {
+    // An image has been captured.
+    video.src = URL.createObjectURL(stream);
+    video.play();
+});</pre>
+    <p>Demo: <a href="http://goo.gl/uwKoF">goo.gl/uwKoF</a></p>
+</article>
   </slide>
 
   <slide>
@@ -506,6 +521,7 @@ cam.onchange = function(event) {
 &lt;/a&gt;
 	  </pre>
 	  <p>More information: <a href="https://developers.google.com/chrome/mobile/docs/intents">developers.google.com/chrome/mobile/docs/intents</a></p>
+	   <p>Demo: <a href="http://goo.gl/aMrhC">goo.gl/aMrhC</a></p>
     </article>
   </slide>
 
@@ -577,7 +593,7 @@ document.isFullScreen();
        <h2>CSS Shaders</h2>
      </hgroup>
      <video class=demo poster="/images/poster.png" loop controls>
-       <source src="videos/fullscreen.webm"></source>
+       <source src="videos/cssshaders.webm"></source>
      </video>
      <article>
        <ul>
@@ -647,12 +663,6 @@ for (var i = 0; i &lt; perfEntries.length; i++) {
 }
 </pre>
 
-      <h3>window.performance.now()</h3>
-       <ul>
-         <li>High precision (double)
-       </ul>
-       <pre class="prettyprint">Date.now();  //  1337376068250
-performance.now(); //  20303.427000007</pre>
     </article>
   </slide>
 
