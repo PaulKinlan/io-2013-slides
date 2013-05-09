@@ -161,6 +161,9 @@ URL: https://code.google.com/p/io-2012-slides
      <hgroup>
        <h2>Orientation</h2>
      </hgroup>
+      <video class=demo poster="/images/poster.png" loop controls>
+         <source src="/videos/cssorientation.webm"></source>
+       </video>
      <article>
        <h3>Mobile devices can usually be rotated</h3>
        <pre class="prettyprint">@media screen and (<b>orientation: portrait</b>) {}</pre>
@@ -472,7 +475,7 @@ onpointerout, onpointerenter, onpointerleave.</pre>
       <h2>Camera - Media Capture</h2>
     </hgroup>
     <video class=demo poster="/images/poster.png" loop controls>
-      <source src="videos/touchevents.webm"></source>
+      <source src="videos/mediacapture.webm"></source>
     </video>
     <article>
       <h3>Take photos</h3>
@@ -494,7 +497,7 @@ cam.onchange = function(event) {
       <h2>getUserMedia</h2>
     </hgroup>
     <video class=demo poster="/images/poster.png" loop controls>
-      <source src="videos/touchevents.webm"></source>
+      <source src="videos/getusermedia.webm"></source>
     </video>
     <article>
     <h3>Inline camera and mic access</h3>    
@@ -626,7 +629,7 @@ for (var i = 0; i &lt; perfEntries.length; i++) {
   
   <slide class="segue red">
     <hgroup>
-      <h2>Pizazz. Bling.</h2>
+      <h2>chrome://flags</h2>
     </hgroup>
   </slide>
   
@@ -635,11 +638,10 @@ for (var i = 0; i &lt; perfEntries.length; i++) {
       <h2>WebRTC</h2>
     </hgroup>
     <video class=demo poster="/images/poster.png" loop controls>
-      <source src="/videos/flexbox.webm"></source>
+      <source src="/videos/webrtc.webm"></source>
     </video>
     <article>
        <ul>
-          <li>chrome://flags
           <li>Video
           <li>Audio
           <li>Data
@@ -656,7 +658,6 @@ for (var i = 0; i &lt; perfEntries.length; i++) {
     </video>
     <article>
       <ul>
-        <li>chrome://flags
         <li>Neon supported phones only
       </ul>
       <p>Demo: <a href="http://goo.gl/Lh0uh">goo.gl/Lh0uh</a></p>
@@ -675,17 +676,51 @@ for (var i = 0; i &lt; perfEntries.length; i++) {
   
   <slide>
      <hgroup>
-       <h2>CSS Custom Shaders</h2>
+       <h2>CSS Filters</h2>
      </hgroup>
      <video class=demo poster="/images/poster.png" loop controls>
-       <source src="videos/cssshaders.webm"></source>
+       <source src="videos/cssfilters.webm"></source>
      </video>
      <article>
-       <ul>
-         <li>chrome://flags
-       </ul>
+       <pre class="prettyprint">element {
+  -webkit-filter: blur(4px) greyscale(0.8);
+}</pre>
+       <h3>Animating filters</h3>
+       <pre class="prettyprint">element {
+   -webkit-filter: blur(4px) greyscale(0.8);
+ }</pre>
      </article>
    </slide>
+   
+   <slide>
+      <hgroup>
+        <h2>CSS Custom Shaders</h2>
+      </hgroup>
+      <video class=demo poster="/images/poster.png" loop controls>
+        <source src="videos/cssshaders.webm"></source>
+      </video>
+      <article>
+        <pre class="prettyprint">element {
+  -webkit-filter:
+    custom(
+      url(shaders/fold.vs) 
+      mix(url(shaders/fold.fs) multiply source-atop),
+    8 50 border-box, 
+    transform 
+      perspective(1000) 
+      scale(1) 
+      rotateX(0deg) 
+      rotateY(-30deg) 
+      rotateZ(0deg), 
+    t 0.5, spins 1.5, 
+    phase -0.7, 
+    shadow 1.5, mapDepth 40, 
+    mapCurve -0.3, 
+    minSpacing 0.3, 
+    useColoredBack 1, 
+    backColor 0.5 0.5 0.5 1);</pre>
+      </article>
+    </slide>
 
   <slide>
     <hgroup>
@@ -715,7 +750,7 @@ for (var i = 0; i &lt; perfEntries.length; i++) {
     <aside class="gdbar right"><img src="images/google_developers_icon_128.png"></aside>
     <article class="flexbox vleft auto-fadein">
       <h2>&lt;Thank You!&gt;</h2>
-      <p>Important contact information goes here.</p>
+      <p>mobile-html.appspot.com/</p>
     </article>
     <p class="auto-fadein" data-config-contact>
       <!-- populated from slide_config.json -->

@@ -6,8 +6,8 @@ api_version: 1
 threadsafe: yes
 
 handlers:
-#- url: /secret_url.html
-- url: /
+- url: /secret_url.html
+#- url: /
   static_files: template.html
   upload: template\.html
 
