@@ -13,32 +13,59 @@
         line-height: 1em;
       }
       
-      #vmin {
+      #v {
         background-color: black;
         color: white;
         width: 20vmin;
         height: 20vmin;
         margin: 10px;
-        padding: 10px;
-        font-size: 2vw;
+        padding: 15px;
+        font-size: 36px;
         box-sizing: border-box;
       }
       
-      #vmax {
-        background-color: black;
-        color: white;
-        width: 20vmax;
-        height: 20vmax;
-        margin: 10px;
-        padding: 10px;
-        font-size: 2vw;
-        box-sizing: border-box;
+      button {  
+        margin-top: 5px;
       }
+        
     </style>
+    <script>
+     onload = function() {
+        var vw = document.getElementById("vw");
+        var vh = document.getElementById("vh");
+        var vmin = document.getElementById("vmin");
+        var vmax = document.getElementById("vmax");
+        var v = document.getElementById("v")
+
+        vw.onclick = function(e) {
+          v.innerText = v.style.width = v.style.height = "30vw";
+        }
+
+        vh.onclick = function() {
+          v.innerText = v.style.width = v.style.height = "30vh";
+        }
+
+        vmin.onclick = function() {
+          v.innerText = v.style.width = v.style.height = "30vmin";
+        }
+
+        vmax.onclick = function() {
+          v.innerText = v.style.width = v.style.height = "30vmax";
+        }
+      };
+    </script>
   </head>
   <body>
     <h1>Viewport Units 10w</h1>
-    <div id="vmin">20vmin.</div>
-    <div id="vmax">20vmax.</div>
+    <div id="v"></div>
+   
+    <div id=items>
+      <button id="vw" class="btn btn-primary">Set vw</button>
+      <button id="vh" class="btn btn-primary">Set vh</button>
+      <button id="vmin" class="btn btn-primary">Set vmin</button>
+      <button id="vmax" class="btn btn-primary">Set vmax</button>
+    </div>
+
+       
   </body>
 </html>
