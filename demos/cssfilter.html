@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CSSFilter</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+    <script>
+      onload = function() {
+        var gray = document.getElementById("gray");
+        var hue = document.getElementById("hue");
+        var saturate = document.getElementById("saturate");
+        var blur = document.getElementById("blur");
+        
+        var v = document.getElementById("v");
+        
+        gray.onclick = function() {
+          v.style.webkitFilter = "grayscale(100%)";
+        }
+        
+        hue.onclick = function() {
+          v.style.webkitFilter = "hue-rotate(270deg)";
+        }
+        
+        saturate.onclick = function() {
+          v.style.webkitFilter = "saturate(400%)";
+        }
+        
+        blur.onclick = function() {
+          v.style.webkitFilter = "blur(5px)";
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <video id="v" autoplay style="width:100%; min-height: 1px;background-color: black;"></video> 
+     <h1>CSS Filter</h1>
+    <div id=items>
+      <button id="gray" class="btn btn-primary">Grey Scale</button>
+      <button id="hue" class="btn btn-primary">Rotate Hue</button>
+      <button id="saturate" class="btn btn-primary">Saturate</button>
+      <button id="blur" class="btn btn-primary">Blur</button>
+    </div>
+   
+    <script>
+      var v = document.querySelector("#v");
+      v.onclick = function(e) {
+        navigator.webkitGetUserMedia({video:true, audio: true}, function(s) {
+          v.src = window.URL.createObjectURL(s);
+        })
+      };
+    </script>
+  </body>
+</html>
