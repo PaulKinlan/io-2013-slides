@@ -843,39 +843,6 @@ for (var i = 0; i &lt; perfEntries.length; i++) {
       </ul>
     </aside>
   </slide>
-
-  <slide>
-    <hgroup>
-      <h2>User Timing API</h2>
-    </hgroup>
-    <video class=demo poster="images/poster.png" loop controls></video>
-    <article class="smaller">
-        <h3>A good timing API</h3>
-<pre class="prettyprint">performance.mark('startTask1');
-doTask1();
-performance.mark('endTask1');
-    
-performance.mark('startTask2');
-doTask2();
-performance.mark('endTask2');
-
-var perfEntries = performance.getEntriesByType('mark');
-for (var i = 0; i &lt; perfEntries.length; i++) {
-  console.log('Name: ' + perfEntries[i].name   +
-    ' Entry Type: ' + perfEntries[i].entryType +
-    ' Start Time: ' + perfEntries[i].startTime +
-    ' Duration: '   + perfEntries[i].duration  + '\n');
-}
-</pre>
-    </article>
-    <aside class="note">
-      <!-- notes -->
-      <p class="presenter">PETER - 18M</p>
-      <ul>
-        <li>..</li>
-      </ul>
-    </aside>
-  </slide>
   
   <slide class="segue red">
     <hgroup>
