@@ -1,3 +1,4 @@
+/** Make sure slides are properly aligned with each other. **/
 h4 {
   margin-bottom: 10px;
 }
@@ -8,4 +9,35 @@ slides > slide > hgroup+video+article {
 
 .additional-margin-top {
   margin-top: 45px;
+}
+
+/** Have badges to indicate whether a feature is available today,
+    or will be available in the near future. **/
+.today::after {
+  background: rgb(13, 168, 97);
+  background: linear-gradient(180deg, #00a86d, #009f5d);
+  color: white;
+  content: 'today';
+}
+
+.today.new::after {
+  content: 'brand new!';
+}
+
+.tomorrow::after {
+  background: rgb(244, 74, 63);
+  background: linear-gradient(180deg, #f9cc46, #f6c000);
+  color: white;
+  content: 'tomorrow';
+}
+
+.today::after, .tomorrow::after {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: .4em;
+  margin-left: 25px;
+  padding: 2px 8px;
+  border-radius: 5px;
+  position: relative;
+  top: -6px;
 }

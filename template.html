@@ -97,7 +97,7 @@ URL: https://code.google.com/p/io-2012-slides
 
   <slide>
     <hgroup>
-      <h2>Viewport</h2>
+      <h2 class="today">Viewport</h2>
     </hgroup>
     <video class=demo poster="images/poster.png" loop controls>
       <source src="videos/viewport.webm">
@@ -120,7 +120,7 @@ URL: https://code.google.com/p/io-2012-slides
 
   <slide>
     <hgroup>
-      <h2>Device Adaptation</h2>
+      <h2 class="tomorrow">Device Adaptation</h2>
     </hgroup>
     <article>
 	  <h3>A saner solution is on it's way!</h3>
@@ -141,7 +141,7 @@ URL: https://code.google.com/p/io-2012-slides
   
   <slide>
     <hgroup>
-      <h2>Media Queries</h2>
+      <h2 class="today">Media Queries</h2>
     </hgroup>
     <article>
       <h3>Adaptive to screen size</h3>
@@ -158,7 +158,7 @@ URL: https://code.google.com/p/io-2012-slides
    
     <slide>
      <hgroup>
-       <h2>Orientation</h2>
+       <h2 class="today">Orientation</h2>
      </hgroup>
       <video class=demo poster="images/poster.png" loop controls>
          <source src="videos/cssorientation.webm"></source>
@@ -174,7 +174,7 @@ URL: https://code.google.com/p/io-2012-slides
   
   <slide class="smaller">
       <hgroup>
-        <h2>Viewport units</h2>
+        <h2 class="today new">Viewport units</h2>
       </hgroup>
       <video class=demo poster="images/poster.png" loop controls>
         <source src="videos/viewportunits.webm"></source>
@@ -190,10 +190,9 @@ URL: https://code.google.com/p/io-2012-slides
             <span class="blue">vmin</span> and <span class="blue">vmax</span>.</li>
           <li>Relative to the size of the viewport</li>
         </ul>
-        <h4>vw</h4>
-        <pre class="prettyprint">h1 {
-  font-size: 10vw; // 1 char is 10% of viewport
-}</pre>
+        <h4 class="additional-margin-top">Value is 1% of width/height of the viewport</h4>
+        <pre>1<b>vw</b> = 1% of the viewport width
+1<b>vh</b> = 1% of viewport height</pre>
         <p>Demo: <a href="http://goo.gl/H9jXi">goo.gl/H9jXi</a></p>
       </article>
     </slide>
