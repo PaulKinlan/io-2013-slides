@@ -982,42 +982,6 @@ element:hover {
     </aside>
    </slide>
    
-   <slide>
-      <hgroup>
-        <h2>CSS Custom Shaders</h2>
-      </hgroup>
-      <video class=demo poster="images/poster.png" loop controls>
-        <source src="videos/cssshaders.webm"></source>
-      </video>
-      <article>
-        <pre class="prettyprint">element {
-  -webkit-filter:
-    custom(
-      url(shaders/fold.vs) 
-      mix(url(shaders/fold.fs) multiply source-atop),
-    8 50 border-box, 
-    transform 
-      perspective(1000) 
-      scale(1) 
-      rotateX(0deg) 
-      rotateY(-30deg) 
-      rotateZ(0deg), 
-    t 0.5, spins 1.5, 
-    phase -0.7, 
-    shadow 1.5, mapDepth 40, 
-    mapCurve -0.3, 
-    minSpacing 0.3, 
-    useColoredBack 1, 
-    backColor 0.5 0.5 0.5 1);</pre>
-      </article>
-      <aside class="note">
-        <!-- notes -->
-        <p class="presenter">PAUL - 14M</p>
-      <ul>
-        <li>..</li>
-      </ul>
-      </aside>
-    </slide>
 
   <slide>
     <hgroup>
