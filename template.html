@@ -234,18 +234,18 @@ URL: https://code.google.com/p/io-2012-slides
      <hgroup>
        <h2 class="today">Orientation</h2>
      </hgroup>
-      <video class=demo poster="images/poster.png" loop controls id="orientationVideo">
+      <video class=demo poster="images/poster.png" loop controls id="orientationVideo" style="transition: all 0.2s ease-in-out">
          <track src="videos/cssorientation.vtt" label="Control subtitles" kind="subtitles" srclang="en" default="" id="orientationtrack"></track>
          <source src="videos/cssorientation.webm"></source>
        </video>
        <script>
          orientationtrack.addEventListener("cuechange", function () {
-           var cue = this.activeCues[0];
+           var cue = this.track.activeCues[0];
            if(cue.text == "portrait") {
              orientationVideo.style.webkitTransform = "rotate(0deg)";
            }
            else if (cue.text == "landscape"){
-             orientationVideo.style.webkitTransform = "rotate(-90deg)";
+             orientationVideo.style.webkitTransform = "translate(-150px, 120px) rotate(-90deg) ";
            }
          });
        </script>
