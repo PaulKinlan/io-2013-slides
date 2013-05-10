@@ -948,15 +948,24 @@ article.smaller {
     position: absolute;
   }
 
-  h2 {
+  :not(&.title-slide) h2 {
     color: #fff;
     font-size: 60px;
     padding: 20px;
     margin: 20px;
     border-radius: 2px;
     background-color: rgba(0,0,0,0.81);
-    
     line-height: 1em;
+  }
+  
+  h2 {
+    color: #fff;
+    font-size: 60px;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 2px;
+    line-height: 1em;
+    background-color: inherit;
   }
   
   h3 {

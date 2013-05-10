@@ -561,7 +561,7 @@ document.isFullScreen();
   
   
 
-  <slide class="segue red">
+  <slide class="segue red fill" style="background-image: url(/images/treacle.png);">
     <hgroup>
       <h2>Everything is slower</h2>
       <q>What can I do?</q>
@@ -657,7 +657,7 @@ for (var i = 0; i &lt; perfEntries.length; i++) {
     </video>
     <article>
       <ul>
-        <li>Neon supported phones only
+        <li>Neon Chipset supported phones only
       </ul>
       <p>Demo: <a href="http://goo.gl/Lh0uh">goo.gl/Lh0uh</a></p>
     </article>
@@ -686,8 +686,13 @@ for (var i = 0; i &lt; perfEntries.length; i++) {
 }</pre>
        <h3>Animating filters</h3>
        <pre class="prettyprint">element {
-   -webkit-filter: blur(4px) greyscale(0.8);
- }</pre>
+  transition: -webkit-filter 1s ease-in-out;
+}
+
+element:hover {
+  -webkit-filter: blur(4px) greyscale(0.8);
+}
+</pre>
      </article>
    </slide>
    
