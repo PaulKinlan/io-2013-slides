@@ -42,22 +42,22 @@ slides > slide > hgroup+video+article {
   top: -6px;
 }
 
-/** Fany buttons for sending people to demos **/
-.demo-button {
-  text-transform: uppercase;
+/** Presenter information in the slide's notes **/
+aside.note .presenter {
   font-weight: bold;
-  display: inline-block;
-  border: 1px solid #2463de;
-  border-radius: 5px;
-  padding: 4px 10px;
-
-  background-color: #759ae9;
-  background: linear-gradient(180deg, #4387fd, #2463de);
-  color: white;
+  color: black;
+  padding-bottom: 10px;
 }
 
-.demo-button:hover {
-  color: white !important;
-  background-color: #2463de;
-  background: linear-gradient(180deg, #376fe0, #2463de);
+aside.note ul { 
+  list-style-type: none;
+  margin-left: 0px;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+aside.note ul li { margin-bottom: 0.1em; }
+
+aside.note ul li:before {
+  display: none;
 }
