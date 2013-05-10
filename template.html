@@ -160,9 +160,21 @@ URL: https://code.google.com/p/io-2012-slides
      <hgroup>
        <h2 class="today">Orientation</h2>
      </hgroup>
-      <video class=demo poster="images/poster.png" loop controls>
+      <video class=demo poster="images/poster.png" loop controls id="orientationVideo">
+         <track src="videos/cssorientation.vtt" label="Control subtitles" kind="subtitles" srclang="en" default="" id="orientationtrack"></track>
          <source src="videos/cssorientation.webm"></source>
        </video>
+       <script>
+         orientationtrack.addEventListener("cuechange", function () {
+           var cue = this.activeCues[0];
+           if(cue.text == "portrait") {
+             orientationVideo.style.webkitTransform = "rotate(0deg)";
+           }
+           else if (cue.text == "landscape"){
+             orientationVideo.style.webkitTransform = "rotate(-90deg)";
+           }
+         });
+       </script>
      <article>
        <h3>Mobile devices can usually be rotated</h3>
        <pre class="prettyprint">@media screen and (<b>orientation: portrait</b>) {}</pre>
