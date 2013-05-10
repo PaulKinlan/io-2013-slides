@@ -41,3 +41,23 @@ slides > slide > hgroup+video+article {
   position: relative;
   top: -6px;
 }
+
+/** Fany buttons for sending people to demos **/
+.demo-button {
+  text-transform: uppercase;
+  font-weight: bold;
+  display: inline-block;
+  border: 1px solid #2463de;
+  border-radius: 5px;
+  padding: 4px 10px;
+
+  background-color: #759ae9;
+  background: linear-gradient(180deg, #4387fd, #2463de);
+  color: white;
+}
+
+.demo-button:hover {
+  color: white !important;
+  background-color: #2463de;
+  background: linear-gradient(180deg, #376fe0, #2463de);
+}
