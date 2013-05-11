@@ -19,14 +19,14 @@ var SLIDE_CONFIG = {
 
   // Author information
   presenters: [{
-    name: 'Peter "Mobile Maestro" Beverloo',
+    name: 'Peter Beverloo',
     company: 'Software Engineer, Google',
     gplus: 'http://plus.google.com/1234567890',
     twitter: '@beverloo',
     www: 'http://www.peter.sh',
     github: 'http://github.com/beverloo'
   }, {
-    name: 'Paul "Pianist fingers" Kinlan',
+    name: 'Paul Kinlan',
     company: 'Developer Advocate, Google',
     gplus: 'http://google.com/+PaulKinlan',
     twitter: '@paul_kinlan',
