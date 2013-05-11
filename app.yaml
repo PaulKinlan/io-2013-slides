@@ -28,7 +28,7 @@ handlers:
   static_dir: images
 
 - url: /browser-logos
-  static_dir: browser-logos
+  static_dir: logos
   
 - url: /videos
   static_dir: videos
