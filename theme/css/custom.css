@@ -61,3 +61,7 @@ aside.note ul li { margin-bottom: 0.1em; }
 aside.note ul li:before {
   display: none;
 }
+
+.supports.ie {
+	
+}
