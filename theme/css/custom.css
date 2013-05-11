@@ -28,7 +28,7 @@ slides > slide > hgroup+video+article {
   background: rgb(244, 74, 63);
   background: linear-gradient(180deg, #f9cc46, #f6c000);
   color: white;
-  content: 'tomorrow';
+  content: 'soon';
 }
 
 .today::after, .tomorrow::after {
