@@ -24,6 +24,25 @@ URL: https://code.google.com/p/io-2012-slides
   <script data-main="js/slides" src="js/require-1.0.8.min.js"></script>
 </head>
 <body style="opacity: 0" class="weavebg">
+  
+  <script>
+    document.addEventListener("slideenter", function(e) {
+      var vid = e.slide.querySelector("video");
+      if(vid) {
+        vid.play();
+      }
+
+    }, false);
+
+    document.addEventListener("slideleave", function(e) {
+       var vid = e.slide.querySelector("video");
+       if(vid) {
+         vid.pause();
+       }
+
+     }, false);
+
+  </script>
 
 <slides class="layout-widescreen">
 
@@ -187,7 +206,7 @@ URL: https://code.google.com/p/io-2012-slides
         <img src="browser-logos/opera.svg">
       </h3>
     </hgroup>
-    <video class=demo poster="images/poster.png" loop controls>
+    <video class=demo poster="images/poster.png" loop muted>
       <source src="videos/viewport.webm">
     </video>
     <article>
@@ -297,7 +316,7 @@ URL: https://code.google.com/p/io-2012-slides
          <img src="browser-logos/opera.svg">
        </h3>
      </hgroup>
-      <video class=demo poster="images/poster.png" loop controls id="orientationVideo" style="transition: all 0.2s ease-in-out">
+      <video class=demo poster="images/poster.png" loop muted id="orientationVideo" style="transition: all 0.2s ease-in-out">
          <track src="videos/cssorientation.vtt" label="Control subtitles" kind="subtitles" srclang="en" default="" id="orientationtrack"></track>
          <source src="videos/cssorientation.webm"></source>
        </video>
@@ -340,7 +359,7 @@ URL: https://code.google.com/p/io-2012-slides
           <img src="browser-logos/opera.svg">
         </h3>
       </hgroup>
-      <video class=demo poster="images/poster.png" loop controls>
+      <video class=demo poster="images/poster.png" loop muted>
         <source src="videos/viewportunits.webm"></source>
       </video>
       <article class="smaller">
@@ -380,7 +399,7 @@ URL: https://code.google.com/p/io-2012-slides
         <img src="browser-logos/opera.svg">
       </h3>
     </hgroup>
-    <video class=demo poster="images/poster.png" loop controls>
+    <video class=demo poster="images/poster.png" loop muted>
       <source src="videos/flexbox.webm"></source>
     </video>
     <article>
@@ -419,7 +438,7 @@ URL: https://code.google.com/p/io-2012-slides
           <img src="browser-logos/opera.svg">
         </h3>
       </hgroup>
-      <video class=demo poster="images/poster.png" loop controls>
+      <video class=demo poster="images/poster.png" loop muted>
         <source src="videos/sticky.webm"></source>
       </video>
       <article>
@@ -470,7 +489,7 @@ URL: https://code.google.com/p/io-2012-slides
         <img src="browser-logos/opera.svg">
       </h3>
     </hgroup>
-    <video class=demo poster="images/poster.png" loop controls>
+    <video class=demo poster="images/poster.png" loop muted>
       <source src="videos/geolocation.webm"></source>
     </video>
     <article>
@@ -510,7 +529,7 @@ clearWatch(watchId);</pre>
         <img src="browser-logos/opera.svg">
       </h3>
     </hgroup>
-    <video class=demo poster="images/poster.png" loop controls>
+    <video class=demo poster="images/poster.png" loop muted>
       <source src="videos/orientation.webm"></source>
     </video>
     <article>
@@ -545,7 +564,7 @@ clearWatch(watchId);</pre>
         <img src="browser-logos/opera.svg">
       </h3>
     </hgroup>
-    <video class=demo poster="images/poster.png" loop controls>
+    <video class=demo poster="images/poster.png" loop muted>
       <source src="videos/offlineevents.webm"></source>
     </video>
     <article>
@@ -585,7 +604,7 @@ console.log("Visitor <b>is definitely</b> offline.");
           <img src="browser-logos/opera.svg">
         </h3>
       </hgroup>
-      <video class=demo poster="images/poster.png" loop controls>
+      <video class=demo poster="images/poster.png" loop muted>
         <source src="videos/appcache.webm"></source>
       </video>
       <article>
@@ -725,7 +744,7 @@ img/paul.png</pre>
         <img src="browser-logos/opera.svg">
       </h3>
     </hgroup>
-    <video class=demo poster="images/poster.png" loop controls>
+    <video class=demo poster="images/poster.png" loop muted>
       <source src="videos/input.webm"></source>
     </video>
     <article>
@@ -762,7 +781,7 @@ img/paul.png</pre>
         <img src="browser-logos/opera.svg">
       </h3>
     </hgroup>
-    <video class=demo poster="images/poster.png" loop controls>
+    <video class=demo poster="images/poster.png" loop muted>
       <source src="videos/touchevents.webm"></source>
     </video>
     <article>
@@ -844,7 +863,7 @@ onpointerout, onpointerenter, onpointerleave.</pre>
         <img src="browser-logos/opera.svg">
       </h3>
     </hgroup>
-    <video class=demo poster="images/poster.png" loop controls>
+    <video class=demo poster="images/poster.png" loop muted>
       <source src="videos/mediacapture.webm"></source>
     </video>
     <article>
@@ -881,7 +900,7 @@ cam.onchange = function(event) {
         <img src="browser-logos/opera.svg">
       </h3>
     </hgroup>
-    <video class=demo poster="images/poster.png" loop controls>
+    <video class=demo poster="images/poster.png" loop muted>
       <source src="videos/getusermedia.webm"></source>
     </video>
     <article>
@@ -915,7 +934,7 @@ cam.onchange = function(event) {
         <img class="no" src="browser-logos/opera.svg">
       </h3>
     </hgroup>
-    <video class=demo poster="images/poster.png" loop controls>
+    <video class=demo poster="images/poster.png" loop muted>
       <source src="videos/androidintent.webm"></source>
     </video>
     <article class="smaller">
@@ -958,7 +977,7 @@ cam.onchange = function(event) {
         <img src="browser-logos/opera.svg">
       </h3>
     </hgroup>
-    <video class=demo poster="images/poster.png" loop controls>
+    <video class=demo poster="images/poster.png" loop muted>
       <source src="videos/fullscreen.webm"></source>
     </video>
     <article>
@@ -1037,7 +1056,7 @@ document.isFullScreen();
         <img src="browser-logos/opera.svg">
       </h3>
     </hgroup>
-    <video class=demo poster="images/poster.png" loop controls>
+    <video class=demo poster="images/poster.png" loop muted>
       <source src="videos/resourcetiming.webm"></source>
     </video>
     <article>
@@ -1084,7 +1103,7 @@ for (var i = 0; i &lt; perfEntries.length; i++) {
         <img src="browser-logos/opera.svg">
       </h3>
     </hgroup>
-    <video class=demo poster="images/poster.png" loop controls>
+    <video class=demo poster="images/poster.png" loop muted>
       <source src="videos/webrtc.webm"></source>
     </video>
     <article>
@@ -1115,7 +1134,7 @@ for (var i = 0; i &lt; perfEntries.length; i++) {
         <img src="browser-logos/opera.svg">
       </h3>
     </hgroup>
-    <video class=demo poster="images/poster.png" loop controls>
+    <video class=demo poster="images/poster.png" loop muted>
       <source src="videos/webaudio.webm"></source>
     </video>
     <article>
@@ -1154,7 +1173,7 @@ gainNode.connect(context.destination);</pre>
         <img src="browser-logos/opera.svg">
       </h3>
     </hgroup>
-     <video class=demo poster="images/poster.png" loop controls>
+     <video class=demo poster="images/poster.png" loop muted>
         <source src="videos/webgl.webm"></source>
       </video>
     <article>
@@ -1181,7 +1200,7 @@ gainNode.connect(context.destination);</pre>
          <img src="browser-logos/opera.svg">
        </h3>
      </hgroup>
-     <video class=demo poster="images/poster.png" loop controls>
+     <video class=demo poster="images/poster.png" loop muted>
        <source src="videos/cssfilters.webm"></source>
      </video>
      <article>
@@ -1243,24 +1262,7 @@ element:hover {
 
 </slides>
 
-<script>
-  document.addEventListener("slideenter", function(e) {
-    var vid = e.slide.querySelector("video");
-    if(vid) {
-      vid.play();
-    }
-    
-  }, false);
-  
-  document.addEventListener("slideleave", function(e) {
-     var vid = e.slide.querySelector("video");
-     if(vid) {
-       vid.pause();
-     }
 
-   }, false);
-  
-</script>
 
 <script>
 var _gaq = _gaq || [];
