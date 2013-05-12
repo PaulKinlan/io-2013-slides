@@ -1,3 +1,54 @@
+@font-face {
+  font-family: 'Alike';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Alike'), local('Alike-Regular'), url(/theme/Alike-Regular.ttf) format('woff');
+}
+
+@font-face {
+  font-family: 'Source Code Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Source Code Pro'), local('SourceCodePro-Regular'), url(/theme/SourceCodePro-Regular.ttf) format('woff');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(/theme/OpenSans-Regular.ttf) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(/theme/OpenSans-Semibold.ttf) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(/theme/OpenSans-Bold.ttf) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Open Sans Italic'), local('OpenSans-Italic'), url(/theme/OpenSans-Italic.ttf) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 600;
+  src: local('Open Sans Semibold Italic'), local('OpenSans-SemiboldItalic'), url(/theme/OpenSans-SemiboldItalic.ttf) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Open Sans Bold Italic'), local('OpenSans-BoldItalic'), url(/theme/OpenSans-BoldItalic.ttf) format('woff');
+}
+
 /** Make sure slides are properly aligned with each other. **/
 h4 {
   margin-bottom: 10px;
