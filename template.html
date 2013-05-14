@@ -70,13 +70,13 @@ URL: https://code.google.com/p/io-2012-slides
   <slide>
     <article>
       <h1>Peter Beverloo</h1>
-      <img src="/images/peter.jpg" style="margin: 10px; width: 256px; height: 256px; float:left;"><br><br><br>
-      <p>G+: <a href="https://plus.google.com/u/0/117722992032033182292">plus.google.com/u/0/117722992032033182292</a> </p>
+      <img src="/images/peter.jpg" style="margin: 10px; width: 256px; height: 256px; float:left; border-radius: 10px; box-shadow: 0 0 10px black;"><br><br><br>
+      <p>G+: <a href="https://plus.google.com/u/0/117722992032033182292">peter.sh/+</a></p>
       <p>Twitter: <a href="https://twitter.com/beverloo">@beverloo</a> </p>
       <p>Blog: <a href="https://peter.sh">peter.sh</a> </p>
       <br style="clear:both;">
       <h1>Paul Kinlan</h1>
-      <img src="/images/paul.jpg" style="margin: 10px; width: 256px; height: 256px; float: left;"><br><br><br>
+      <img src="/images/paul.jpg" style="margin: 10px; width: 256px; height: 256px; float: left;  border-radius: 10px; box-shadow: 0 0 10px black;"><br><br><br>
       <p>G+: <a href="http://google.com/+PaulKinlan">google.com/+PaulKinlan</a></p>
       <p>Twitter: <a href="https://twitter.com/paul_kinlan">@paul_kinlan</a> </p>
       <p>Blog: <a href="http://paul.kinlan.me">paul.kinlan.me</a> </p>
@@ -575,13 +575,13 @@ clearWatch(watchId);</pre>
     <article>
       <h3>Determine the network state</h3>
       <pre class="prettyprint" data-lang="javascript">window.navigator.<b>onLine</b></pre>
-      <pre class="prettyprint" data-lang="javascript">window.<b>ononline</b> = function() {
-console.log("Visitor <b>might</b> be online.");
-};
+      <pre class="prettyprint" data-lang="javascript">wwindow.addEventListener(<b>"online"</b>, function() {
+  console.log("Visitor <b>might</b> be online.");
+});
 
-window.<b>onoffline</b> = function() {
-console.log("Visitor <b>is definitely</b> offline.");
-};</pre>
+window.addEventListener(<b>"offline"</b>, function() {
+  console.log("Visitor <b>is definitely</b> offline.");
+});</pre>
       <ul>
         <li>Very hard to know for sure whether the visitor is online.</li>
         <li>And what if the server is unavailable?</li>
@@ -795,11 +795,8 @@ img/paul.png</pre>
 [element].ontouchmove = function(event) {};
 [element].ontouchend = function(event) {};
 </pre>
-      <ul>
-        <li>touchmove event? <span class="red">preventDefault()</span>!</li>
-        <li>300 millisecond click delay.</li>
-      </ul>
-      <p>Documentation: <a href="http://goo.gl/8ybb5">goo.gl/8ybb5</a></p> 
+      <h1><span style="color:red;">Warning:</span> 300 millisecond click delay.</h1><br><br>
+      <p>Docs: <a href="http://goo.gl/8ybb5">goo.gl/8ybb5</a></p> 
       <p>Demo: <a href="http://goo.gl/ZwOzk" target="_blank">goo.gl/ZwOzk</a></p>
     </article>
     <aside class="note">
@@ -1201,44 +1198,6 @@ gainNode.connect(context.destination);</pre>
     </aside>
   </slide>
   
-  <slide>
-     <hgroup>
-       <h2 class="tomorrow">CSS Filters</h2>
-       <h3 class="supports">
-         <img src="browser-logos/chrome.svg">
-         <img class="no" src="browser-logos/android.png">
-         <img src="browser-logos/safari.png">
-         <img class="no" src="browser-logos/ie10.svg">
-         <img class="no" src="browser-logos/firefox.svg">
-         <img src="browser-logos/opera.svg">
-       </h3>
-     </hgroup>
-     <video class=demo poster="images/poster.png" loop muted>
-       <source src="videos/cssfilters.webm"></source>
-     </video>
-     <article>
-       <pre class="prettyprint">element {
-  -webkit-filter: blur(4px) greyscale(0.8);
-}</pre>
-       <h3>Animating filters</h3>
-       <pre class="prettyprint">element {
-  transition: -webkit-filter 1s ease-in-out;
-}
-
-element:hover {
-  -webkit-filter: blur(4px) greyscale(0.8);
-}
-</pre>
-       <p>Demo: <a href="http://goo.gl/0zwX9">goo.gl/0zwX9</a></p>
-     </article>
-     <aside class="note">
-      <!-- notes -->
-      <p class="presenter">PAUL - 15M</p>
-      <ul>
-        <li>..</li>
-      </ul>
-    </aside>
-   </slide>
    
    <slide class="title-slide segue blue">
      <hgroup>

@@ -125,6 +125,8 @@ aside.note ul li:before {
 
 .supports img.no {
   opacity: 0.2;
+  -webkit-filter: greyscale(1);
+  filter: greyscale(1);
 }
 
 p {
