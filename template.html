@@ -184,7 +184,7 @@ URL: https://code.google.com/p/io-2012-slides
       <li class="supports"><img src="browser-logos/safari.png">iOS Safari</li>
       <li class="supports"><img src="browser-logos/ie10.svg">Internet Explorer 10 Mobile</li>
       <li class="supports"><img src="browser-logos/firefox.svg">Firefox Mobile</li>
-      <li class="supports"><img src="browser-logos/opera.svg">Opera Beta</li>
+      <li class="supports"><img src="browser-logos/opera.svg">Opera for Android (Beta)</li>
       </ul>
     </article>
   </slide>
@@ -261,7 +261,7 @@ URL: https://code.google.com/p/io-2012-slides
   orientation: portrait;
 }</pre>
       <h3>Greater flexibility when used with Media Queries:</h3>
-      <pre class="prettyprint">@media screen and (min-device-width: 800px) { 
+      <pre class="prettyprint">@media screen and (min-width: 800px) { 
   @viewport {
     width: device-width;
     user-zoom: fixed;
@@ -292,9 +292,8 @@ URL: https://code.google.com/p/io-2012-slides
     </hgroup>
     <article>
       <h3>Adaptive to screen size</h3>
-	  <pre class="prettyprint">@media screen and (min-device-width: 800px) { ... }</pre>
-	  <pre class="prettyprint">@media screen and (device-aspect-ratio: 16/9) { ... }</pre>
-	  <pre class="prettyprint">@media screen and (min-device-pixel-ratio: 3/2) { ... }</pre>
+  	  <pre class="prettyprint">@media screen and (min-width: 800px) { ... }</pre>
+	    <pre class="prettyprint">@media screen and (device-aspect-ratio: 16/9) { ... }</pre>
       <pre class="prettyprint">@media screen and (resolution: 2dppx) { ... }</pre>
 	  <ul>
         <li>Logically group your styling rules.</li>
@@ -676,16 +675,6 @@ img/paul.png</pre>
                     <img src="browser-logos/opera.svg">
                   </td>
                 </tr>
-                <tr>
-                  <td>FileSystem</td><td>Kind of</td><td>No</td><td>Yes</td><td class="supports">
-                    <img src="browser-logos/chrome.svg">
-        <img src="browser-logos/android.png">
-                    <img class="no" src="browser-logos/safari.png">
-                    <img class="no" src="browser-logos/ie10.svg">
-                    <img class="no" src="browser-logos/firefox.svg">
-                    <img src="browser-logos/opera.svg">
-                  </td>
-                </tr>
               </tbody></table>
         <div class="flexbox vcenter">
           <br><br><br>
@@ -709,7 +698,6 @@ img/paul.png</pre>
       <article>
         <ul>
           <li>Lawn Chair - <a href="brian.io/lawnchair/">brian.io/lawnchair/</a>
-          <li>PouchDB - <a href="pouchdb.com/">pouchdb.com/</a>
           <li>IndexedDBShim - <a href="http://nparashuram.com/IndexedDBShim/">nparashuram.com/IndexedDBShim/</a>
         </ul>
         
