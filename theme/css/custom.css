@@ -136,7 +136,7 @@ p {
 
 h3.support.chrome {
   background-image: 
-    url(/browser-logos/chrome.svg);
+    url(../../../blogo/chrome.svg);
   background-size: 32px 32px;
   background-position: 32px 0px;
   background-repeat: no-repeat;
