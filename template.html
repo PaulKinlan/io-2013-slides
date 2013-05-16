@@ -993,7 +993,7 @@ document.isFullScreen();
   
   
 
-  <slide class="segue red fill" style="background-image: url(/images/treacle.png);">
+  <slide class="segue red fill" style="background-image: url(images/treacle.png);">
     <hgroup>
       <h2>Everything is slower</h2>
       <q>What can I do?</q>
@@ -1021,8 +1021,36 @@ document.isFullScreen();
       </h3>
     </hgroup>
     <article>
+      <div class="timing-bar timing-network">Network</div>
+      <div class="timing-bar timing-loading">Loading</div>
+      <div class="timing-bar timing-process">Processing</div>
+
+      <div class="timing-label timing-navigation">Navigation</div>
+      <div class="timing-label timing-onload">onload()</div>
+    </article>
+    <aside class="note">
+      <!-- notes -->
+      <p class="presenter">PETER - 19M</p>
+      <ul>
+        <li>..</li>
+      </ul>
+    </aside>
+  </slide>
+
+  <slide style="background-color: white;" >
+    <hgroup>
+      <h2 class="today">Navigation Timing API</h2>
+      <h3 class="supports">
+        <img src="blogo/chrome.svg">
+        <img class="no" src="blogo/android.png">
+        <img class="no" src="blogo/safari.png">
+        <img src="blogo/ie10.svg">
+        <img src="blogo/firefox.svg">
+        <img src="blogo/opera.svg">
+      </h3>
+    </hgroup>
+    <article>
       <img src="images/timing-overview.png" style="position: absolute; top: 140px;">
-    
     </article>
     <footer>w3c-test.org/webperf/specs/NavigationTiming/</footer>
     <aside class="note">

@@ -173,3 +173,44 @@ h3.support.opera {
   background-position: 160px 0px;
   background-repeat: no-repeat;
 }
+
+.timing-bar {
+  height: 54px;
+  position: absolute;
+  margin-top: 266px;
+  line-height: 54px;
+  text-align: center;
+
+  border: 3px solid rgb(43, 73, 119);
+  background-color: rgb(170, 215, 226);
+}
+
+.timing-label {
+  border-left: 3px solid rgb(43, 73, 119);
+  position: absolute;
+  margin-top: 100px;
+  padding: 0px 0px 150px 5px;
+}
+
+.timing-navigation {
+  margin-left: 4px;
+}
+
+.timing-onload {
+  margin-left: 872px;
+}
+
+.timing-network {
+  width: 334px;
+  margin-left: 4px;
+}
+
+.timing-loading {
+  width: 221px;
+  margin-left: 348px;
+}
+
+.timing-process {
+  width: 291px;
+  margin-left: 579px;
+}
